@@ -15,6 +15,8 @@
 		2E4944AC2187DEE100A97FB9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E4944AA2187DEE100A97FB9 /* LaunchScreen.storyboard */; };
 		2E4944B72187DEE100A97FB9 /* BizyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4944B62187DEE100A97FB9 /* BizyTests.swift */; };
 		2E4944C22187DEE100A97FB9 /* BizyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4944C12187DEE100A97FB9 /* BizyUITests.swift */; };
+		2E4944D62187E84A00A97FB9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4944D52187E84A00A97FB9 /* User.swift */; };
+		2E4FE34F218E82AC00CCAC51 /* WalletCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4FE34E218E82AC00CCAC51 /* WalletCard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		2E4944BD2187DEE100A97FB9 /* BizyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BizyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E4944C12187DEE100A97FB9 /* BizyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BizyUITests.swift; sourceTree = "<group>"; };
 		2E4944C32187DEE100A97FB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2E4944D52187E84A00A97FB9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		2E4FE34E218E82AC00CCAC51 /* WalletCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletCard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +135,8 @@
 		2E4944CF2187DEEC00A97FB9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				2E4944D52187E84A00A97FB9 /* User.swift */,
+				2E4FE34E218E82AC00CCAC51 /* WalletCard.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -307,8 +313,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E4944D62187E84A00A97FB9 /* User.swift in Sources */,
 				2E4944A12187DEE000A97FB9 /* ViewController.swift in Sources */,
 				2E4944A72187DEE000A97FB9 /* Bizy.xcdatamodeld in Sources */,
+				2E4FE34F218E82AC00CCAC51 /* WalletCard.swift in Sources */,
 				2E49449F2187DEE000A97FB9 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
