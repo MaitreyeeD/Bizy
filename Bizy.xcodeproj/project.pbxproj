@@ -17,6 +17,24 @@
 		2E4944C22187DEE100A97FB9 /* BizyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4944C12187DEE100A97FB9 /* BizyUITests.swift */; };
 		2E4944D62187E84A00A97FB9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4944D52187E84A00A97FB9 /* User.swift */; };
 		2E4FE34F218E82AC00CCAC51 /* WalletCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4FE34E218E82AC00CCAC51 /* WalletCard.swift */; };
+		2E4FE356218E8D6000CCAC51 /* QRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4FE355218E8D6000CCAC51 /* QRCode.swift */; };
+		2E4FE358218E8DA100CCAC51 /* CIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4FE357218E8DA100CCAC51 /* CIColorExtension.swift */; };
+		2E4FE35A218E8DCA00CCAC51 /* CIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4FE359218E8DCA00CCAC51 /* CIImageExtension.swift */; };
+		2E4FE35D218E8F2900CCAC51 /* UserParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4FE35C218E8F2900CCAC51 /* UserParser.swift */; };
+		2E4FE35F218E8F4A00CCAC51 /* WalletParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4FE35E218E8F4A00CCAC51 /* WalletParser.swift */; };
+		2E4FE361218E91BC00CCAC51 /* QRCodeReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4FE360218E91BC00CCAC51 /* QRCodeReader.swift */; };
+		2E4FE363218E91E600CCAC51 /* QRCodeReaderResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4FE362218E91E600CCAC51 /* QRCodeReaderResult.swift */; };
+		2E4FE365218E923A00CCAC51 /* QRCodeReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4FE364218E923A00CCAC51 /* QRCodeReaderView.swift */; };
+		2ECB0813218E929F0035D264 /* QRCodeViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECB0812218E929F0035D264 /* QRCodeViewContainer.swift */; };
+		2ECB0815218E92C90035D264 /* QRCodeReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECB0814218E92C90035D264 /* QRCodeReaderViewController.swift */; };
+		2ECB0817218E92F40035D264 /* QRCodeReaderViewControllerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECB0816218E92F40035D264 /* QRCodeReaderViewControllerBuilder.swift */; };
+		2ECB0819218E93130035D264 /* QRCodeReaderViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECB0818218E93130035D264 /* QRCodeReaderViewControllerDelegate.swift */; };
+		2ECB081B218E932A0035D264 /* ReaderOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECB081A218E932A0035D264 /* ReaderOverlayView.swift */; };
+		2ECB081D218E93460035D264 /* SwitchCameraButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECB081C218E93460035D264 /* SwitchCameraButton.swift */; };
+		2ECB081F218E935E0035D264 /* ToggleTorchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECB081E218E935E0035D264 /* ToggleTorchButton.swift */; };
+		428A577047830792AC44C131 /* Pods_BizyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F6949F043C67A28AEFBACDC /* Pods_BizyUITests.framework */; };
+		8441071D1D42271A2DED5928 /* Pods_Bizy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C2EF5CC9EC417F699F6D78A /* Pods_Bizy.framework */; };
+		8BD9D93944558DC296445380 /* Pods_BizyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA7A915DCACD0E444B4D1758 /* Pods_BizyTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +55,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		218BA0C204732D86F13F1821 /* Pods-BizyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BizyUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BizyUITests/Pods-BizyUITests.release.xcconfig"; sourceTree = "<group>"; };
 		2E49449B2187DEE000A97FB9 /* Bizy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bizy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E49449E2187DEE000A97FB9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2E4944A02187DEE000A97FB9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -53,6 +72,29 @@
 		2E4944C32187DEE100A97FB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2E4944D52187E84A00A97FB9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		2E4FE34E218E82AC00CCAC51 /* WalletCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletCard.swift; sourceTree = "<group>"; };
+		2E4FE355218E8D6000CCAC51 /* QRCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCode.swift; sourceTree = "<group>"; };
+		2E4FE357218E8DA100CCAC51 /* CIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIColorExtension.swift; sourceTree = "<group>"; };
+		2E4FE359218E8DCA00CCAC51 /* CIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIImageExtension.swift; sourceTree = "<group>"; };
+		2E4FE35C218E8F2900CCAC51 /* UserParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserParser.swift; sourceTree = "<group>"; };
+		2E4FE35E218E8F4A00CCAC51 /* WalletParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletParser.swift; sourceTree = "<group>"; };
+		2E4FE360218E91BC00CCAC51 /* QRCodeReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeReader.swift; sourceTree = "<group>"; };
+		2E4FE362218E91E600CCAC51 /* QRCodeReaderResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeReaderResult.swift; sourceTree = "<group>"; };
+		2E4FE364218E923A00CCAC51 /* QRCodeReaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeReaderView.swift; sourceTree = "<group>"; };
+		2ECB0812218E929F0035D264 /* QRCodeViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeViewContainer.swift; sourceTree = "<group>"; };
+		2ECB0814218E92C90035D264 /* QRCodeReaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeReaderViewController.swift; sourceTree = "<group>"; };
+		2ECB0816218E92F40035D264 /* QRCodeReaderViewControllerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeReaderViewControllerBuilder.swift; sourceTree = "<group>"; };
+		2ECB0818218E93130035D264 /* QRCodeReaderViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeReaderViewControllerDelegate.swift; sourceTree = "<group>"; };
+		2ECB081A218E932A0035D264 /* ReaderOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderOverlayView.swift; sourceTree = "<group>"; };
+		2ECB081C218E93460035D264 /* SwitchCameraButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchCameraButton.swift; sourceTree = "<group>"; };
+		2ECB081E218E935E0035D264 /* ToggleTorchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleTorchButton.swift; sourceTree = "<group>"; };
+		2F6949F043C67A28AEFBACDC /* Pods_BizyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BizyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		68C38BC3FFE055A1C3E2B9B6 /* Pods-BizyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BizyTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BizyTests/Pods-BizyTests.release.xcconfig"; sourceTree = "<group>"; };
+		70CEB54289FDECAD0E8FAE88 /* Pods-BizyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BizyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BizyTests/Pods-BizyTests.debug.xcconfig"; sourceTree = "<group>"; };
+		7B895FF69AC8C545A4491F36 /* Pods-Bizy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bizy.release.xcconfig"; path = "Pods/Target Support Files/Pods-Bizy/Pods-Bizy.release.xcconfig"; sourceTree = "<group>"; };
+		7C2EF5CC9EC417F699F6D78A /* Pods_Bizy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bizy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA7A915DCACD0E444B4D1758 /* Pods_BizyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BizyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE06CF96A5684291A3C3C60C /* Pods-Bizy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bizy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bizy/Pods-Bizy.debug.xcconfig"; sourceTree = "<group>"; };
+		CE870486F4CA2484BE89FB0F /* Pods-BizyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BizyUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BizyUITests/Pods-BizyUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8441071D1D42271A2DED5928 /* Pods_Bizy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,6 +110,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BD9D93944558DC296445380 /* Pods_BizyTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +118,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				428A577047830792AC44C131 /* Pods_BizyUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,6 +132,8 @@
 				2E4944B52187DEE100A97FB9 /* BizyTests */,
 				2E4944C02187DEE100A97FB9 /* BizyUITests */,
 				2E49449C2187DEE000A97FB9 /* Products */,
+				31755658F43CD05C0CD17C94 /* Pods */,
+				C40922B1801850AF3EC184B0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,6 +150,7 @@
 		2E49449D2187DEE000A97FB9 /* Bizy */ = {
 			isa = PBXGroup;
 			children = (
+				2E4FE35B218E8F0000CCAC51 /* Parsers */,
 				2E4944D42187DF9F00A97FB9 /* Assets */,
 				2E4944D32187DF5E00A97FB9 /* AppDelegate */,
 				2E4944D22187DF4500A97FB9 /* InternalAPIs */,
@@ -161,6 +209,8 @@
 		2E4944D22187DF4500A97FB9 /* InternalAPIs */ = {
 			isa = PBXGroup;
 			children = (
+				2E4FE352218E8C4100CCAC51 /* QRCodeReader */,
+				2E4FE350218E8C2200CCAC51 /* QRCodeGenerator */,
 			);
 			path = InternalAPIs;
 			sourceTree = "<group>";
@@ -182,6 +232,65 @@
 			path = Assets;
 			sourceTree = "<group>";
 		};
+		2E4FE350218E8C2200CCAC51 /* QRCodeGenerator */ = {
+			isa = PBXGroup;
+			children = (
+				2E4FE355218E8D6000CCAC51 /* QRCode.swift */,
+				2E4FE357218E8DA100CCAC51 /* CIColorExtension.swift */,
+				2E4FE359218E8DCA00CCAC51 /* CIImageExtension.swift */,
+			);
+			path = QRCodeGenerator;
+			sourceTree = "<group>";
+		};
+		2E4FE352218E8C4100CCAC51 /* QRCodeReader */ = {
+			isa = PBXGroup;
+			children = (
+				2E4FE360218E91BC00CCAC51 /* QRCodeReader.swift */,
+				2E4FE362218E91E600CCAC51 /* QRCodeReaderResult.swift */,
+				2E4FE364218E923A00CCAC51 /* QRCodeReaderView.swift */,
+				2ECB0812218E929F0035D264 /* QRCodeViewContainer.swift */,
+				2ECB0814218E92C90035D264 /* QRCodeReaderViewController.swift */,
+				2ECB0816218E92F40035D264 /* QRCodeReaderViewControllerBuilder.swift */,
+				2ECB0818218E93130035D264 /* QRCodeReaderViewControllerDelegate.swift */,
+				2ECB081A218E932A0035D264 /* ReaderOverlayView.swift */,
+				2ECB081C218E93460035D264 /* SwitchCameraButton.swift */,
+				2ECB081E218E935E0035D264 /* ToggleTorchButton.swift */,
+			);
+			path = QRCodeReader;
+			sourceTree = "<group>";
+		};
+		2E4FE35B218E8F0000CCAC51 /* Parsers */ = {
+			isa = PBXGroup;
+			children = (
+				2E4FE35C218E8F2900CCAC51 /* UserParser.swift */,
+				2E4FE35E218E8F4A00CCAC51 /* WalletParser.swift */,
+			);
+			path = Parsers;
+			sourceTree = "<group>";
+		};
+		31755658F43CD05C0CD17C94 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CE06CF96A5684291A3C3C60C /* Pods-Bizy.debug.xcconfig */,
+				7B895FF69AC8C545A4491F36 /* Pods-Bizy.release.xcconfig */,
+				70CEB54289FDECAD0E8FAE88 /* Pods-BizyTests.debug.xcconfig */,
+				68C38BC3FFE055A1C3E2B9B6 /* Pods-BizyTests.release.xcconfig */,
+				CE870486F4CA2484BE89FB0F /* Pods-BizyUITests.debug.xcconfig */,
+				218BA0C204732D86F13F1821 /* Pods-BizyUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C40922B1801850AF3EC184B0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7C2EF5CC9EC417F699F6D78A /* Pods_Bizy.framework */,
+				BA7A915DCACD0E444B4D1758 /* Pods_BizyTests.framework */,
+				2F6949F043C67A28AEFBACDC /* Pods_BizyUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -189,9 +298,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2E4944C62187DEE100A97FB9 /* Build configuration list for PBXNativeTarget "Bizy" */;
 			buildPhases = (
+				C8ED648C684257DD44D37C95 /* [CP] Check Pods Manifest.lock */,
 				2E4944972187DEDF00A97FB9 /* Sources */,
 				2E4944982187DEDF00A97FB9 /* Frameworks */,
 				2E4944992187DEDF00A97FB9 /* Resources */,
+				4F87CD3EA84C50038F35DFA5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -206,6 +317,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2E4944C92187DEE100A97FB9 /* Build configuration list for PBXNativeTarget "BizyTests" */;
 			buildPhases = (
+				4F9DCA9C6098071224C768AB /* [CP] Check Pods Manifest.lock */,
 				2E4944AE2187DEE100A97FB9 /* Sources */,
 				2E4944AF2187DEE100A97FB9 /* Frameworks */,
 				2E4944B02187DEE100A97FB9 /* Resources */,
@@ -224,6 +336,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2E4944CC2187DEE100A97FB9 /* Build configuration list for PBXNativeTarget "BizyUITests" */;
 			buildPhases = (
+				8722572A85F72827227EA8F4 /* [CP] Check Pods Manifest.lock */,
 				2E4944B92187DEE100A97FB9 /* Sources */,
 				2E4944BA2187DEE100A97FB9 /* Frameworks */,
 				2E4944BB2187DEE100A97FB9 /* Resources */,
@@ -308,16 +421,124 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4F87CD3EA84C50038F35DFA5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Bizy/Pods-Bizy-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Bizy/Pods-Bizy-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4F9DCA9C6098071224C768AB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BizyTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8722572A85F72827227EA8F4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BizyUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C8ED648C684257DD44D37C95 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Bizy-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2E4944972187DEDF00A97FB9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2ECB081F218E935E0035D264 /* ToggleTorchButton.swift in Sources */,
+				2ECB081B218E932A0035D264 /* ReaderOverlayView.swift in Sources */,
 				2E4944D62187E84A00A97FB9 /* User.swift in Sources */,
+				2E4FE361218E91BC00CCAC51 /* QRCodeReader.swift in Sources */,
 				2E4944A12187DEE000A97FB9 /* ViewController.swift in Sources */,
+				2E4FE363218E91E600CCAC51 /* QRCodeReaderResult.swift in Sources */,
+				2E4FE358218E8DA100CCAC51 /* CIColorExtension.swift in Sources */,
+				2E4FE35F218E8F4A00CCAC51 /* WalletParser.swift in Sources */,
+				2ECB0815218E92C90035D264 /* QRCodeReaderViewController.swift in Sources */,
 				2E4944A72187DEE000A97FB9 /* Bizy.xcdatamodeld in Sources */,
 				2E4FE34F218E82AC00CCAC51 /* WalletCard.swift in Sources */,
+				2ECB081D218E93460035D264 /* SwitchCameraButton.swift in Sources */,
+				2ECB0817218E92F40035D264 /* QRCodeReaderViewControllerBuilder.swift in Sources */,
+				2ECB0813218E929F0035D264 /* QRCodeViewContainer.swift in Sources */,
+				2E4FE35A218E8DCA00CCAC51 /* CIImageExtension.swift in Sources */,
 				2E49449F2187DEE000A97FB9 /* AppDelegate.swift in Sources */,
+				2E4FE35D218E8F2900CCAC51 /* UserParser.swift in Sources */,
+				2ECB0819218E93130035D264 /* QRCodeReaderViewControllerDelegate.swift in Sources */,
+				2E4FE365218E923A00CCAC51 /* QRCodeReaderView.swift in Sources */,
+				2E4FE356218E8D6000CCAC51 /* QRCode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -488,6 +709,7 @@
 		};
 		2E4944C72187DEE100A97FB9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE06CF96A5684291A3C3C60C /* Pods-Bizy.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -505,6 +727,7 @@
 		};
 		2E4944C82187DEE100A97FB9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B895FF69AC8C545A4491F36 /* Pods-Bizy.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -522,6 +745,7 @@
 		};
 		2E4944CA2187DEE100A97FB9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 70CEB54289FDECAD0E8FAE88 /* Pods-BizyTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -542,6 +766,7 @@
 		};
 		2E4944CB2187DEE100A97FB9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 68C38BC3FFE055A1C3E2B9B6 /* Pods-BizyTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -562,6 +787,7 @@
 		};
 		2E4944CD2187DEE100A97FB9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE870486F4CA2484BE89FB0F /* Pods-BizyUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -581,6 +807,7 @@
 		};
 		2E4944CE2187DEE100A97FB9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 218BA0C204732D86F13F1821 /* Pods-BizyUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
