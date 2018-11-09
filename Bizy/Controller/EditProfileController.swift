@@ -61,7 +61,7 @@ class EditProfileController: UIViewController, UITextFieldDelegate, UIImagePicke
     user.position = positionField.text
     user.image = pic
     self.saveProfile(profile: user)
-    //delegate?.addContactController(controller: self, didFinishAddingContact: contact)
+    
   }
   
   
@@ -90,16 +90,5 @@ class EditProfileController: UIViewController, UITextFieldDelegate, UIImagePicke
   }
   
   
-
-
-
-
-
-
-
-
-
-
-
 
 }
