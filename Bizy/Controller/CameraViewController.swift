@@ -20,7 +20,7 @@ class CameraViewController: UIViewController, QRCodeReaderViewControllerDelegate
 //  let toggleTorchButton: UIButton?  = ToggleTorchButton()
 //  var overlayView: UIView?          = UIView()
   
-  let userURL: String
+  let userURL = ""
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
