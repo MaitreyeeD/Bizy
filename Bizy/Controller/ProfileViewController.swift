@@ -14,7 +14,7 @@ class ProfileViewController: UIViewController {
 //   @IBOutlet var done: UIButton!
 
   
-  @IBOutlet var firstNameLabel: UILabel!
+   @IBOutlet var firstNameLabel: UILabel!
    @IBOutlet var lastNameLabel: UILabel!
    @IBOutlet var companyLabel: UILabel!
    @IBOutlet var positionLabel: UILabel!
@@ -46,10 +46,10 @@ class ProfileViewController: UIViewController {
       if let workPhone = self.workPhoneLabel {
         workPhone.text = detail.phone
       }
-//      if let image = self.pictureLabel {
-//        image.image = detail.image
-//      }
-    }
+     if let image = self.pictureLabel {
+       image.image = detail.image
+     }
+ }
   }
 
   

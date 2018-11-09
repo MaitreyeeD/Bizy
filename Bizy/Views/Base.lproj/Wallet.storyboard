@@ -138,23 +138,16 @@
             </objects>
             <point key="canvasLocation" x="1392.8" y="-720.08995502248877"/>
         </scene>
-        <!--View Controller-->
+        <!--Edit Profile Controller-->
         <scene sceneID="Fvu-uN-Ibc">
             <objects>
-                <viewController id="hlj-im-0PW" sceneMemberID="viewController">
+                <viewController id="hlj-im-0PW" customClass="EditProfileController" customModule="Bizy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rq3-U4-iTH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="John" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oAS-CK-EJa">
                                 <rect key="frame" x="206" y="230" width="116" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="Rockwell-Italic" family="Rockwell" pointSize="16"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Smith" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nt8-Ws-DCp">
-                                <rect key="frame" x="206" y="283" width="116" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="Rockwell-Italic" family="Rockwell" pointSize="16"/>
@@ -233,10 +226,34 @@
                                 <rect key="frame" x="90" y="54" width="195" height="92"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I0M-Ft-9Bq">
+                                <rect key="frame" x="128" y="167" width="128" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Rockwell-Italic" family="Rockwell" pointSize="17"/>
+                                <state key="normal" title="Choose a Photo"/>
+                                <connections>
+                                    <action selector="loadImageButtonTappedWithSender:" destination="hlj-im-0PW" eventType="touchUpInside" id="Ilx-lS-rZR"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Smith" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nt8-Ws-DCp">
+                                <rect key="frame" x="206" y="283" width="116" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="Rockwell-Italic" family="Rockwell" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="iFn-Ws-J7e"/>
                     </view>
+                    <connections>
+                        <outlet property="companyField" destination="jP4-NJ-NTx" id="JZE-U6-lMZ"/>
+                        <outlet property="firstNameField" destination="oAS-CK-EJa" id="l43-oo-tNt"/>
+                        <outlet property="lastNameField" destination="nt8-Ws-DCp" id="Wj5-PC-Dx5"/>
+                        <outlet property="picturePreview" destination="7EW-ix-Dom" id="8Wi-Zy-VAW"/>
+                        <outlet property="positionField" destination="Gs9-4R-2Gf" id="sOx-ux-tne"/>
+                        <outlet property="workPhoneField" destination="Jig-yu-JT5" id="pXt-EO-TdT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qaH-AN-lDa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -401,7 +418,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="08N-fw-QWe"/>
         <segue reference="dZg-OE-wpY"/>
     </inferredMetricsTieBreakers>
 </document>
