@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		2E49449F2187DEE000A97FB9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E49449E2187DEE000A97FB9 /* AppDelegate.swift */; };
 		2E4944A12187DEE000A97FB9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4944A02187DEE000A97FB9 /* ViewController.swift */; };
-		2E4944A42187DEE000A97FB9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E4944A22187DEE000A97FB9 /* Main.storyboard */; };
+		2E4944A42187DEE000A97FB9 /* Wallet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E4944A22187DEE000A97FB9 /* Wallet.storyboard */; };
 		2E4944A72187DEE000A97FB9 /* Bizy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2E4944A52187DEE000A97FB9 /* Bizy.xcdatamodeld */; };
 		2E4944A92187DEE100A97FB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E4944A82187DEE100A97FB9 /* Assets.xcassets */; };
 		2E4944AC2187DEE100A97FB9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E4944AA2187DEE100A97FB9 /* LaunchScreen.storyboard */; };
@@ -27,6 +27,10 @@
 		2E4FE365218E923A00CCAC51 /* QRCodeReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4FE364218E923A00CCAC51 /* QRCodeReaderView.swift */; };
 		2EC4B3E821951393006E9B3E /* UserParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC4B3E721951393006E9B3E /* UserParserTests.swift */; };
 		2EC4B3EA21952BD1006E9B3E /* WalletController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC4B3E921952BD1006E9B3E /* WalletController.swift */; };
+		2EC4B3ED21954AD4006E9B3E /* GetUserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC4B3EC21954AD4006E9B3E /* GetUserData.swift */; };
+		2EC4B3EF21955E80006E9B3E /* Temp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2EC4B3EE21955E80006E9B3E /* Temp.storyboard */; };
+		2EC4B3F121956439006E9B3E /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC4B3F021956439006E9B3E /* CameraViewController.swift */; };
+		2EC4B3F32195645F006E9B3E /* QRCodeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC4B3F22195645F006E9B3E /* QRCodeController.swift */; };
 		2ECB0813218E929F0035D264 /* QRCodeViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECB0812218E929F0035D264 /* QRCodeViewContainer.swift */; };
 		2ECB0815218E92C90035D264 /* QRCodeReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECB0814218E92C90035D264 /* QRCodeReaderViewController.swift */; };
 		2ECB0817218E92F40035D264 /* QRCodeReaderViewControllerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECB0816218E92F40035D264 /* QRCodeReaderViewControllerBuilder.swift */; };
@@ -61,7 +65,7 @@
 		2E49449B2187DEE000A97FB9 /* Bizy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bizy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E49449E2187DEE000A97FB9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2E4944A02187DEE000A97FB9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		2E4944A32187DEE000A97FB9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2E4944A32187DEE000A97FB9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Wallet.storyboard; sourceTree = "<group>"; };
 		2E4944A62187DEE000A97FB9 /* Bizy.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Bizy.xcdatamodel; sourceTree = "<group>"; };
 		2E4944A82187DEE100A97FB9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2E4944AB2187DEE100A97FB9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -84,6 +88,10 @@
 		2E4FE364218E923A00CCAC51 /* QRCodeReaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeReaderView.swift; sourceTree = "<group>"; };
 		2EC4B3E721951393006E9B3E /* UserParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserParserTests.swift; sourceTree = "<group>"; };
 		2EC4B3E921952BD1006E9B3E /* WalletController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletController.swift; sourceTree = "<group>"; };
+		2EC4B3EC21954AD4006E9B3E /* GetUserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserData.swift; sourceTree = "<group>"; };
+		2EC4B3EE21955E80006E9B3E /* Temp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Temp.storyboard; sourceTree = "<group>"; };
+		2EC4B3F021956439006E9B3E /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		2EC4B3F22195645F006E9B3E /* QRCodeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeController.swift; sourceTree = "<group>"; };
 		2ECB0812218E929F0035D264 /* QRCodeViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeViewContainer.swift; sourceTree = "<group>"; };
 		2ECB0814218E92C90035D264 /* QRCodeReaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeReaderViewController.swift; sourceTree = "<group>"; };
 		2ECB0816218E92F40035D264 /* QRCodeReaderViewControllerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeReaderViewControllerBuilder.swift; sourceTree = "<group>"; };
@@ -154,6 +162,7 @@
 		2E49449D2187DEE000A97FB9 /* Bizy */ = {
 			isa = PBXGroup;
 			children = (
+				2EC4B3EB219538D9006E9B3E /* Network */,
 				2E4944A82187DEE100A97FB9 /* Assets.xcassets */,
 				2E4944AD2187DEE100A97FB9 /* Info.plist */,
 				2E4FE35B218E8F0000CCAC51 /* Parsers */,
@@ -200,6 +209,8 @@
 			children = (
 				2E4944A02187DEE000A97FB9 /* ViewController.swift */,
 				2EC4B3E921952BD1006E9B3E /* WalletController.swift */,
+				2EC4B3F021956439006E9B3E /* CameraViewController.swift */,
+				2EC4B3F22195645F006E9B3E /* QRCodeController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -207,8 +218,9 @@
 		2E4944D12187DF2500A97FB9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				2E4944A22187DEE000A97FB9 /* Main.storyboard */,
+				2E4944A22187DEE000A97FB9 /* Wallet.storyboard */,
 				2E4944AA2187DEE100A97FB9 /* LaunchScreen.storyboard */,
+				2EC4B3EE21955E80006E9B3E /* Temp.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -272,6 +284,14 @@
 				2EC4B3E721951393006E9B3E /* UserParserTests.swift */,
 			);
 			path = Classes;
+			sourceTree = "<group>";
+		};
+		2EC4B3EB219538D9006E9B3E /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				2EC4B3EC21954AD4006E9B3E /* GetUserData.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		31755658F43CD05C0CD17C94 /* Pods */ = {
@@ -405,9 +425,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2EC4B3EF21955E80006E9B3E /* Temp.storyboard in Resources */,
 				2E4944AC2187DEE100A97FB9 /* LaunchScreen.storyboard in Resources */,
 				2E4944A92187DEE100A97FB9 /* Assets.xcassets in Resources */,
-				2E4944A42187DEE000A97FB9 /* Main.storyboard in Resources */,
+				2E4944A42187DEE000A97FB9 /* Wallet.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -512,6 +533,7 @@
 				2ECB081F218E935E0035D264 /* ToggleTorchButton.swift in Sources */,
 				2ECB081B218E932A0035D264 /* ReaderOverlayView.swift in Sources */,
 				2E4944D62187E84A00A97FB9 /* User.swift in Sources */,
+				2EC4B3F121956439006E9B3E /* CameraViewController.swift in Sources */,
 				2E4FE361218E91BC00CCAC51 /* QRCodeReader.swift in Sources */,
 				2E4944A12187DEE000A97FB9 /* ViewController.swift in Sources */,
 				2E4FE363218E91E600CCAC51 /* QRCodeReaderResult.swift in Sources */,
@@ -519,7 +541,9 @@
 				2E4FE35F218E8F4A00CCAC51 /* WalletParser.swift in Sources */,
 				2ECB0815218E92C90035D264 /* QRCodeReaderViewController.swift in Sources */,
 				2E4944A72187DEE000A97FB9 /* Bizy.xcdatamodeld in Sources */,
+				2EC4B3F32195645F006E9B3E /* QRCodeController.swift in Sources */,
 				2E4FE34F218E82AC00CCAC51 /* WalletCard.swift in Sources */,
+				2EC4B3ED21954AD4006E9B3E /* GetUserData.swift in Sources */,
 				2ECB081D218E93460035D264 /* SwitchCameraButton.swift in Sources */,
 				2ECB0817218E92F40035D264 /* QRCodeReaderViewControllerBuilder.swift in Sources */,
 				2ECB0813218E929F0035D264 /* QRCodeViewContainer.swift in Sources */,
@@ -566,12 +590,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		2E4944A22187DEE000A97FB9 /* Main.storyboard */ = {
+		2E4944A22187DEE000A97FB9 /* Wallet.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				2E4944A32187DEE000A97FB9 /* Base */,
 			);
-			name = Main.storyboard;
+			name = Wallet.storyboard;
 			sourceTree = "<group>";
 		};
 		2E4944AA2187DEE100A97FB9 /* LaunchScreen.storyboard */ = {

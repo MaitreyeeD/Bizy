@@ -12,36 +12,70 @@ import Alamofire
 import SwiftyJSON
 
 class UserParser {
-//  var urlString: String
+  var urlString: String!
 ////  var call: NSURL
-////  var data: NSData
+//  var dataResult: Data!
+  var swiftyjson: JSON!
 //  init(url: String) {
 //    urlString = url
 //  }
   
-  func parseURL(urlString: String) -> JSON? {
-    let call = NSURL(string: urlString)!
+  
+//  func parseURL(url: String) {
+//    urlString = url
     
-    let data = NSData(contentsOf: call as URL) as Data?
+//    let urls = URL(string: url)
+    
+//    URLSession.shared.dataTask(with:urls!, completionHandler: {(data, response, error) in
+//      guard let data = data, error == nil else { return }
+//      do {
+//        self.swiftyjson = try JSON(data: data)
+////        let json = try JSON(data: data);
+//      } catch let error as NSError {
+//        print(error)
+//      }
+//    }).resume()
+    
+//    let call = NSURL(string: url)!
+    
+    
+//    do {
+//      let data = try Data(contentsOf: call as URL)
+//        do {
+//
+//          let swiftyjson = try JSON(data: data)
+//          return swiftyjson
+//
+//        } catch {
+//          print("Error parsing this url!!")
+//        }
+//
+//    } catch  {
+//      print("Error parsing this url!!")
+//    }
+//
+//    let data = Data(contentsOf: call as URL)
 //    var swiftyjson :JSON
   
-    do {
-      if let data = data {
-        let swiftyjson = try JSON(data: data)
-        return swiftyjson
-      }
-    } catch {
-      print("Error parsing this url!!")
-    }
-    
-    return nil
-  }
+//    do {
+//      if let data = self.dataResult {
+//        let swiftyjson = try JSON(data: data)
+//        return swiftyjson
+//      }
+//    } catch {
+//      print("Error parsing this url!!")
+//    }
+//
+//    return nil
+//  }
   
-  func createUser(url: String) -> User? {
-    guard let swiftyjson = parseURL(urlString: url) else {
-      print("Error parsing this url!!")
-      return nil
-    }
+  func createUser() -> User? {
+    
+//    parseURL(url: url)
+//    guard let swiftyjson = parseURL(url: url) else {
+//      print("Error parsing this url!!")
+//      return nil
+//    }
     
     guard let fname = swiftyjson["first_name"].string  else {
       return nil
@@ -96,7 +130,7 @@ class UserParser {
     //To Be Determined!!!!!!
     //How do we store and access images into our database!!!
     //var image: UIImageView?
-    
+      
     return user;
   }
   

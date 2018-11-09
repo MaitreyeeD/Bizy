@@ -22,7 +22,7 @@ class UserParserTests: XCTestCase {
 //  }
   
   func test_createUser() {
-    let url = "http://localhost:3000/users/1.json"
+    let url = "https://api.github.com/search/repositories?q=language:swift&sort=stars&order=desc"
     
 //    let user = createUser()
     let parser = UserParser()
