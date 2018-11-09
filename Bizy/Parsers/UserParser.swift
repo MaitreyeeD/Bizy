@@ -101,7 +101,7 @@ class UserParser {
   }
   
   func postUser(person: User) {
-    let urlString: String = ""
+    let urlString: String = "https://desolate-springs-29566.herokuapp.com/users/"
 
     
     let parameters: Parameters = [
@@ -119,28 +119,31 @@ class UserParser {
       "summary": person.summary ?? "",
     ]
     
-//    Alamofire.request(urlString, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil).responseJSON {
-//      response in
-//      switch response.result {
-//      case .success:
-//        do {
-//          
-//          let swiftyjson = try JSON(data: response.data!)
-//          let id = swiftyjson["id"].string
-//          person.id = id;
-////          http://localhost:3000/users/1.json
-////          person.qrCode =
-//          
-//        } catch {
-//          print("Error sending the post request with this information!")
-//        }
-//        
-//        break
-//      case .failure(let error):
-//
-//        print(error)
-//      }
-//    }
+    Alamofire.request(urlString, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil).responseJSON {
+      response in
+      switch response.result {
+      case .success:
+        do {
+
+          let swiftyjson = try JSON(data: response.data!)
+          let userId = swiftyjson["id"].string
+          person.id = userId;
+          if let bop = userId {
+            let qrString = urlString + bop
+            person.qrCode = QRCode(qrString)
+          }
+          
+          
+        } catch {
+          print("Error sending the post request with this information!")
+        }
+        
+        break
+      case .failure(let error):
+
+        print(error)
+      }
+    }
     
   }
   

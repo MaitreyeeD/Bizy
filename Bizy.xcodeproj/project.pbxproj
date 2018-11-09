@@ -25,6 +25,8 @@
 		2E4FE361218E91BC00CCAC51 /* QRCodeReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4FE360218E91BC00CCAC51 /* QRCodeReader.swift */; };
 		2E4FE363218E91E600CCAC51 /* QRCodeReaderResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4FE362218E91E600CCAC51 /* QRCodeReaderResult.swift */; };
 		2E4FE365218E923A00CCAC51 /* QRCodeReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4FE364218E923A00CCAC51 /* QRCodeReaderView.swift */; };
+		2EC4B3E821951393006E9B3E /* UserParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC4B3E721951393006E9B3E /* UserParserTests.swift */; };
+		2EC4B3EA21952BD1006E9B3E /* WalletController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC4B3E921952BD1006E9B3E /* WalletController.swift */; };
 		2ECB0813218E929F0035D264 /* QRCodeViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECB0812218E929F0035D264 /* QRCodeViewContainer.swift */; };
 		2ECB0815218E92C90035D264 /* QRCodeReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECB0814218E92C90035D264 /* QRCodeReaderViewController.swift */; };
 		2ECB0817218E92F40035D264 /* QRCodeReaderViewControllerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECB0816218E92F40035D264 /* QRCodeReaderViewControllerBuilder.swift */; };
@@ -80,6 +82,8 @@
 		2E4FE360218E91BC00CCAC51 /* QRCodeReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeReader.swift; sourceTree = "<group>"; };
 		2E4FE362218E91E600CCAC51 /* QRCodeReaderResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeReaderResult.swift; sourceTree = "<group>"; };
 		2E4FE364218E923A00CCAC51 /* QRCodeReaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeReaderView.swift; sourceTree = "<group>"; };
+		2EC4B3E721951393006E9B3E /* UserParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserParserTests.swift; sourceTree = "<group>"; };
+		2EC4B3E921952BD1006E9B3E /* WalletController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletController.swift; sourceTree = "<group>"; };
 		2ECB0812218E929F0035D264 /* QRCodeViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeViewContainer.swift; sourceTree = "<group>"; };
 		2ECB0814218E92C90035D264 /* QRCodeReaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeReaderViewController.swift; sourceTree = "<group>"; };
 		2ECB0816218E92F40035D264 /* QRCodeReaderViewControllerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeReaderViewControllerBuilder.swift; sourceTree = "<group>"; };
@@ -150,8 +154,9 @@
 		2E49449D2187DEE000A97FB9 /* Bizy */ = {
 			isa = PBXGroup;
 			children = (
+				2E4944A82187DEE100A97FB9 /* Assets.xcassets */,
+				2E4944AD2187DEE100A97FB9 /* Info.plist */,
 				2E4FE35B218E8F0000CCAC51 /* Parsers */,
-				2E4944D42187DF9F00A97FB9 /* Assets */,
 				2E4944D32187DF5E00A97FB9 /* AppDelegate */,
 				2E4944D22187DF4500A97FB9 /* InternalAPIs */,
 				2E4944D12187DF2500A97FB9 /* Views */,
@@ -165,6 +170,7 @@
 		2E4944B52187DEE100A97FB9 /* BizyTests */ = {
 			isa = PBXGroup;
 			children = (
+				2EC4B3E621951344006E9B3E /* Classes */,
 				2E4944B62187DEE100A97FB9 /* BizyTests.swift */,
 				2E4944B82187DEE100A97FB9 /* Info.plist */,
 			);
@@ -193,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				2E4944A02187DEE000A97FB9 /* ViewController.swift */,
+				2EC4B3E921952BD1006E9B3E /* WalletController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -221,15 +228,6 @@
 				2E49449E2187DEE000A97FB9 /* AppDelegate.swift */,
 			);
 			path = AppDelegate;
-			sourceTree = "<group>";
-		};
-		2E4944D42187DF9F00A97FB9 /* Assets */ = {
-			isa = PBXGroup;
-			children = (
-				2E4944A82187DEE100A97FB9 /* Assets.xcassets */,
-				2E4944AD2187DEE100A97FB9 /* Info.plist */,
-			);
-			path = Assets;
 			sourceTree = "<group>";
 		};
 		2E4FE350218E8C2200CCAC51 /* QRCodeGenerator */ = {
@@ -266,6 +264,14 @@
 				2E4FE35E218E8F4A00CCAC51 /* WalletParser.swift */,
 			);
 			path = Parsers;
+			sourceTree = "<group>";
+		};
+		2EC4B3E621951344006E9B3E /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				2EC4B3E721951393006E9B3E /* UserParserTests.swift */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		31755658F43CD05C0CD17C94 /* Pods */ = {
@@ -427,16 +433,12 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Bizy/Pods-Bizy-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
@@ -451,15 +453,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-BizyTests-checkManifestLockResult.txt",
 			);
@@ -473,15 +471,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-BizyUITests-checkManifestLockResult.txt",
 			);
@@ -495,15 +489,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-Bizy-checkManifestLockResult.txt",
 			);
@@ -537,6 +527,7 @@
 				2E49449F2187DEE000A97FB9 /* AppDelegate.swift in Sources */,
 				2E4FE35D218E8F2900CCAC51 /* UserParser.swift in Sources */,
 				2ECB0819218E93130035D264 /* QRCodeReaderViewControllerDelegate.swift in Sources */,
+				2EC4B3EA21952BD1006E9B3E /* WalletController.swift in Sources */,
 				2E4FE365218E923A00CCAC51 /* QRCodeReaderView.swift in Sources */,
 				2E4FE356218E8D6000CCAC51 /* QRCode.swift in Sources */,
 			);
@@ -547,6 +538,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2E4944B72187DEE100A97FB9 /* BizyTests.swift in Sources */,
+				2EC4B3E821951393006E9B3E /* UserParserTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

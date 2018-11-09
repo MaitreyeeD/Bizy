@@ -55,25 +55,25 @@ class WalletParser {
 //    var contactIds = [String]()
 //    var allWalletsUrl: String
 //    var specificUrl: String
-//    
+//
 //    let call = NSURL(string: allWalletsUrl)!
-//    
+//
 //    let data = NSData(contentsOf: call as URL) as Data?
 //    //    var swiftyjson :JSON
-//    
+//
 //    do {
 //      if let data = data {
 //        let swiftyjson = try JSON(data: data)
 //        for swift in swiftyjson {
 //          if (swift["user_id"] == userId) {
-//            
+//
 //          }
 //        }
 //      }
 //    } catch {
 //      print("Error parsing this url!!")
 //    }
-//    
+//
 //  }
   
   
