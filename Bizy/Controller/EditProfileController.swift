@@ -10,6 +10,10 @@ import UIKit
 import Photos
 import CoreData
 
+protocol DataEnteredDelegate {
+  func userDidEnterInformation(info:String)
+}
+
 
 class EditProfileController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
   
@@ -23,6 +27,25 @@ class EditProfileController: UIViewController, UITextFieldDelegate, UIImagePicke
   
   let imagePicker = UIImagePickerController()
   var pic: UIImage?
+  
+  var delegate:DataEnteredDelegate?
+  
+  
+  @IBAction func sendData(_ sender: AnyObject) {
+    // identifying my delegate
+    print("\n* My delegate is: \(String(describing: delegate))")
+    
+    if let delegate = delegate {
+      let information:String = firstNameField.text!
+      
+      // Step 5: Send info to my delegate so it can handle it appropriately on my behalf
+      print("* Telling my delegate what was entered: \(information)\n")
+      delegate.userDidEnterInformation(info: information)
+      
+      // even if you comment out the next line, the delegate will do its job (you just won't see it in the app...)
+      self.navigationController?.popViewController(animated: true)
+    }
+  }
   
   override func viewDidLoad() {
     super.viewDidLoad()

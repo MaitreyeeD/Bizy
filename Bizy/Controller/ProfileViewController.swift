@@ -9,7 +9,8 @@
 import UIKit
 
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: UIViewController,  DataEnteredDelegate {
+  
 //   @IBOutlet var edit: UIButton!
 //   @IBOutlet var done: UIButton!
 
@@ -55,7 +56,8 @@ class ProfileViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    self.configureView()
+    //self.configureView()
+    firstNameLabel.text = "A name"
 
     
   }
@@ -63,6 +65,27 @@ class ProfileViewController: UIViewController {
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
+  }
+  
+  func userDidEnterInformation(info: String) {
+    print("true")
+    firstNameLabel.text = info
+    print("-- Doing my job as a delegate")
+    print("-- Sending to outlet: \(info)\n")
+    print(info)
+    
+  }
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if segue.identifier == "addDataVC" {
+      print("segue")
+      let addDataVC:EditProfileController = segue.destination as! EditProfileController
+      
+      // Step 4: Tell object A (AddVC) that object B (VC) is now its delegate
+      addDataVC.delegate = self as DataEnteredDelegate
+      // declaring that this VC is acting as the delegate
+      print("\n-- I'm \(String(describing: addDataVC))'s delegate: \(String(describing: addDataVC.delegate))\n")
+    }
   }
   
 

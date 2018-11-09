@@ -25,7 +25,7 @@
             </objects>
             <point key="canvasLocation" x="98" y="1424"/>
         </scene>
-        <!--Profile View Controller-->
+        <!--Profile-->
         <scene sceneID="Jct-dV-A80">
             <objects>
                 <viewController id="tQq-3V-p7H" customClass="ProfileViewController" customModule="Bizy" customModuleProvider="target" sceneMemberID="viewController">
@@ -108,7 +108,7 @@
                                 <fontDescription key="fontDescription" name="Rockwell-Italic" family="Rockwell" pointSize="17"/>
                                 <state key="normal" title="Edit"/>
                                 <connections>
-                                    <segue destination="hlj-im-0PW" kind="show" id="08N-fw-QWe"/>
+                                    <segue destination="hlj-im-0PW" kind="show" identifier="addDataVC" id="08N-fw-QWe"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tLo-S1-28G">
@@ -125,6 +125,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="roS-0L-ODM"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Profile" id="p6w-f5-MQA"/>
                     <connections>
                         <outlet property="companyLabel" destination="xzk-Ee-hV1" id="Ftd-FF-TzL"/>
                         <outlet property="firstNameLabel" destination="uTr-03-xkt" id="LLk-OA-jiQ"/>
@@ -138,7 +139,7 @@
             </objects>
             <point key="canvasLocation" x="1392.8" y="-720.08995502248877"/>
         </scene>
-        <!--Edit Profile Controller-->
+        <!--Edit Profile-->
         <scene sceneID="Fvu-uN-Ibc">
             <objects>
                 <viewController id="hlj-im-0PW" customClass="EditProfileController" customModule="Bizy" customModuleProvider="target" sceneMemberID="viewController">
@@ -213,7 +214,7 @@
                                 <fontDescription key="fontDescription" name="Rockwell-Italic" family="Rockwell" pointSize="17"/>
                                 <state key="normal" title="Save"/>
                                 <connections>
-                                    <segue destination="tQq-3V-p7H" kind="show" id="pxQ-fr-wZj"/>
+                                    <action selector="sendData:" destination="hlj-im-0PW" eventType="touchUpInside" id="Rwp-BN-dzQ"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Last Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Abc-JE-XHh">
@@ -246,6 +247,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="iFn-Ws-J7e"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Edit Profile" id="Zgr-87-9Yt"/>
                     <connections>
                         <outlet property="companyField" destination="jP4-NJ-NTx" id="JZE-U6-lMZ"/>
                         <outlet property="firstNameField" destination="oAS-CK-EJa" id="l43-oo-tNt"/>
@@ -416,9 +418,24 @@
             </objects>
             <point key="canvasLocation" x="2522.4000000000001" y="110.19490254872565"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="fCu-ee-g8g">
+            <objects>
+                <navigationController id="Qhy-0r-B7N" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Mhm-RT-U7A">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="tQq-3V-p7H" kind="relationship" relationship="rootViewController" id="Dnf-AL-kAD"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VGF-mp-EeH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2191" y="-1478"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="08N-fw-QWe"/>
         <segue reference="dZg-OE-wpY"/>
     </inferredMetricsTieBreakers>
 </document>
