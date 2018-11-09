@@ -31,6 +31,8 @@
 		2EC4B3EF21955E80006E9B3E /* Temp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2EC4B3EE21955E80006E9B3E /* Temp.storyboard */; };
 		2EC4B3F121956439006E9B3E /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC4B3F021956439006E9B3E /* CameraViewController.swift */; };
 		2EC4B3F32195645F006E9B3E /* QRCodeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC4B3F22195645F006E9B3E /* QRCodeController.swift */; };
+		2EC4B3F521957A35006E9B3E /* SecondaryCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC4B3F421957A35006E9B3E /* SecondaryCameraView.swift */; };
+		2EC4B3F7219590EA006E9B3E /* ShowUserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC4B3F6219590E9006E9B3E /* ShowUserController.swift */; };
 		2ECB0813218E929F0035D264 /* QRCodeViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECB0812218E929F0035D264 /* QRCodeViewContainer.swift */; };
 		2ECB0815218E92C90035D264 /* QRCodeReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECB0814218E92C90035D264 /* QRCodeReaderViewController.swift */; };
 		2ECB0817218E92F40035D264 /* QRCodeReaderViewControllerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECB0816218E92F40035D264 /* QRCodeReaderViewControllerBuilder.swift */; };
@@ -92,6 +94,8 @@
 		2EC4B3EE21955E80006E9B3E /* Temp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Temp.storyboard; sourceTree = "<group>"; };
 		2EC4B3F021956439006E9B3E /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		2EC4B3F22195645F006E9B3E /* QRCodeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeController.swift; sourceTree = "<group>"; };
+		2EC4B3F421957A35006E9B3E /* SecondaryCameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryCameraView.swift; sourceTree = "<group>"; };
+		2EC4B3F6219590E9006E9B3E /* ShowUserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowUserController.swift; sourceTree = "<group>"; };
 		2ECB0812218E929F0035D264 /* QRCodeViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeViewContainer.swift; sourceTree = "<group>"; };
 		2ECB0814218E92C90035D264 /* QRCodeReaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeReaderViewController.swift; sourceTree = "<group>"; };
 		2ECB0816218E92F40035D264 /* QRCodeReaderViewControllerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeReaderViewControllerBuilder.swift; sourceTree = "<group>"; };
@@ -211,6 +215,8 @@
 				2EC4B3E921952BD1006E9B3E /* WalletController.swift */,
 				2EC4B3F021956439006E9B3E /* CameraViewController.swift */,
 				2EC4B3F22195645F006E9B3E /* QRCodeController.swift */,
+				2EC4B3F421957A35006E9B3E /* SecondaryCameraView.swift */,
+				2EC4B3F6219590E9006E9B3E /* ShowUserController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -535,6 +541,7 @@
 				2E4944D62187E84A00A97FB9 /* User.swift in Sources */,
 				2EC4B3F121956439006E9B3E /* CameraViewController.swift in Sources */,
 				2E4FE361218E91BC00CCAC51 /* QRCodeReader.swift in Sources */,
+				2EC4B3F521957A35006E9B3E /* SecondaryCameraView.swift in Sources */,
 				2E4944A12187DEE000A97FB9 /* ViewController.swift in Sources */,
 				2E4FE363218E91E600CCAC51 /* QRCodeReaderResult.swift in Sources */,
 				2E4FE358218E8DA100CCAC51 /* CIColorExtension.swift in Sources */,
@@ -552,6 +559,7 @@
 				2E4FE35D218E8F2900CCAC51 /* UserParser.swift in Sources */,
 				2ECB0819218E93130035D264 /* QRCodeReaderViewControllerDelegate.swift in Sources */,
 				2EC4B3EA21952BD1006E9B3E /* WalletController.swift in Sources */,
+				2EC4B3F7219590EA006E9B3E /* ShowUserController.swift in Sources */,
 				2E4FE365218E923A00CCAC51 /* QRCodeReaderView.swift in Sources */,
 				2E4FE356218E8D6000CCAC51 /* QRCode.swift in Sources */,
 			);

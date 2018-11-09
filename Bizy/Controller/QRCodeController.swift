@@ -9,6 +9,10 @@ import UIKit
 
 class QRCodeController: UIViewController {
 
+  @IBOutlet weak var qrCodeImage: UIImageView!
+  @IBOutlet weak var statusLabel: UILabel!
+  @IBOutlet weak var customizeButton: UIButton!
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.

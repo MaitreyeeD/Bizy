@@ -14,7 +14,7 @@ import SwiftyJSON
 class UserParser {
   var urlString: String!
 ////  var call: NSURL
-//  var dataResult: Data!
+  var dataResult: Data!
   var swiftyjson: JSON!
 //  init(url: String) {
 //    urlString = url
