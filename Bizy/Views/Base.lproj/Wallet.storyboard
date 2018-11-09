@@ -25,18 +25,14 @@
             </objects>
             <point key="canvasLocation" x="98" y="1424"/>
         </scene>
-        <!--Profile Controller-->
+        <!--Profile View Controller-->
         <scene sceneID="Jct-dV-A80">
             <objects>
-                <viewController id="tQq-3V-p7H" customClass="ProfileController" sceneMemberID="viewController">
+                <viewController id="tQq-3V-p7H" customClass="ProfileViewController" customModule="Bizy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cG6-46-x5c">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tLo-S1-28G">
-                                <rect key="frame" x="67" y="102" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="First Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NAf-k7-eeV">
                                 <rect key="frame" x="77" y="276" width="88" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -98,16 +94,16 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Veq-V5-4qa">
-                                <rect key="frame" x="284" y="598" width="62" height="35"/>
+                                <rect key="frame" x="252" y="598" width="94" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Rockwell-Italic" family="Rockwell" pointSize="17"/>
                                 <state key="normal" title="Done"/>
                                 <connections>
-                                    <segue destination="gVn-J6-cBN" kind="show" id="60x-if-aUG"/>
+                                    <segue destination="gVn-J6-cBN" kind="show" id="gon-Ml-aW4"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="John Smith" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fkr-hr-8tP">
-                                <rect key="frame" x="112" y="49" width="150" height="45"/>
+                                <rect key="frame" x="112" y="35" width="150" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Rockwell-Italic" family="Rockwell" pointSize="25"/>
                                 <nil key="highlightedColor"/>
@@ -118,17 +114,29 @@
                                 <fontDescription key="fontDescription" name="Rockwell-Italic" family="Rockwell" pointSize="17"/>
                                 <state key="normal" title="Edit"/>
                                 <connections>
-                                    <segue destination="hlj-im-0PW" kind="show" id="bov-z1-akL"/>
+                                    <segue destination="hlj-im-0PW" kind="show" id="08N-fw-QWe"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tLo-S1-28G">
+                                <rect key="frame" x="67" y="101" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="roS-0L-ODM"/>
                     </view>
+                    <connections>
+                        <outlet property="companyLabel" destination="xzk-Ee-hV1" id="Ftd-FF-TzL"/>
+                        <outlet property="firstNameLabel" destination="uTr-03-xkt" id="LLk-OA-jiQ"/>
+                        <outlet property="lastNameLabel" destination="14a-da-enb" id="Bfv-Q0-4UQ"/>
+                        <outlet property="pictureLabel" destination="tLo-S1-28G" id="fzG-49-aeh"/>
+                        <outlet property="positionLabel" destination="8eN-zD-35o" id="5EF-ao-6jC"/>
+                        <outlet property="workPhoneLabel" destination="xxI-Bx-Yh4" id="PKF-2h-Whu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nVx-XZ-ekw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1511.2" y="-723.68815592203907"/>
+            <point key="canvasLocation" x="1392.8" y="-720.08995502248877"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Fvu-uN-Ibc">
@@ -139,20 +147,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="John" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oAS-CK-EJa">
-                                <rect key="frame" x="206" y="215" width="116" height="30"/>
+                                <rect key="frame" x="206" y="230" width="116" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="Rockwell-Italic" family="Rockwell" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="John Smith" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HYW-8W-ki7">
-                                <rect key="frame" x="112" y="41" width="150" height="45"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Rockwell-Italic" family="Rockwell" pointSize="25"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Smith" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nt8-Ws-DCp">
-                                <rect key="frame" x="206" y="276" width="116" height="30"/>
+                                <rect key="frame" x="206" y="283" width="116" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="Rockwell-Italic" family="Rockwell" pointSize="16"/>
@@ -180,13 +182,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="First Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ReW-eb-3oi">
-                                <rect key="frame" x="16" y="218" width="88" height="25"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Rockwell-Italic" family="Rockwell" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Last Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Abc-JE-XHh">
-                                <rect key="frame" x="16" y="283" width="86" height="17"/>
+                                <rect key="frame" x="14" y="237" width="88" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Rockwell-Italic" family="Rockwell" pointSize="17"/>
                                 <nil key="highlightedColor"/>
@@ -227,8 +223,14 @@
                                     <segue destination="tQq-3V-p7H" kind="show" id="pxQ-fr-wZj"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Last Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Abc-JE-XHh">
+                                <rect key="frame" x="16" y="290" width="86" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Rockwell-Italic" family="Rockwell" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7EW-ix-Dom">
-                                <rect key="frame" x="90" y="94" width="195" height="92"/>
+                                <rect key="frame" x="90" y="54" width="195" height="92"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -399,6 +401,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="08N-fw-QWe"/>
         <segue reference="dZg-OE-wpY"/>
     </inferredMetricsTieBreakers>
 </document>
