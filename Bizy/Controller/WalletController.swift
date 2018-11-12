@@ -9,7 +9,7 @@
 import UIKit
 
 class WalletController: UIViewController {
-  @IBOutlet weak var profile: UIBarButtonItem!
+  @IBOutlet var profile: UIButton!
   @IBOutlet var tableView: UITableView!
   @IBOutlet var scanCode: UIButton!
   @IBOutlet var qrCode: UIButton!
