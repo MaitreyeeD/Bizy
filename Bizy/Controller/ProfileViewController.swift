@@ -24,9 +24,15 @@ class ProfileViewController: UIViewController, DataEnteredDelegate {
   @IBOutlet weak var positionData: UILabel!
   @IBOutlet weak var summaryData: UILabel!
   
+  @IBOutlet weak var editButton: UIBarButtonItem!
+  
   override func viewDidLoad() {
     super.viewDidLoad()
-    displayData.text = "Name."
+    displayData.text = "First Last"
+    if(displayData.text == "First Last"){
+      editButton.title = "Create"
+    }
+    
   }
   
   override func didReceiveMemoryWarning() {
@@ -43,6 +49,7 @@ class ProfileViewController: UIViewController, DataEnteredDelegate {
     companyData.text = company
     positionData.text = position
     summaryData.text = summary
+    editButton.title = "Edit"
   
     print("-- Doing my job as a delegate")
     print("-- Sending to displayData outlet: \(fname)\n")

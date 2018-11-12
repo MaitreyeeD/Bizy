@@ -8,6 +8,8 @@
 
 import Foundation
 import UIKit
+import Photos
+import CoreData
 
 // Step 1: Define a protocol for being a delegate for
 //         Object A (AddViewController)
@@ -15,7 +17,7 @@ protocol DataEnteredDelegate {
   func userDidEnterInformation(fname:String, lname:String, email:String, phone: String, company: String, position: String, summary:String)
 }
 
-class EditProfileController: UIViewController {
+class EditProfileController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
   
  
   @IBOutlet weak var firstName:UITextField!
@@ -25,6 +27,10 @@ class EditProfileController: UIViewController {
    @IBOutlet weak var company:UITextField!
    @IBOutlet weak var position:UITextField!
    @IBOutlet weak var summary:UITextField!
+   @IBOutlet weak var picPreview: UIImageView!
+  
+  let imagePicker = UIImagePickerController()
+  var picture: UIImage?
   
   // Step 3: Give object A an optional delegate variable
   var delegate:DataEnteredDelegate?
@@ -54,10 +60,29 @@ class EditProfileController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    PHPhotoLibrary.requestAuthorization({_ in return})
+    imagePicker.delegate = (self as UIImagePickerControllerDelegate & UINavigationControllerDelegate)
   }
   
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
+  }
+  
+  @IBAction func loadImageButtonTapped(sender: UIButton) {
+    imagePicker.allowsEditing = false
+    imagePicker.sourceType = .photoLibrary
+    
+    present(imagePicker, animated: true, completion: nil)
+  }
+  
+  func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+    if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+      picture = pickedImage
+      picPreview.image = picture
+    }
+    
+    dismiss(animated: true, completion: nil)
   }
   
 }
