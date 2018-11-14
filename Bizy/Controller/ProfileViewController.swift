@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import CoreData
 import UIKit
 
 // Step 2: Make Object B (ViewController) conform to the
@@ -15,7 +15,7 @@ import UIKit
 //         that VC will adopt the protocol
 class ProfileViewController: UIViewController, DataEnteredDelegate {
   
-  
+  //coredata
   
   @IBOutlet weak var displayData: UILabel!
   @IBOutlet weak var emailData: UILabel!

@@ -17,6 +17,8 @@ protocol DataEnteredDelegate {
   func userDidEnterInformation(fname:String, lname:String, email:String, phone: String, company: String, position: String, summary:String)
 }
 
+
+
 class EditProfileController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
   
  
