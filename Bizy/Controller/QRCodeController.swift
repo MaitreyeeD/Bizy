@@ -12,6 +12,7 @@ class QRCodeController: UIViewController {
   @IBOutlet weak var qrCodeImage: UIImageView!
   @IBOutlet weak var statusLabel: UILabel!
   @IBOutlet weak var customizeButton: UIButton!
+  @IBOutlet weak var back: UIButton!
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -21,6 +22,10 @@ class QRCodeController: UIViewController {
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
+  }
+  
+  @IBAction func goBack(sender: UIButton) {
+       self.dismiss(animated: true, completion: nil)
   }
   
   

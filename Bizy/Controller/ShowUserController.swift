@@ -62,6 +62,7 @@ class ShowUserController: UIViewController {
   }
   
   func populateView() {
+    
     if userData.count > 0 {
       let user = userData[0]
       firstNameLabel.text = user.firstName
