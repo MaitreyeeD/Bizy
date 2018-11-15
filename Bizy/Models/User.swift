@@ -14,8 +14,9 @@ class User  {
   // MARK: - Properties
   var firstName: String
   var lastName: String
-  var password: String?
   var email: String
+  var password: String?
+  
   
   var phone: String?
   var summary: String?
