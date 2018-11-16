@@ -41,6 +41,8 @@
 		2ECB081D218E93460035D264 /* SwitchCameraButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECB081C218E93460035D264 /* SwitchCameraButton.swift */; };
 		2ECB081F218E935E0035D264 /* ToggleTorchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECB081E218E935E0035D264 /* ToggleTorchButton.swift */; };
 		428A577047830792AC44C131 /* Pods_BizyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F6949F043C67A28AEFBACDC /* Pods_BizyUITests.framework */; };
+		62C22B33219910DE00189CDB /* EditProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C22B32219910DE00189CDB /* EditProfileController.swift */; };
+		62C22B352199137200189CDB /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C22B342199137200189CDB /* ProfileViewController.swift */; };
 		8441071D1D42271A2DED5928 /* Pods_Bizy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C2EF5CC9EC417F699F6D78A /* Pods_Bizy.framework */; };
 		8BD9D93944558DC296445380 /* Pods_BizyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA7A915DCACD0E444B4D1758 /* Pods_BizyTests.framework */; };
 /* End PBXBuildFile section */
@@ -104,6 +106,8 @@
 		2ECB081C218E93460035D264 /* SwitchCameraButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchCameraButton.swift; sourceTree = "<group>"; };
 		2ECB081E218E935E0035D264 /* ToggleTorchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleTorchButton.swift; sourceTree = "<group>"; };
 		2F6949F043C67A28AEFBACDC /* Pods_BizyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BizyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		62C22B32219910DE00189CDB /* EditProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileController.swift; sourceTree = "<group>"; };
+		62C22B342199137200189CDB /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		68C38BC3FFE055A1C3E2B9B6 /* Pods-BizyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BizyTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BizyTests/Pods-BizyTests.release.xcconfig"; sourceTree = "<group>"; };
 		70CEB54289FDECAD0E8FAE88 /* Pods-BizyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BizyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BizyTests/Pods-BizyTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7B895FF69AC8C545A4491F36 /* Pods-Bizy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bizy.release.xcconfig"; path = "Pods/Target Support Files/Pods-Bizy/Pods-Bizy.release.xcconfig"; sourceTree = "<group>"; };
@@ -217,6 +221,8 @@
 				2EC4B3F22195645F006E9B3E /* QRCodeController.swift */,
 				2EC4B3F421957A35006E9B3E /* SecondaryCameraView.swift */,
 				2EC4B3F6219590E9006E9B3E /* ShowUserController.swift */,
+				62C22B32219910DE00189CDB /* EditProfileController.swift */,
+				62C22B342199137200189CDB /* ProfileViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -538,6 +544,7 @@
 			files = (
 				2ECB081F218E935E0035D264 /* ToggleTorchButton.swift in Sources */,
 				2ECB081B218E932A0035D264 /* ReaderOverlayView.swift in Sources */,
+				62C22B33219910DE00189CDB /* EditProfileController.swift in Sources */,
 				2E4944D62187E84A00A97FB9 /* User.swift in Sources */,
 				2EC4B3F121956439006E9B3E /* CameraViewController.swift in Sources */,
 				2E4FE361218E91BC00CCAC51 /* QRCodeReader.swift in Sources */,
@@ -553,6 +560,7 @@
 				2EC4B3ED21954AD4006E9B3E /* GetUserData.swift in Sources */,
 				2ECB081D218E93460035D264 /* SwitchCameraButton.swift in Sources */,
 				2ECB0817218E92F40035D264 /* QRCodeReaderViewControllerBuilder.swift in Sources */,
+				62C22B352199137200189CDB /* ProfileViewController.swift in Sources */,
 				2ECB0813218E929F0035D264 /* QRCodeViewContainer.swift in Sources */,
 				2E4FE35A218E8DCA00CCAC51 /* CIImageExtension.swift in Sources */,
 				2E49449F2187DEE000A97FB9 /* AppDelegate.swift in Sources */,
