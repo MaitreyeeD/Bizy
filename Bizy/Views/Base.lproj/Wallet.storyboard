@@ -10,8 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-<<<<<<< HEAD
-=======
+
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -267,7 +266,6 @@
             </objects>
             <point key="canvasLocation" x="3629.5999999999999" y="-657.12143928035982"/>
         </scene>
->>>>>>> f218f40e9e927216f62cef1a5ed95c33ae753f4e
         <!--Wallet Controller-->
         <scene sceneID="a27-74-Em8">
             <objects>
