@@ -14,7 +14,7 @@ import SwiftyJSON
 class ShowUserController: UIViewController {
   
   var urlString: String!
-  var userData = [User]()
+  var userData: User!
   let parser = UserParser()
   
   @IBOutlet var addButton: UIButton!
@@ -46,7 +46,7 @@ class ShowUserController: UIViewController {
             let json = JSON(value);
             self.parser.swiftyjson = json
             if let user = self.parser.createUser() {
-                self.userData.append(user)
+                self.userData = user
             }
           
         case.failure(let error):
@@ -63,8 +63,7 @@ class ShowUserController: UIViewController {
   
   func populateView() {
     
-    if userData.count > 0 {
-      let user = userData[0]
+    if let user = self.userData {
       firstNameLabel.text = user.firstName
       lastNameLabel.text = user.lastName
       emailLabel.text = user.email

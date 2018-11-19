@@ -10,6 +10,8 @@ import Foundation
 import UIKit
 import Photos
 import CoreData
+import Alamofire
+import SwiftyJSON
 
 // Step 1: Define a protocol for being a delegate for
 //         Object A (AddViewController)
@@ -41,7 +43,7 @@ class EditProfileController: UIViewController, UIImagePickerControllerDelegate, 
   
   let imagePicker = UIImagePickerController()
   var picture: UIImage?
-  
+  var user: User? = nil
   // Step 3: Give object A an optional delegate variable
   //var delegate:DataEnteredDelegate?
   
@@ -74,11 +76,49 @@ class EditProfileController: UIViewController, UIImagePickerControllerDelegate, 
     user.company = company.text!
     user.position = position.text!
     user.summary = summary.text!
-   
+    self.user = user
     
+    sendPostRequest()
     self.saveUser(user: user)
+    
     delegate?.editProfileController(controller: self, didFinishAddingProfile: user)
+    
   }
+  
+  
+  func sendPostRequest() {
+    guard let person = self.user else {
+      print("There is no user to be saved!")
+      return
+    }
+    let parameters: Parameters = [
+      "email": person.email,
+      "password": person.password ?? "",
+      "first_name": person.firstName,
+      "last_name": person.lastName,
+      "company": person.company ?? "",
+      "position": person.position ?? "",
+      "phone": person.phone ?? "",
+      "city": person.city ?? "",
+      "state": person.state ?? "",
+      "linkedin": person.linkedIn ?? "",
+      "website": person.website ?? "",
+      "summary": person.summary ?? "",
+      ]
+    let urlString: String = "https://desolate-springs-29566.herokuapp.com/users/"
+    DispatchQueue.main.async() {
+      Alamofire.request(urlString, method: .post, parameters: parameters).responseJSON(completionHandler: {(response) in
+        print(response.response)
+        print(response.data)
+        let swifty = JSON(response.result.value)
+        let id = swifty["id"].string
+        self.user!.id = id
+        var code = urlString + id!
+        self.user!.qrCode = QRCode(code)
+      })
+    }
+  }
+  
   
   func saveUser(user: User){
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -92,6 +132,7 @@ class EditProfileController: UIViewController, UIImagePickerControllerDelegate, 
     newUser.setValue(user.company, forKey: "company")
     newUser.setValue(user.position, forKey: "position")
     newUser.setValue(user.summary, forKey: "summary")
+    newUser.setValue(user.qrCode, forKey: "QRCode")
     
 //    if let pic = contact.picture {
 //      newUser.setValue(UIImagePNGRepresentation(pic), forKey: "photo")

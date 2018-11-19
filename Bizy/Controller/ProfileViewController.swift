@@ -72,7 +72,7 @@ class ProfileViewController: UIViewController, EditProfileControllerDelegate {
      newUser.company = (data.value(forKey: "company") as? String ?? "Microsoft")
      newUser.position = (data.value(forKey: "position") as? String ?? "Intern")
      newUser.summary = (data.value(forKey: "summary") as? String ?? "I'm a developer")
-//     newUser.qrCode = (data.value(forKey: "qrcode") as! QRCode)
+//     newUser.qrCode = (data.value(forKey: "QRcode") as! QRCode)
 //    users.append(newUser)
     self.thisuser = newUser
     self.loaded = true
@@ -135,5 +135,7 @@ class ProfileViewController: UIViewController, EditProfileControllerDelegate {
     
     dismiss(animated: true, completion: nil)
   }
+  
+
   
 }

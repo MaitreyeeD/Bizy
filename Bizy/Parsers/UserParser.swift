@@ -153,31 +153,6 @@ class UserParser {
       "summary": person.summary ?? "",
     ]
     
-    Alamofire.request(urlString, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil).responseJSON {
-      response in
-      switch response.result {
-      case .success:
-        do {
-
-          let swiftyjson = try JSON(data: response.data!)
-          let userId = swiftyjson["id"].string
-          person.id = userId;
-          if let bop = userId {
-            let qrString = urlString + bop
-            person.qrCode = QRCode(qrString)
-          }
-          
-          
-        } catch {
-          print("Error sending the post request with this information!")
-        }
-        
-        break
-      case .failure(let error):
-
-        print(error)
-      }
-    }
     
   }
   
