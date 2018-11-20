@@ -28,6 +28,15 @@ class ProfileViewController: UIViewController, EditProfileControllerDelegate {
   @IBOutlet weak var positionData: UILabel!
   @IBOutlet weak var summaryData: UILabel!
   
+  //changes
+  @IBOutlet weak var passwordData: UILabel!
+  @IBOutlet weak var linkedinData: UILabel!
+  @IBOutlet weak var websiteData: UILabel!
+  @IBOutlet weak var cityData: UILabel!
+  @IBOutlet weak var stateData: UILabel!
+  @IBOutlet weak var imageData: UIImageView!
+  
+  
   @IBOutlet weak var editButton: UIBarButtonItem!
   
   override func viewDidLoad() {
@@ -43,8 +52,9 @@ class ProfileViewController: UIViewController, EditProfileControllerDelegate {
       let result = try context.fetch(request)
       for data in result as! [NSManagedObject] {
         self.loadUsers(data: data)
-        nameData.text = thisuser.firstName
-        emailData.text = thisuser.email
+//        nameData.text = thisuser.firstName
+//        emailData.text = thisuser.email
+        self.configureView()
         
 //        print(data.value(forKey: "first_name") as! String)
 //        print(data.value(forKey: "email") as! String)
@@ -70,16 +80,26 @@ class ProfileViewController: UIViewController, EditProfileControllerDelegate {
      newUser.company = (data.value(forKey: "company") as? String ?? "Microsoft")
      newUser.position = (data.value(forKey: "position") as? String ?? "Intern")
      newUser.summary = (data.value(forKey: "summary") as? String ?? "I'm a developer")
+    //changes
+    
+    newUser.city = (data.value(forKey: "city") as? String ?? "")
+    newUser.state = (data.value(forKey: "state") as? String ?? "")
+    newUser.website = (data.value(forKey: "website") as? String ?? "")
+    newUser.linkedIn = (data.value(forKey: "linkedin") as? String ?? "")
+    newUser.password = (data.value(forKey: "password") as? String ?? "")
+//    newUser.image = UIImage(data:(data.value(forKey: "image") as! NSData) as! Data)
+//
+    
 //     newUser.qrCode = (data.value(forKey: "QRcode") as! QRCode)
 //    users.append(newUser)
     thisuser = newUser
     //self.loaded = true
   }
   
-  override func viewDidAppear(_ animated: Bool) {
-    super.viewDidAppear(animated)
-    configureView()
-  }
+//  override func viewDidAppear(_ animated: Bool) {
+//    super.viewDidAppear(animated)
+//    configureView()
+//  }
   
  
   
@@ -92,8 +112,13 @@ class ProfileViewController: UIViewController, EditProfileControllerDelegate {
       companyData.text = thisuser.company ?? "N/A"
       positionData.text = thisuser.position ?? "N/A"
       summaryData.text = thisuser.summary ?? "N/A"
-      
-    
+    //changes
+    passwordData.text = thisuser.password ?? "N/A"
+    linkedinData.text = thisuser.linkedIn ?? "N/A"
+    websiteData.text = thisuser.website ?? "N/A"
+    cityData.text = thisuser.city ?? "N/A"
+    stateData.text = thisuser.state ?? "N/A"
+//    imageData.image = thisuser.image ?? nil
     
   }
   
