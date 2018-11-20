@@ -16,7 +16,6 @@ import UIKit
 class ProfileViewController: UIViewController, EditProfileControllerDelegate {
   
   
-  
   var thisuser = User(fname: "", lname: "", email: "")
   let test = "Test"
   var loaded = false
@@ -44,9 +43,8 @@ class ProfileViewController: UIViewController, EditProfileControllerDelegate {
       let result = try context.fetch(request)
       for data in result as! [NSManagedObject] {
         self.loadUsers(data: data)
-        nameData.text = (data.value(forKey: "first_name") as! String)
-        emailData.text = (data.value(forKey: "email") as? String ?? "bop@gmil.com")
-
+        nameData.text = thisuser.firstName
+        emailData.text = thisuser.email
         
 //        print(data.value(forKey: "first_name") as! String)
 //        print(data.value(forKey: "email") as! String)
@@ -74,14 +72,16 @@ class ProfileViewController: UIViewController, EditProfileControllerDelegate {
      newUser.summary = (data.value(forKey: "summary") as? String ?? "I'm a developer")
 //     newUser.qrCode = (data.value(forKey: "QRcode") as! QRCode)
 //    users.append(newUser)
-    self.thisuser = newUser
-    self.loaded = true
+    thisuser = newUser
+    //self.loaded = true
   }
   
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
     configureView()
   }
+  
+ 
   
   func configureView() {
     
@@ -111,15 +111,16 @@ class ProfileViewController: UIViewController, EditProfileControllerDelegate {
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if segue.identifier == "addDataVC" {
       
-//      let navigationController = segue.destination as! UINavigationController
-//      let controller = navigationController.topViewController as! EditProfileController
-//      controller.delegate = self
+      
+      
       
       
       let addDataVC: EditProfileController = segue.destination as! EditProfileController
 
       // Step 4: Tell object A (AddVC) that object B (VC) is now its delegate
       addDataVC.delegate = self as EditProfileControllerDelegate
+      let us = thisuser
+      (segue.destination as! EditProfileController).detailItem = us
       // declaring that this VC is acting as the delegate
       print("\n-- I'm \(String(describing: addDataVC))'s delegate: \(String(describing: addDataVC.delegate))\n")
     }
