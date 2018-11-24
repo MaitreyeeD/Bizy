@@ -16,7 +16,6 @@ import UIKit
 class ProfileViewController: UIViewController, EditProfileControllerDelegate {
   
   
-  
   var thisuser = User(fname: "", lname: "", email: "")
   let test = "Test"
   var loaded = false
@@ -28,6 +27,15 @@ class ProfileViewController: UIViewController, EditProfileControllerDelegate {
   @IBOutlet weak var companyData: UILabel!
   @IBOutlet weak var positionData: UILabel!
   @IBOutlet weak var summaryData: UILabel!
+  
+  //changes
+  @IBOutlet weak var passwordData: UILabel!
+  @IBOutlet weak var linkedinData: UILabel!
+  @IBOutlet weak var websiteData: UILabel!
+  @IBOutlet weak var cityData: UILabel!
+  @IBOutlet weak var stateData: UILabel!
+  @IBOutlet weak var imageData: UIImageView!
+  
   
   @IBOutlet weak var editButton: UIBarButtonItem!
   
@@ -44,9 +52,9 @@ class ProfileViewController: UIViewController, EditProfileControllerDelegate {
       let result = try context.fetch(request)
       for data in result as! [NSManagedObject] {
         self.loadUsers(data: data)
-        nameData.text = (data.value(forKey: "first_name") as! String)
-        emailData.text = (data.value(forKey: "email") as? String ?? "bop@gmil.com")
-
+//        nameData.text = thisuser.firstName
+//        emailData.text = thisuser.email
+        self.configureView()
         
 //        print(data.value(forKey: "first_name") as! String)
 //        print(data.value(forKey: "email") as! String)
@@ -72,16 +80,28 @@ class ProfileViewController: UIViewController, EditProfileControllerDelegate {
      newUser.company = (data.value(forKey: "company") as? String ?? "Microsoft")
      newUser.position = (data.value(forKey: "position") as? String ?? "Intern")
      newUser.summary = (data.value(forKey: "summary") as? String ?? "I'm a developer")
+    //changes
+    
+    newUser.city = (data.value(forKey: "city") as? String ?? "")
+    newUser.state = (data.value(forKey: "state") as? String ?? "")
+    newUser.website = (data.value(forKey: "website") as? String ?? "")
+    newUser.linkedIn = (data.value(forKey: "linkedin") as? String ?? "")
+    newUser.password = (data.value(forKey: "password") as? String ?? "")
+//    newUser.image = UIImage(data:(data.value(forKey: "image") as! NSData) as! Data)
+//
+    
 //     newUser.qrCode = (data.value(forKey: "QRcode") as! QRCode)
 //    users.append(newUser)
-    self.thisuser = newUser
-    self.loaded = true
+    thisuser = newUser
+    //self.loaded = true
   }
   
-  override func viewDidAppear(_ animated: Bool) {
-    super.viewDidAppear(animated)
-    configureView()
-  }
+//  override func viewDidAppear(_ animated: Bool) {
+//    super.viewDidAppear(animated)
+//    configureView()
+//  }
+  
+ 
   
   func configureView() {
     
@@ -92,8 +112,13 @@ class ProfileViewController: UIViewController, EditProfileControllerDelegate {
       companyData.text = thisuser.company ?? "N/A"
       positionData.text = thisuser.position ?? "N/A"
       summaryData.text = thisuser.summary ?? "N/A"
-      
-    
+    //changes
+    passwordData.text = thisuser.password ?? "N/A"
+    linkedinData.text = thisuser.linkedIn ?? "N/A"
+    websiteData.text = thisuser.website ?? "N/A"
+    cityData.text = thisuser.city ?? "N/A"
+    stateData.text = thisuser.state ?? "N/A"
+//    imageData.image = thisuser.image ?? nil
     
   }
   
@@ -111,15 +136,16 @@ class ProfileViewController: UIViewController, EditProfileControllerDelegate {
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if segue.identifier == "addDataVC" {
       
-//      let navigationController = segue.destination as! UINavigationController
-//      let controller = navigationController.topViewController as! EditProfileController
-//      controller.delegate = self
+      
+      
       
       
       let addDataVC: EditProfileController = segue.destination as! EditProfileController
 
       // Step 4: Tell object A (AddVC) that object B (VC) is now its delegate
       addDataVC.delegate = self as EditProfileControllerDelegate
+      let us = thisuser
+      (segue.destination as! EditProfileController).detailItem = us
       // declaring that this VC is acting as the delegate
       print("\n-- I'm \(String(describing: addDataVC))'s delegate: \(String(describing: addDataVC.delegate))\n")
     }

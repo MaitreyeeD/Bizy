@@ -27,7 +27,6 @@ protocol EditProfileControllerDelegate: class {
 
 
 
-
 class EditProfileController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
   
  
@@ -38,17 +37,78 @@ class EditProfileController: UIViewController, UIImagePickerControllerDelegate, 
    @IBOutlet weak var company:UITextField!
    @IBOutlet weak var position:UITextField!
    @IBOutlet weak var summary:UITextField!
-   @IBOutlet weak var picPreview: UIImageView!
+  //changes
+   @IBOutlet weak var password: UITextField!
+  @IBOutlet weak var linkedin: UITextField!
+  @IBOutlet weak var state: UITextField!
+  @IBOutlet weak var city: UITextField!
+  @IBOutlet weak var website: UITextField!
+  
+  
    @IBOutlet weak var doneBarButton: UIButton!
+  @IBOutlet weak var picPreview: UIImageView!
   
   let imagePicker = UIImagePickerController()
   var picture: UIImage?
   var user: User? = nil
+  
+  var detailItem: User? {
+    didSet{
+      self.configureView()
+    }
+    
+  }
   // Step 3: Give object A an optional delegate variable
   //var delegate:DataEnteredDelegate?
   
   weak var delegate: EditProfileControllerDelegate?
   
+  func configureView(){
+    if let detail: User = self.detailItem{
+      if let fname = self.firstName{
+        fname.text = detail.firstName
+      }
+      if let lname = self.lastName{
+        lname.text = detail.lastName
+      }
+      if let email = self.email {
+        email.text = detail.email
+      }
+      if let phone = self.phone{
+        phone.text = detail.phone
+      }
+      if let company = self.company{
+        company.text = detail.company
+      }
+      if let position = self.position{
+        position.text = detail.position
+      }
+      //changes
+      if let password = self.password{
+        password.text = detail.password
+      }
+      if let summary = self.summary{
+        summary.text = detail.summary
+      }
+      if let linkedin = self.linkedin{
+        linkedin.text = detail.linkedIn
+      }
+      if let state = self.state{
+        state.text = detail.state
+      }
+      if let city = self.city{
+        city.text = detail.city
+      }
+      if let website = self.website{
+        website.text = detail.website
+      }
+      if let image = self.picPreview {
+        image.image = detail.image
+      }
+      
+      
+    }
+  }
   
   
   override func viewDidLoad() {
@@ -56,6 +116,7 @@ class EditProfileController: UIViewController, UIImagePickerControllerDelegate, 
     
     PHPhotoLibrary.requestAuthorization({_ in return})
     imagePicker.delegate = (self as UIImagePickerControllerDelegate & UINavigationControllerDelegate)
+    self.configureView()
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -76,7 +137,15 @@ class EditProfileController: UIViewController, UIImagePickerControllerDelegate, 
     user.company = company.text!
     user.position = position.text!
     user.summary = summary.text!
-    self.user = user
+    
+    //changes
+    user.password = password.text!
+    user.linkedIn = linkedin.text!
+    user.state = state.text!
+    user.city = city.text!
+    user.website = website.text!
+    user.image = picture
+    
     
     sendPostRequest()
     self.saveUser(user: user)
@@ -132,11 +201,17 @@ class EditProfileController: UIViewController, UIImagePickerControllerDelegate, 
     newUser.setValue(user.company, forKey: "company")
     newUser.setValue(user.position, forKey: "position")
     newUser.setValue(user.summary, forKey: "summary")
-    newUser.setValue(user.qrCode, forKey: "QRCode")
+    newUser.setValue(user.qrCode, forKey: "qrcode")
     
-//    if let pic = contact.picture {
-//      newUser.setValue(UIImagePNGRepresentation(pic), forKey: "photo")
-//    }
+    newUser.setValue(user.linkedIn, forKey: "linkedin")
+    newUser.setValue(user.password, forKey: "password")
+    newUser.setValue(user.state, forKey: "state")
+    newUser.setValue(user.city, forKey: "city")
+    newUser.setValue(user.website, forKey: "website")
+    
+    if let pic = user.image {
+      newUser.setValue(UIImagePNGRepresentation(pic), forKey: "image")
+    }
     do {
       try context.save()
     } catch {
