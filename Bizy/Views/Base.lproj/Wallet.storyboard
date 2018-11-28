@@ -438,12 +438,20 @@
                                     <segue destination="PIh-vG-zDZ" kind="show" id="242-Ya-2z0"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ssu-8Q-qrg">
+                                <rect key="frame" x="301" y="79" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="7tH-dX-Us4"/>
                     </view>
                     <navigationItem key="navigationItem" id="LZK-Hy-MlS"/>
                     <connections>
+                        <outlet property="nameData" destination="Ssu-8Q-qrg" id="vks-2g-Jny"/>
                         <outlet property="profile" destination="VlM-UY-f30" id="odZ-OC-V5n"/>
                         <outlet property="qrCode" destination="BeR-lw-o4x" id="TWV-0I-LPq"/>
                         <outlet property="scanCode" destination="LdQ-d7-Ywc" id="ITU-UY-Xfo"/>
