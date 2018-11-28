@@ -20,6 +20,10 @@ class CameraViewController: UIViewController, QRCodeReaderViewControllerDelegate
 //  let toggleTorchButton: UIButton?  = ToggleTorchButton()
 //  var overlayView: UIView?          = UIView()
   
+  //Temporary
+  @IBOutlet weak var back: UIButton!
+  
+  
   var userURL = ""
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -137,6 +141,9 @@ class CameraViewController: UIViewController, QRCodeReaderViewControllerDelegate
   }
   
   
+  @IBAction func goBack(sender: UIButton) {
+    self.dismiss(animated: true, completion: nil)
+  }
   
   
   

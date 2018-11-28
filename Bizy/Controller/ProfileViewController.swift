@@ -38,6 +38,7 @@ class ProfileViewController: UIViewController, EditProfileControllerDelegate {
   
   
   @IBOutlet weak var editButton: UIBarButtonItem!
+  @IBOutlet weak var back: UIButton!
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -113,7 +114,7 @@ class ProfileViewController: UIViewController, EditProfileControllerDelegate {
       positionData.text = thisuser.position ?? "N/A"
       summaryData.text = thisuser.summary ?? "N/A"
     //changes
-    passwordData.text = thisuser.password ?? "N/A"
+//    passwordData.text = thisuser.password ?? "N/A"
     linkedinData.text = thisuser.linkedIn ?? "N/A"
     websiteData.text = thisuser.website ?? "N/A"
     cityData.text = thisuser.city ?? "N/A"
@@ -163,5 +164,8 @@ class ProfileViewController: UIViewController, EditProfileControllerDelegate {
   }
   
 
+  @IBAction func goBack(sender: UIButton) {
+    self.dismiss(animated: true, completion: nil)
+  }
   
 }

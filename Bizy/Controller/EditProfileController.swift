@@ -112,12 +112,13 @@ class EditProfileController: UIViewController, UIImagePickerControllerDelegate, 
   
   
   override func viewDidLoad() {
-    super.viewDidLoad()
-    
+    super.viewDidLoad() 
     PHPhotoLibrary.requestAuthorization({_ in return})
     imagePicker.delegate = (self as UIImagePickerControllerDelegate & UINavigationControllerDelegate)
     self.configureView()
+//    self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: Selector(self.view.endEditing(true))))
   }
+  
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
