@@ -12,6 +12,7 @@ import Photos
 import CoreData
 import Alamofire
 import SwiftyJSON
+import RealmSwift
 
 // Step 1: Define a protocol for being a delegate for
 //         Object A (AddViewController)
@@ -37,8 +38,9 @@ class EditProfileController: UIViewController, UIImagePickerControllerDelegate, 
    @IBOutlet weak var company:UITextField!
    @IBOutlet weak var position:UITextField!
    @IBOutlet weak var summary:UITextField!
-  //changes
+  //must remove
    @IBOutlet weak var password: UITextField!
+
   @IBOutlet weak var linkedin: UITextField!
   @IBOutlet weak var state: UITextField!
   @IBOutlet weak var city: UITextField!
@@ -140,6 +142,7 @@ class EditProfileController: UIViewController, UIImagePickerControllerDelegate, 
     user.summary = summary.text!
     
     //changes
+    //must remove password
     user.password = password.text!
     user.linkedIn = linkedin.text!
     user.state = state.text!
@@ -149,13 +152,15 @@ class EditProfileController: UIViewController, UIImagePickerControllerDelegate, 
     
     
     sendPostRequest()
+    
     self.saveUser(user: user)
     
     delegate?.editProfileController(controller: self, didFinishAddingProfile: user)
     
   }
   
-  
+  //Finish With Core Data OR Realm
+  // Change informaiton bs
   func sendPostRequest() {
     guard let person = self.user else {
       print("There is no user to be saved!")

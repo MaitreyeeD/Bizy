@@ -7,6 +7,7 @@ target 'Bizy' do
 
     pod 'Alamofire'
     pod 'SwiftyJSON'
+    pod 'RealmSwift'
 
   # Pods for Bizy
 

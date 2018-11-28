@@ -84,5 +84,25 @@ class ShowUserController: UIViewController {
     // Dispose of any resources that can be recreated.
   }
   
+  @IBAction func sendPostToWallet(_ sender: Any) {
+    postToWallet()
+  }
   
+  //Finish with CoreData
+  func postToWallet() {
+    let parameters: Parameters = [
+      "user_id": "",
+      "contact_id": userData.id!,
+      "category": "main"
+      ]
+    let urlString: String = "https://desolate-springs-29566.herokuapp.com/wallets/"
+    DispatchQueue.main.async() {
+      Alamofire.request(urlString, method: .post, parameters: parameters).responseJSON(completionHandler: {(response) in
+        print(response.response)
+        print(response.data)
+        let swifty = JSON(response.result.value)
+
+      })
+    }
+  }
 }

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E24A88921AEEF23000A3540 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E24A88821AEEF23000A3540 /* TableViewCell.swift */; };
+		2E24A88D21AEF453000A3540 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E24A88C21AEF453000A3540 /* TableViewCell.xib */; };
 		2E49449F2187DEE000A97FB9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E49449E2187DEE000A97FB9 /* AppDelegate.swift */; };
 		2E4944A12187DEE000A97FB9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4944A02187DEE000A97FB9 /* ViewController.swift */; };
 		2E4944A42187DEE000A97FB9 /* Wallet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E4944A22187DEE000A97FB9 /* Wallet.storyboard */; };
@@ -66,6 +68,8 @@
 
 /* Begin PBXFileReference section */
 		218BA0C204732D86F13F1821 /* Pods-BizyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BizyUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BizyUITests/Pods-BizyUITests.release.xcconfig"; sourceTree = "<group>"; };
+		2E24A88821AEEF23000A3540 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		2E24A88C21AEF453000A3540 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		2E49449B2187DEE000A97FB9 /* Bizy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bizy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E49449E2187DEE000A97FB9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2E4944A02187DEE000A97FB9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -223,6 +227,8 @@
 				2EC4B3F6219590E9006E9B3E /* ShowUserController.swift */,
 				62C22B32219910DE00189CDB /* EditProfileController.swift */,
 				62C22B342199137200189CDB /* ProfileViewController.swift */,
+				2E24A88821AEEF23000A3540 /* TableViewCell.swift */,
+				2E24A88C21AEF453000A3540 /* TableViewCell.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -438,6 +444,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2EC4B3EF21955E80006E9B3E /* Temp.storyboard in Resources */,
+				2E24A88D21AEF453000A3540 /* TableViewCell.xib in Resources */,
 				2E4944AC2187DEE100A97FB9 /* LaunchScreen.storyboard in Resources */,
 				2E4944A92187DEE100A97FB9 /* Assets.xcassets in Resources */,
 				2E4944A42187DEE000A97FB9 /* Wallet.storyboard in Resources */,
@@ -469,11 +476,15 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Bizy/Pods-Bizy-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -551,6 +562,7 @@
 				2EC4B3F521957A35006E9B3E /* SecondaryCameraView.swift in Sources */,
 				2E4944A12187DEE000A97FB9 /* ViewController.swift in Sources */,
 				2E4FE363218E91E600CCAC51 /* QRCodeReaderResult.swift in Sources */,
+				2E24A88921AEEF23000A3540 /* TableViewCell.swift in Sources */,
 				2E4FE358218E8DA100CCAC51 /* CIColorExtension.swift in Sources */,
 				2E4FE35F218E8F4A00CCAC51 /* WalletParser.swift in Sources */,
 				2ECB0815218E92C90035D264 /* QRCodeReaderViewController.swift in Sources */,
