@@ -128,8 +128,13 @@
                         <viewLayoutGuide key="safeArea" id="sAp-Gw-uOD"/>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Profile" id="IRh-zV-WgV">
+                    <navigationItem key="navigationItem" title="Profile" leftItemsSupplementBackButton="YES" id="IRh-zV-WgV">
                         <barButtonItem key="backBarButtonItem" title="Home" id="4GA-rA-Z9X"/>
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="Fib-eA-3Q1">
+                            <connections>
+                                <segue destination="gVn-J6-cBN" kind="show" identifier="backToHome" id="FaU-0z-jyE"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Edit" id="pLl-2C-eSl">
                             <connections>
                                 <segue destination="ZI2-Ay-xha" kind="show" identifier="addDataVC" id="pMi-KR-vU3"/>
