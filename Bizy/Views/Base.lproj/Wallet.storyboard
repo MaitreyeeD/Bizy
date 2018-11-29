@@ -25,7 +25,8 @@
             </objects>
             <point key="canvasLocation" x="129" y="81"/>
         </scene>
-        <!--Create Your Profile!-->
+        <!--Profile-->
+
         <scene sceneID="M7a-Wk-nn9">
             <objects>
                 <viewController id="Ffx-YT-Os7" customClass="ProfileViewController" customModule="Bizy" customModuleProvider="target" sceneMemberID="viewController">
@@ -60,8 +61,9 @@
                                 <fontDescription key="fontDescription" name="Futura-MediumItalic" family="Futura" pointSize="19"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l4q-GY-N3l">
-                                <rect key="frame" x="29" y="71" width="316" height="44"/>
+
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l4q-GY-N3l">
+                                <rect key="frame" x="43" y="88" width="288" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="24"/>
                                 <nil key="textColor"/>
@@ -95,14 +97,15 @@
                                 <fontDescription key="fontDescription" name="Futura-MediumItalic" family="Futura" pointSize="19"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Summary" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="18" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9x7-v6-t2m">
-                                <rect key="frame" x="43" y="524" width="288" height="99"/>
+
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Summary" lineBreakMode="tailTruncation" numberOfLines="18" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9x7-v6-t2m">
+                                <rect key="frame" x="43" y="525" width="288" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Futura-MediumItalic" family="Futura" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Position" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x0O-3z-CF8">
-                                <rect key="frame" x="43" y="372" width="288" height="26"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="LinkedIn" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gLX-qk-ega">
+                                <rect key="frame" x="43" y="485" width="288" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Futura-MediumItalic" family="Futura" pointSize="19"/>
                                 <nil key="highlightedColor"/>
@@ -121,8 +124,13 @@
                         <viewLayoutGuide key="safeArea" id="sAp-Gw-uOD"/>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Create Your Profile!" leftItemsSupplementBackButton="YES" id="IRh-zV-WgV">
-                        <barButtonItem key="backBarButtonItem" title="Back" id="BGx-oo-7UX"/>
+                    <navigationItem key="navigationItem" title="Profile" leftItemsSupplementBackButton="YES" id="IRh-zV-WgV">
+                        <barButtonItem key="backBarButtonItem" title="Home" id="4GA-rA-Z9X"/>
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="Fib-eA-3Q1">
+                            <connections>
+                                <segue destination="gVn-J6-cBN" kind="show" identifier="backToHome" id="FaU-0z-jyE"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Edit" id="pLl-2C-eSl">
                             <connections>
                                 <segue destination="ZI2-Ay-xha" kind="show" identifier="addDataVC" id="pMi-KR-vU3"/>
@@ -426,12 +434,20 @@
                                     <segue destination="PIh-vG-zDZ" kind="show" id="242-Ya-2z0"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ssu-8Q-qrg">
+                                <rect key="frame" x="301" y="79" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="7tH-dX-Us4"/>
                     </view>
                     <navigationItem key="navigationItem" id="LZK-Hy-MlS"/>
                     <connections>
+                        <outlet property="nameData" destination="Ssu-8Q-qrg" id="vks-2g-Jny"/>
                         <outlet property="profile" destination="VlM-UY-f30" id="odZ-OC-V5n"/>
                         <outlet property="qrCode" destination="BeR-lw-o4x" id="TWV-0I-LPq"/>
                         <outlet property="scanCode" destination="LdQ-d7-Ywc" id="ITU-UY-Xfo"/>
@@ -692,7 +708,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fLH-iH-mD7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1492" y="-657"/>
+            <point key="canvasLocation" x="1694" y="-657"/>
         </scene>
     </scenes>
 </document>

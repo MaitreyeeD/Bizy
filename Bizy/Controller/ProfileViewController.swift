@@ -138,9 +138,6 @@ class ProfileViewController: UIViewController, EditProfileControllerDelegate {
     if segue.identifier == "addDataVC" {
       
       
-      
-      
-      
       let addDataVC: EditProfileController = segue.destination as! EditProfileController
 
       // Step 4: Tell object A (AddVC) that object B (VC) is now its delegate
@@ -149,6 +146,9 @@ class ProfileViewController: UIViewController, EditProfileControllerDelegate {
       (segue.destination as! EditProfileController).detailItem = us
       // declaring that this VC is acting as the delegate
       print("\n-- I'm \(String(describing: addDataVC))'s delegate: \(String(describing: addDataVC.delegate))\n")
+    }
+    else if segue.identifier == "backToHome" {
+      let backToHome: WalletController = segue.destination as! WalletController
     }
     
     

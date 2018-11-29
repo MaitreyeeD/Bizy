@@ -20,6 +20,18 @@ import RealmSwift
 //  func userDidEnterInformation(fname:String, lname:String, email:String, phone: String, company: String, position: String, summary:String)
 //}
 
+extension UIViewController {
+  func hideKeyboardWhenTappedAround() {
+    let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+    tap.cancelsTouchesInView = false
+    view.addGestureRecognizer(tap)
+  }
+  
+  @objc func dismissKeyboard() {
+    view.endEditing(true)
+  }
+}
+
 protocol EditProfileControllerDelegate: class {
   //func addContactControllerDidCancel(controller: AddContactController)
   
@@ -114,11 +126,13 @@ class EditProfileController: UIViewController, UIImagePickerControllerDelegate, 
   
   
   override func viewDidLoad() {
-    super.viewDidLoad() 
+    super.viewDidLoad()
+    
+    self.hideKeyboardWhenTappedAround() 
+    
     PHPhotoLibrary.requestAuthorization({_ in return})
     imagePicker.delegate = (self as UIImagePickerControllerDelegate & UINavigationControllerDelegate)
     self.configureView()
-//    self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: Selector(self.view.endEditing(true))))
   }
   
   
