@@ -49,13 +49,14 @@ class ProfileViewController: UIViewController, EditProfileControllerDelegate {
     
     let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Person")
     request.returnsObjectsAsFaults = false
+    
     do {
       let result = try context.fetch(request)
       for data in result as! [NSManagedObject] {
         self.loadUsers(data: data)
 //        nameData.text = thisuser.firstName
 //        emailData.text = thisuser.email
-        self.configureView()
+        
         
 //        print(data.value(forKey: "first_name") as! String)
 //        print(data.value(forKey: "email") as! String)
@@ -65,7 +66,8 @@ class ProfileViewController: UIViewController, EditProfileControllerDelegate {
       
       print("Failed")
     }
-   
+    
+    self.configureView()
     
     
   }
@@ -94,32 +96,45 @@ class ProfileViewController: UIViewController, EditProfileControllerDelegate {
 //     newUser.qrCode = (data.value(forKey: "QRcode") as! QRCode)
 //    users.append(newUser)
     thisuser = newUser
-    //self.loaded = true
   }
-  
-//  override func viewDidAppear(_ animated: Bool) {
-//    super.viewDidAppear(animated)
-//    configureView()
-//  }
-  
- 
-  
+
   func configureView() {
     
-      
-      nameData.text = thisuser.firstName + " " + thisuser.lastName
-      emailData.text = thisuser.email
-      phoneData.text = thisuser.phone ?? "N/A"
-      companyData.text = thisuser.company ?? "N/A"
-      positionData.text = thisuser.position ?? "N/A"
-      summaryData.text = thisuser.summary ?? "N/A"
-    //changes
-//    passwordData.text = thisuser.password ?? "N/A"
-    linkedinData.text = thisuser.linkedIn ?? "N/A"
-    websiteData.text = thisuser.website ?? "N/A"
-    cityData.text = thisuser.city ?? "N/A"
-    stateData.text = thisuser.state ?? "N/A"
-//    imageData.image = thisuser.image ?? nil
+      if (thisuser.firstName.count > 0) {
+        print(thisuser.email)
+        nameData.text = thisuser.firstName + " " + thisuser.lastName
+        emailData.text = thisuser.email
+        phoneData.text = thisuser.phone ?? ""
+        companyData.text = thisuser.company ?? ""
+        positionData.text = thisuser.position ?? ""
+        summaryData.text = thisuser.summary ?? ""
+        //changes
+        //    passwordData.text = thisuser.password ?? "N/A"
+        linkedinData.text = thisuser.linkedIn ?? ""
+        websiteData.text = thisuser.website ?? ""
+        cityData.text = thisuser.city ?? ""
+        stateData.text = thisuser.state ?? ""
+        //    imageData.image = thisuser.image ?? nil
+      }
+    
+      else {
+        nameData.text = "Get Started By Creating A Profile!"
+        
+        emailData.text = ""
+        phoneData.text =  ""
+        companyData.text = ""
+        positionData.text = ""
+        summaryData.text = ""
+        //changes
+        //    passwordData.text = thisuser.password ?? "N/A"
+        linkedinData.text = ""
+        websiteData.text = ""
+        cityData.text =  ""
+        stateData.text = ""
+        //    imageData.image = thisuser.image ?? nil
+    }
+    
+    
     
   }
   

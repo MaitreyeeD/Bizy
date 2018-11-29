@@ -15,18 +15,48 @@ class QRCodeController: UIViewController {
   @IBOutlet weak var customizeButton: UIButton!
   @IBOutlet weak var back: UIButton!
   
-  var me: User? = nil
+  var thisuser = User(fname: "", lname: "", email: "")
   
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    let context = appDelegate.persistentContainer.viewContext
+    
+    let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Person")
+    request.returnsObjectsAsFaults = false
+    do {
+      let result = try context.fetch(request)
+      for data in result as! [NSManagedObject] {
+        loadUsers(data: data)
+      }
+      
+    } catch {
+      
+      print("Failed")
+    }
+    
+  }
+  
+  
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
     loadInfo()
   }
   
+  func loadUsers(data: NSManagedObject){
+    let newUser = User(fname: "", lname: "", email: "")
+    newUser.firstName = (data.value(forKey: "first_name") as! String)
+    newUser.qrCode = (data.value(forKey: "qrcode") as! String)
+    thisuser = newUser
+    
+  }
+  
   func loadInfo() {
-    if let user = me {
+    if (thisuser.firstName.count > 0){
       statusLabel.text = "Your Bizy Code!"
-      qrCodeImage.image = user.qrCode?.image
+      let qrCode = QRCode(thisuser.qrCode!)
+      qrCodeImage.image = qrCode?.image
       return
     }
     

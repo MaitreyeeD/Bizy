@@ -23,6 +23,7 @@ class WalletController: UIViewController {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
     
+    //Possibly Move to View Did Appear
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     let context = appDelegate.persistentContainer.viewContext
     
@@ -34,7 +35,7 @@ class WalletController: UIViewController {
         self.loadUsers(data: data)
         //        nameData.text = thisuser.firstName
         //        emailData.text = thisuser.email
-        self.configureView()
+        
         
         //        print(data.value(forKey: "first_name") as! String)
         //        print(data.value(forKey: "email") as! String)
@@ -45,6 +46,12 @@ class WalletController: UIViewController {
       print("Failed")
     }
     
+  }
+  
+  
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated);
+    configureView()
   }
   
   func loadUsers(data: NSManagedObject){
@@ -73,10 +80,12 @@ class WalletController: UIViewController {
   }
   
   func configureView() {
-    
-    
-    nameData.text = thisuser.firstName + " " + thisuser.lastName
-    
+    if (thisuser.firstName.count > 0) {
+      nameData.text = thisuser.firstName + "'s Wallet"
+      return
+    } else {
+      nameData.text = "Wallet"
+    }
     
   }
   

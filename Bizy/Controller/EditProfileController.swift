@@ -64,7 +64,7 @@ class EditProfileController: UIViewController, UIImagePickerControllerDelegate, 
   
   let imagePicker = UIImagePickerController()
   var picture: UIImage?
-  var user: User? = nil
+  var me: User? = nil
   
   var detailItem: User? {
     didSet{
@@ -163,20 +163,20 @@ class EditProfileController: UIViewController, UIImagePickerControllerDelegate, 
     user.city = city.text!
     user.website = website.text!
     user.image = picture
-    
+    self.me = user
     
     sendPostRequest()
     
-    self.saveUser(user: user)
+    self.saveUser(user: me!)
     
-    delegate?.editProfileController(controller: self, didFinishAddingProfile: user)
+    delegate?.editProfileController(controller: self, didFinishAddingProfile: me!)
     
   }
   
   //Finish With Core Data OR Realm
   // Change informaiton bs
   func sendPostRequest() {
-    guard let person = self.user else {
+    guard let person = self.me else {
       print("There is no user to be saved!")
       return
     }
@@ -197,14 +197,37 @@ class EditProfileController: UIViewController, UIImagePickerControllerDelegate, 
     let urlString: String = "https://desolate-springs-29566.herokuapp.com/users/"
     DispatchQueue.main.async() {
       Alamofire.request(urlString, method: .post, parameters: parameters).responseJSON(completionHandler: {(response) in
-        print(response.response)
-        print(response.data)
-        let swifty = JSON(response.result.value)
-        let id = swifty["id"].string
-        self.user!.id = id
-        var code = urlString + id!
-        self.user!.qrCode = QRCode(code)
+        
+        print("YELLOOOOOOO")
+        print(response.result)
+        guard let rep = response.result.value else {
+          print("Could Not Convert")
+          return
+        }
+        
+        let json = rep as! [String: AnyObject]
+        print(json)
+//        if let jsonId = json["id"] {
+//          let bop = jsonId as! Int
+//          print(jsonId)
+//          print(bop)
+//        }
+//
+//        guard let jsonId = json["id"] else {
+//          print("No Can Do")
+//          return
+//        }
+        
+        let userId = json["id"] as! Int
+        self.me!.id = String(userId)
+        
+        let code = urlString + String(userId)
+        print("code")
+        self.me!.qrCode = code
+        print("SAVED IN DATABASE- WHOOO HOOO")
       })
+      
+      
     }
   }
   
@@ -222,7 +245,6 @@ class EditProfileController: UIViewController, UIImagePickerControllerDelegate, 
     newUser.setValue(user.position, forKey: "position")
     newUser.setValue(user.summary, forKey: "summary")
     newUser.setValue(user.qrCode, forKey: "qrcode")
-    
     newUser.setValue(user.linkedIn, forKey: "linkedin")
     newUser.setValue(user.password, forKey: "password")
     newUser.setValue(user.state, forKey: "state")
