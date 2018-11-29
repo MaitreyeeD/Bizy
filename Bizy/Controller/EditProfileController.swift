@@ -167,7 +167,7 @@ class EditProfileController: UIViewController, UIImagePickerControllerDelegate, 
     
     sendPostRequest()
     
-    self.saveUser(user: me!)
+    
     
     delegate?.editProfileController(controller: self, didFinishAddingProfile: me!)
     
@@ -222,9 +222,10 @@ class EditProfileController: UIViewController, UIImagePickerControllerDelegate, 
         self.me!.id = String(userId)
         
         let code = urlString + String(userId)
-        print("code")
+        print(code)
         self.me!.qrCode = code
         print("SAVED IN DATABASE- WHOOO HOOO")
+        self.saveUser(user: self.me!)
       })
       
       
