@@ -171,6 +171,7 @@ class EditProfileController: UIViewController, UIImagePickerControllerDelegate, 
   }
   
   
+  
   func sendPostRequest() {
     guard let person = self.user else {
       print("There is no user to be saved!")
