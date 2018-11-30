@@ -16,6 +16,8 @@ class QRCodeController: UIViewController {
   @IBOutlet weak var back: UIButton!
   
   var thisuser = User(fname: "", lname: "", email: "")
+  var codePlaced = false
+  var mainImage : UIImage!
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -41,7 +43,10 @@ class QRCodeController: UIViewController {
   
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
-    loadInfo()
+    if (self.codePlaced != true ) {
+        loadInfo()
+    }
+    
   }
   
   func loadUsers(data: NSManagedObject){
@@ -54,9 +59,11 @@ class QRCodeController: UIViewController {
   
   func loadInfo() {
     if (thisuser.firstName.count > 0){
-      statusLabel.text = "Your Bizy Code!"
+      print("WHOAAAAAAAAAOAOAOAOOA")
+      statusLabel.text = "Go ahead and share!"
       let qrCode = QRCode(thisuser.qrCode!)
       qrCodeImage.image = qrCode?.image
+      codePlaced = true
       return
     }
     

@@ -207,16 +207,7 @@ class EditProfileController: UIViewController, UIImagePickerControllerDelegate, 
         
         let json = rep as! [String: AnyObject]
         print(json)
-//        if let jsonId = json["id"] {
-//          let bop = jsonId as! Int
-//          print(jsonId)
-//          print(bop)
-//        }
-//
-//        guard let jsonId = json["id"] else {
-//          print("No Can Do")
-//          return
-//        }
+
         
         let userId = json["id"] as! Int
         self.me!.id = String(userId)
@@ -251,6 +242,7 @@ class EditProfileController: UIViewController, UIImagePickerControllerDelegate, 
     newUser.setValue(user.state, forKey: "state")
     newUser.setValue(user.city, forKey: "city")
     newUser.setValue(user.website, forKey: "website")
+    newUser.setValue(user.id, forKey: "id")
     
     if let pic = user.image {
       newUser.setValue(UIImagePNGRepresentation(pic), forKey: "image")

@@ -119,7 +119,6 @@ class ProfileViewController: UIViewController, EditProfileControllerDelegate {
     
       else {
         nameData.text = "Get Started By Creating A Profile!"
-        
         emailData.text = ""
         phoneData.text =  ""
         companyData.text = ""

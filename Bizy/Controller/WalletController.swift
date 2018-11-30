@@ -16,8 +16,10 @@ class WalletController: UIViewController {
   @IBOutlet var scanCode: UIButton!
   @IBOutlet var qrCode: UIButton!
   @IBOutlet weak var nameData: UILabel!
-  
+  @IBOutlet var tablesView: UITableView!
+ 
   var thisuser = User(fname: "", lname: "", email: "")
+  var contacts = [User]()
   
   override func viewDidLoad() {
     super.viewDidLoad()

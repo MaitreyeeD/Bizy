@@ -10,12 +10,14 @@ import Foundation
 import UIKit
 import Alamofire
 import SwiftyJSON
+import CoreData
 
 class ShowUserController: UIViewController {
   
   var urlString: String!
   var userData: User!
   let parser = UserParser()
+  var thisuser = User(fname: "", lname: "", email: "")
   
   @IBOutlet var addButton: UIButton!
   @IBOutlet var declineButton: UIButton!
@@ -36,6 +38,28 @@ class ShowUserController: UIViewController {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
     fetchUserData()
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    let context = appDelegate.persistentContainer.viewContext
+    
+    let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Person")
+    request.returnsObjectsAsFaults = false
+    
+    do {
+      let result = try context.fetch(request)
+      for data in result as! [NSManagedObject] {
+        self.loadUsers(data: data)
+        //        nameData.text = thisuser.firstName
+        //        emailData.text = thisuser.email
+        
+        
+        //        print(data.value(forKey: "first_name") as! String)
+        //        print(data.value(forKey: "email") as! String)
+      }
+      
+    } catch {
+      
+      print("Failed")
+    }
   }
   
   func fetchUserData() {
@@ -79,6 +103,16 @@ class ShowUserController: UIViewController {
     
   }
   
+  func loadUsers(data: NSManagedObject){
+    let newUser = User(fname: "", lname: "", email: "")
+    newUser.firstName = (data.value(forKey: "first_name") as! String)
+    newUser.lastName = (data.value(forKey: "last_name") as! String)
+    newUser.email = (data.value(forKey: "email") as? String ?? "bop@gmail.com")
+    newUser.id = (data.value(forKey: "id") as? String ?? "")
+
+    thisuser = newUser
+  }
+  
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
@@ -90,19 +124,24 @@ class ShowUserController: UIViewController {
   
   //Finish with CoreData
   func postToWallet() {
+    
     let parameters: Parameters = [
-      "user_id": "",
+      "user_id": thisuser.id!,
       "contact_id": userData.id!,
       "category": "main"
       ]
     let urlString: String = "https://desolate-springs-29566.herokuapp.com/wallets/"
     DispatchQueue.main.async() {
       Alamofire.request(urlString, method: .post, parameters: parameters).responseJSON(completionHandler: {(response) in
-        print(response.response)
-        print(response.data)
-        let swifty = JSON(response.result.value)
-
+        print(response.result)
+        //Add to contacts
       })
     }
   }
+  
+  
+  
+  
+  
+  
 }
