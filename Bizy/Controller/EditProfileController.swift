@@ -50,7 +50,7 @@ class EditProfileController: UIViewController, UIImagePickerControllerDelegate, 
    @IBOutlet weak var position:UITextField!
    @IBOutlet weak var summary:UITextField!
   //changes
-   @IBOutlet weak var password: UITextField!
+   //@IBOutlet weak var password: UITextField!
   @IBOutlet weak var linkedin: UITextField!
   @IBOutlet weak var state: UITextField!
   @IBOutlet weak var city: UITextField!
@@ -96,9 +96,9 @@ class EditProfileController: UIViewController, UIImagePickerControllerDelegate, 
         position.text = detail.position
       }
       //changes
-      if let password = self.password{
-        password.text = detail.password
-      }
+//      if let password = self.password{
+//        password.text = detail.password
+//      }
       if let summary = self.summary{
         summary.text = detail.summary
       }
@@ -155,7 +155,7 @@ class EditProfileController: UIViewController, UIImagePickerControllerDelegate, 
     user.summary = summary.text!
     
     //changes
-    user.password = password.text!
+//    user.password = password.text!
     user.linkedIn = linkedin.text!
     user.state = state.text!
     user.city = city.text!
@@ -178,7 +178,7 @@ class EditProfileController: UIViewController, UIImagePickerControllerDelegate, 
     }
     let parameters: Parameters = [
       "email": person.email,
-      "password": person.password ?? "",
+//      "password": person.password ?? "",
       "first_name": person.firstName,
       "last_name": person.lastName,
       "company": person.company ?? "",
@@ -220,7 +220,7 @@ class EditProfileController: UIViewController, UIImagePickerControllerDelegate, 
     newUser.setValue(user.qrCode, forKey: "qrcode")
     
     newUser.setValue(user.linkedIn, forKey: "linkedin")
-    newUser.setValue(user.password, forKey: "password")
+//    newUser.setValue(user.password, forKey: "password")
     newUser.setValue(user.state, forKey: "state")
     newUser.setValue(user.city, forKey: "city")
     newUser.setValue(user.website, forKey: "website")

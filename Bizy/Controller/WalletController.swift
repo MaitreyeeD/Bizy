@@ -19,6 +19,7 @@ class WalletController: UIViewController {
   
   var thisuser = User(fname: "", lname: "", email: "")
   
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
@@ -62,8 +63,8 @@ class WalletController: UIViewController {
     newUser.state = (data.value(forKey: "state") as? String ?? "")
     newUser.website = (data.value(forKey: "website") as? String ?? "")
     newUser.linkedIn = (data.value(forKey: "linkedin") as? String ?? "")
-    newUser.password = (data.value(forKey: "password") as? String ?? "")
-    //    newUser.image = UIImage(data:(data.value(forKey: "image") as! NSData) as! Data)
+//    newUser.password = (data.value(forKey: "password") as? String ?? "")
+//    //    newUser.image = UIImage(data:(data.value(forKey: "image") as! NSData) as! Data)
     //
     
     //     newUser.qrCode = (data.value(forKey: "QRcode") as! QRCode)

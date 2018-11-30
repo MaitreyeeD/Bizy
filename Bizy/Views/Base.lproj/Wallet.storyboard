@@ -81,13 +81,6 @@
                                 <rect key="frame" x="67" y="117" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Password" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MEt-xn-2hn">
-                                <rect key="frame" x="43" y="282" width="288" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Rockwell-Italic" family="Rockwell" pointSize="17"/>
-                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="City" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XiB-VN-Ifi">
                                 <rect key="frame" x="43" y="398" width="288" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -150,7 +143,6 @@
                         <outlet property="imageData" destination="32U-jw-ogn" id="kwn-By-fvN"/>
                         <outlet property="linkedinData" destination="gLX-qk-ega" id="0Qd-Uf-WXW"/>
                         <outlet property="nameData" destination="l4q-GY-N3l" id="qk9-ST-F3O"/>
-                        <outlet property="passwordData" destination="MEt-xn-2hn" id="BZp-0e-OYy"/>
                         <outlet property="phoneData" destination="Vdt-dr-9pc" id="PN7-qm-JK8"/>
                         <outlet property="positionData" destination="x0O-3z-CF8" id="jtc-fH-G4N"/>
                         <outlet property="stateData" destination="cbd-vK-5fI" id="9cD-Q7-Kyv"/>
@@ -297,20 +289,6 @@
                                     <action selector="done" destination="ZI2-Ay-xha" eventType="touchUpInside" id="ioS-mr-Wba"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Password: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Vq-hb-fwd">
-                                <rect key="frame" x="34" y="182" width="87" height="17"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Rockwell-Italic" family="Rockwell" pointSize="17"/>
-                                <color key="textColor" red="0.80000000000000004" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VbO-sG-sSy">
-                                <rect key="frame" x="167" y="179" width="151" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="Rockwell-Italic" family="Rockwell" pointSize="17"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="City: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YfW-zh-xag">
                                 <rect key="frame" x="35" y="382" width="42" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -378,7 +356,6 @@
                         <outlet property="firstName" destination="pVg-rk-a9I" id="sHE-c9-Wle"/>
                         <outlet property="lastName" destination="BO9-hF-E89" id="D9l-ld-M6I"/>
                         <outlet property="linkedin" destination="ByG-l8-TJW" id="gIi-Iw-pmU"/>
-                        <outlet property="password" destination="VbO-sG-sSy" id="fzP-jx-a3A"/>
                         <outlet property="phone" destination="f4w-2N-QX8" id="re5-Pb-6GK"/>
                         <outlet property="picPreview" destination="ogh-re-6zv" id="Rzl-ao-cQh"/>
                         <outlet property="position" destination="H3F-zx-6VM" id="6YQ-XV-grp"/>

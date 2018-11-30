@@ -29,7 +29,7 @@ class ProfileViewController: UIViewController, EditProfileControllerDelegate {
   @IBOutlet weak var summaryData: UILabel!
   
   //changes
-  @IBOutlet weak var passwordData: UILabel!
+//  @IBOutlet weak var passwordData: UILabel!
   @IBOutlet weak var linkedinData: UILabel!
   @IBOutlet weak var websiteData: UILabel!
   @IBOutlet weak var cityData: UILabel!
@@ -86,7 +86,7 @@ class ProfileViewController: UIViewController, EditProfileControllerDelegate {
     newUser.state = (data.value(forKey: "state") as? String ?? "")
     newUser.website = (data.value(forKey: "website") as? String ?? "")
     newUser.linkedIn = (data.value(forKey: "linkedin") as? String ?? "")
-    newUser.password = (data.value(forKey: "password") as? String ?? "")
+   // newUser.password = (data.value(forKey: "password") as? String ?? "")
 //    newUser.image = UIImage(data:(data.value(forKey: "image") as! NSData) as! Data)
 //
     
@@ -113,7 +113,7 @@ class ProfileViewController: UIViewController, EditProfileControllerDelegate {
       positionData.text = thisuser.position ?? "N/A"
       summaryData.text = thisuser.summary ?? "N/A"
     //changes
-    passwordData.text = thisuser.password ?? "N/A"
+//    passwordData.text = thisuser.password ?? "N/A"
     linkedinData.text = thisuser.linkedIn ?? "N/A"
     websiteData.text = thisuser.website ?? "N/A"
     cityData.text = thisuser.city ?? "N/A"

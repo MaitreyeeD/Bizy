@@ -88,9 +88,9 @@ class UserParser {
     }
     
     let user = User(fname: fname, lname: lname, email: email);
-    if let password = swiftyjson["password"].string {
-      user.password = password
-    }
+//    if let password = swiftyjson["password"].string {
+//      user.password = password
+//    }
     
     if let phone = swiftyjson["phone"].string {
       user.phone = phone
@@ -140,7 +140,7 @@ class UserParser {
     
     let parameters: Parameters = [
       "email": person.email,
-      "password": person.password ?? "",
+//      "password": person.password ?? "",
       "first_name": person.firstName,
       "last_name": person.lastName,
       "company": person.company ?? "",
