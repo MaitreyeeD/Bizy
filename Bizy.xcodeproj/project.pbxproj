@@ -18,7 +18,6 @@
 		2E4944B72187DEE100A97FB9 /* BizyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4944B62187DEE100A97FB9 /* BizyTests.swift */; };
 		2E4944C22187DEE100A97FB9 /* BizyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4944C12187DEE100A97FB9 /* BizyUITests.swift */; };
 		2E4944D62187E84A00A97FB9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4944D52187E84A00A97FB9 /* User.swift */; };
-		2E4CB61A21B0828200F090BE /* ShowWalletCardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4CB61921B0828200F090BE /* ShowWalletCardController.swift */; };
 		2E4FE34F218E82AC00CCAC51 /* WalletCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4FE34E218E82AC00CCAC51 /* WalletCard.swift */; };
 		2E4FE356218E8D6000CCAC51 /* QRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4FE355218E8D6000CCAC51 /* QRCode.swift */; };
 		2E4FE358218E8DA100CCAC51 /* CIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4FE357218E8DA100CCAC51 /* CIColorExtension.swift */; };
@@ -43,6 +42,7 @@
 		2ECB081B218E932A0035D264 /* ReaderOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECB081A218E932A0035D264 /* ReaderOverlayView.swift */; };
 		2ECB081D218E93460035D264 /* SwitchCameraButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECB081C218E93460035D264 /* SwitchCameraButton.swift */; };
 		2ECB081F218E935E0035D264 /* ToggleTorchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECB081E218E935E0035D264 /* ToggleTorchButton.swift */; };
+		2ED67D6521B130E000CA6270 /* CardDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED67D6421B130E000CA6270 /* CardDetailView.swift */; };
 		428A577047830792AC44C131 /* Pods_BizyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F6949F043C67A28AEFBACDC /* Pods_BizyUITests.framework */; };
 		62C22B33219910DE00189CDB /* EditProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C22B32219910DE00189CDB /* EditProfileController.swift */; };
 		62C22B352199137200189CDB /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C22B342199137200189CDB /* ProfileViewController.swift */; };
@@ -69,6 +69,7 @@
 
 /* Begin PBXFileReference section */
 		218BA0C204732D86F13F1821 /* Pods-BizyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BizyUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BizyUITests/Pods-BizyUITests.release.xcconfig"; sourceTree = "<group>"; };
+		2E11246021B1AA3300CAED5D /* Bizy 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Bizy 2.xcdatamodel"; sourceTree = "<group>"; };
 		2E24A88821AEEF23000A3540 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		2E24A88C21AEF453000A3540 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		2E49449B2187DEE000A97FB9 /* Bizy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bizy.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -86,7 +87,6 @@
 		2E4944C12187DEE100A97FB9 /* BizyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BizyUITests.swift; sourceTree = "<group>"; };
 		2E4944C32187DEE100A97FB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2E4944D52187E84A00A97FB9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		2E4CB61921B0828200F090BE /* ShowWalletCardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowWalletCardController.swift; sourceTree = "<group>"; };
 		2E4FE34E218E82AC00CCAC51 /* WalletCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletCard.swift; sourceTree = "<group>"; };
 		2E4FE355218E8D6000CCAC51 /* QRCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCode.swift; sourceTree = "<group>"; };
 		2E4FE357218E8DA100CCAC51 /* CIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIColorExtension.swift; sourceTree = "<group>"; };
@@ -111,6 +111,7 @@
 		2ECB081A218E932A0035D264 /* ReaderOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderOverlayView.swift; sourceTree = "<group>"; };
 		2ECB081C218E93460035D264 /* SwitchCameraButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchCameraButton.swift; sourceTree = "<group>"; };
 		2ECB081E218E935E0035D264 /* ToggleTorchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleTorchButton.swift; sourceTree = "<group>"; };
+		2ED67D6421B130E000CA6270 /* CardDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailView.swift; sourceTree = "<group>"; };
 		2F6949F043C67A28AEFBACDC /* Pods_BizyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BizyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		62C22B32219910DE00189CDB /* EditProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileController.swift; sourceTree = "<group>"; };
 		62C22B342199137200189CDB /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -231,7 +232,7 @@
 				62C22B342199137200189CDB /* ProfileViewController.swift */,
 				2E24A88821AEEF23000A3540 /* TableViewCell.swift */,
 				2E24A88C21AEF453000A3540 /* TableViewCell.xib */,
-				2E4CB61921B0828200F090BE /* ShowWalletCardController.swift */,
+				2ED67D6421B130E000CA6270 /* CardDetailView.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -559,6 +560,7 @@
 				2ECB081F218E935E0035D264 /* ToggleTorchButton.swift in Sources */,
 				2ECB081B218E932A0035D264 /* ReaderOverlayView.swift in Sources */,
 				62C22B33219910DE00189CDB /* EditProfileController.swift in Sources */,
+				2ED67D6521B130E000CA6270 /* CardDetailView.swift in Sources */,
 				2E4944D62187E84A00A97FB9 /* User.swift in Sources */,
 				2EC4B3F121956439006E9B3E /* CameraViewController.swift in Sources */,
 				2E4FE361218E91BC00CCAC51 /* QRCodeReader.swift in Sources */,
@@ -577,7 +579,6 @@
 				2ECB0817218E92F40035D264 /* QRCodeReaderViewControllerBuilder.swift in Sources */,
 				62C22B352199137200189CDB /* ProfileViewController.swift in Sources */,
 				2ECB0813218E929F0035D264 /* QRCodeViewContainer.swift in Sources */,
-				2E4CB61A21B0828200F090BE /* ShowWalletCardController.swift in Sources */,
 				2E4FE35A218E8DCA00CCAC51 /* CIImageExtension.swift in Sources */,
 				2E49449F2187DEE000A97FB9 /* AppDelegate.swift in Sources */,
 				2E4FE35D218E8F2900CCAC51 /* UserParser.swift in Sources */,
@@ -920,9 +921,10 @@
 		2E4944A52187DEE000A97FB9 /* Bizy.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				2E11246021B1AA3300CAED5D /* Bizy 2.xcdatamodel */,
 				2E4944A62187DEE000A97FB9 /* Bizy.xcdatamodel */,
 			);
-			currentVersion = 2E4944A62187DEE000A97FB9 /* Bizy.xcdatamodel */;
+			currentVersion = 2E11246021B1AA3300CAED5D /* Bizy 2.xcdatamodel */;
 			path = Bizy.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

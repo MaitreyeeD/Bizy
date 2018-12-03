@@ -19,6 +19,7 @@ class ShowUserController: UIViewController {
   let parser = UserParser()
   var thisuser = User(fname: "", lname: "", email: "")
   
+  
   @IBOutlet var addButton: UIButton!
   @IBOutlet var declineButton: UIButton!
   
@@ -70,7 +71,9 @@ class ShowUserController: UIViewController {
             let json = JSON(value);
             self.parser.swiftyjson = json
             if let user = self.parser.createUser() {
+                
                 self.userData = user
+                self.saveUser(user: self.userData)
             }
           
         case.failure(let error):
@@ -120,6 +123,29 @@ class ShowUserController: UIViewController {
   
   @IBAction func sendPostToWallet(_ sender: Any) {
     postToWallet()
+    
+    
+    
+    
+    
+    let alert = UIAlertController(
+      title: self.userData!.firstName + " Added to Wallet!",
+      message: "Go To Your Wallet to View Your Bizy Cards!",
+      preferredStyle: .alert
+    )
+    
+    
+    alert.addAction(UIAlertAction(title: "Go To Wallet!", style: .default, handler: {(action) -> Void in
+      self.performSegue(withIdentifier: "backToWallet", sender: self)
+    }))
+    
+    self.present(alert, animated: true, completion: nil)
+    
+    
+  }
+  
+  @IBAction func decline(_ sender: Any) {
+    self.dismiss(animated: true, completion: nil)
   }
   
   //Finish with CoreData
@@ -127,18 +153,77 @@ class ShowUserController: UIViewController {
     
     let parameters: Parameters = [
       "user_id": thisuser.id!,
-      "contact_id": userData.id!,
+      "contact_id": "1",
       "category": "main"
       ]
     let urlString: String = "https://desolate-springs-29566.herokuapp.com/wallets/"
     DispatchQueue.main.async() {
       Alamofire.request(urlString, method: .post, parameters: parameters).responseJSON(completionHandler: {(response) in
         print(response.result)
-        //Add to contacts
       })
     }
   }
   
+  func alreadySaved(id: String) -> Bool {
+
+      let appDelegate = UIApplication.shared.delegate as! AppDelegate
+      let context = appDelegate.persistentContainer.viewContext
+      
+      let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Card")
+      request.returnsObjectsAsFaults = false
+      do {
+        let result = try context.fetch(request)
+        for data in result as! [NSManagedObject] {
+          let newId = (data.value(forKey: "id") as? String ?? "")
+          if (id == newId) {
+            return true
+          }
+        }
+        
+      } catch {
+        
+        print("Failed")
+      }
+    return false
+  }
+  
+  func saveUser(user: User){
+    if (alreadySaved(id: user.id!) == true) {
+      let alert = UIAlertController(title: "Check Again!", message: "User Is Already In Your Wallet!", preferredStyle: .alert)
+      alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in
+          self.dismiss(animated: true, completion: nil)
+      }))
+      self.present(alert, animated: true, completion: nil)
+    }
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    let context = appDelegate.persistentContainer.viewContext
+    let entity = NSEntityDescription.entity(forEntityName: "Card", in: context)
+    let newUser = NSManagedObject(entity: entity!, insertInto: context)
+    newUser.setValue(user.firstName, forKey: "first_name")
+    newUser.setValue(user.lastName, forKey: "last_name")
+    newUser.setValue(user.email, forKey: "email")
+    newUser.setValue(user.phone, forKey: "phone")
+    newUser.setValue(user.company, forKey: "company")
+    newUser.setValue(user.position, forKey: "position")
+    newUser.setValue(user.summary, forKey: "summary")
+    newUser.setValue(user.linkedIn, forKey: "linkedin")
+    newUser.setValue(user.state, forKey: "state")
+    newUser.setValue(user.city, forKey: "city")
+    newUser.setValue(user.website, forKey: "website")
+    newUser.setValue(user.id, forKey: "id")
+    
+    //Set RESUME AND IMAGE ------------------------------------------------------->
+    //must set resume as well
+    //must set image.
+//    if let pic = user.image {
+//      newUser.setValue(UIImagePNGRepresentation(pic), forKey: "image")
+//    }
+    do {
+      try context.save()
+    } catch {
+      print("Failed saving")
+    }
+  }
   
   
   

@@ -123,8 +123,9 @@ class UserParser {
       user.website = website
     }
     
-    if let id = swiftyjson["id"].string {
-      user.id = id
+    if let id = swiftyjson["id"].int {
+      user.id = String(id)
+      print(id)
     }
     
     //To Be Determined!!!!!!

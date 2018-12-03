@@ -43,7 +43,13 @@ class User  {
     self.email = email
   }
   
-
+  
+  func equals(first: User, second: User) -> Bool {
+    if(first.id! == second.id!) {
+      return true
+    }
+    return false
+  }
   
 //  For Encoding and Decoding.
 //  required init(coder aDecoder: NSCoder) {
