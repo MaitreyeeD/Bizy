@@ -19,6 +19,9 @@ class ProfileViewController: UIViewController, EditProfileControllerDelegate {
   var thisuser = User(fname: "", lname: "", email: "")
   let test = "Test"
   var loaded = false
+  
+  var userController =  UserController()
+  
 
   
   @IBOutlet weak var nameData: UILabel!
@@ -37,10 +40,16 @@ class ProfileViewController: UIViewController, EditProfileControllerDelegate {
   @IBOutlet weak var imageData: UIImageView!
   
   
+  
   @IBOutlet weak var editButton: UIBarButtonItem!
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    let modeluser = userController.user
+    print( modeluser.firstName)
+    print (modeluser.linkedIn)
+    
     //self.navigationItem.leftBarButtonItem = self.editButtonItem
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -138,11 +147,15 @@ class ProfileViewController: UIViewController, EditProfileControllerDelegate {
       
       
       let addDataVC: EditProfileController = segue.destination as! EditProfileController
+      
 
       // Step 4: Tell object A (AddVC) that object B (VC) is now its delegate
       addDataVC.delegate = self as EditProfileControllerDelegate
       let us = thisuser
       (segue.destination as! EditProfileController).detailItem = us
+      let thiscontroller = userController
+      (segue.destination as! EditProfileController).modeluser = thiscontroller.user
+      
       // declaring that this VC is acting as the delegate
       print("\n-- I'm \(String(describing: addDataVC))'s delegate: \(String(describing: addDataVC.delegate))\n")
     }

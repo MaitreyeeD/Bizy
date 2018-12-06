@@ -60,6 +60,8 @@ class EditProfileController: UIViewController, UIImagePickerControllerDelegate, 
    @IBOutlet weak var doneBarButton: UIButton!
   @IBOutlet weak var picPreview: UIImageView!
   
+  var userController: UserController!
+  
   let imagePicker = UIImagePickerController()
   var picture: UIImage?
   var user: User? = nil
@@ -69,6 +71,12 @@ class EditProfileController: UIViewController, UIImagePickerControllerDelegate, 
       self.configureView()
     }
     
+  }
+  var modeluser: User? {
+    didSet{
+      print("set")
+      
+    }
   }
   // Step 3: Give object A an optional delegate variable
   //var delegate:DataEnteredDelegate?
@@ -125,6 +133,8 @@ class EditProfileController: UIViewController, UIImagePickerControllerDelegate, 
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    print(modeluser?.linkedIn)
+    
     
     self.hideKeyboardWhenTappedAround() 
     
@@ -262,4 +272,17 @@ class EditProfileController: UIViewController, UIImagePickerControllerDelegate, 
     dismiss(animated: true, completion: nil)
   }
   
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if segue.identifier == "profilePartTwo" {
+      
+      let thisusercontroller = modeluser
+      (segue.destination as! EditProfile2Controller).modeluser = thisusercontroller
+    }
+   
+  }
+  
+  
+  
+  
+ 
 }
