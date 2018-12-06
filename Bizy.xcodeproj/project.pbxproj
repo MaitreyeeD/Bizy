@@ -27,6 +27,12 @@
 		2E4FE361218E91BC00CCAC51 /* QRCodeReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4FE360218E91BC00CCAC51 /* QRCodeReader.swift */; };
 		2E4FE363218E91E600CCAC51 /* QRCodeReaderResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4FE362218E91E600CCAC51 /* QRCodeReaderResult.swift */; };
 		2E4FE365218E923A00CCAC51 /* QRCodeReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4FE364218E923A00CCAC51 /* QRCodeReaderView.swift */; };
+		2E8EEB5E21B83CC500968A6F /* GiddyupStd.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2E8EEB5D21B83CC400968A6F /* GiddyupStd.otf */; };
+		2E8EEB6521B849DE00968A6F /* logo-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E8EEB6321B849DE00968A6F /* logo-2.png */; };
+		2E8EEB6621B849DE00968A6F /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E8EEB6421B849DE00968A6F /* logo.png */; };
+		2E8EEB6821B929FE00968A6F /* RequiredInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8EEB6721B929FE00968A6F /* RequiredInfoController.swift */; };
+		2E8EEB6A21B92AAA00968A6F /* ProfessionalInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8EEB6921B92AAA00968A6F /* ProfessionalInfoController.swift */; };
+		2E8EEB6C21B92AE500968A6F /* SupplementaryInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8EEB6B21B92AE500968A6F /* SupplementaryInfoController.swift */; };
 		2EC4B3E821951393006E9B3E /* UserParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC4B3E721951393006E9B3E /* UserParserTests.swift */; };
 		2EC4B3EA21952BD1006E9B3E /* WalletController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC4B3E921952BD1006E9B3E /* WalletController.swift */; };
 		2EC4B3ED21954AD4006E9B3E /* GetUserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC4B3EC21954AD4006E9B3E /* GetUserData.swift */; };
@@ -96,6 +102,13 @@
 		2E4FE360218E91BC00CCAC51 /* QRCodeReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeReader.swift; sourceTree = "<group>"; };
 		2E4FE362218E91E600CCAC51 /* QRCodeReaderResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeReaderResult.swift; sourceTree = "<group>"; };
 		2E4FE364218E923A00CCAC51 /* QRCodeReaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeReaderView.swift; sourceTree = "<group>"; };
+		2E8EEB5D21B83CC400968A6F /* GiddyupStd.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = GiddyupStd.otf; path = ../../../../../../../../Downloads/GiddyupStd.otf; sourceTree = "<group>"; };
+		2E8EEB5F21B83CC800968A6F /* GiddyupStd.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = GiddyupStd.otf; path = ../../../../../../../../Downloads/GiddyupStd.otf; sourceTree = "<group>"; };
+		2E8EEB6321B849DE00968A6F /* logo-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "logo-2.png"; path = "../../../Assets/logo-2.png"; sourceTree = "<group>"; };
+		2E8EEB6421B849DE00968A6F /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo.png; path = ../../../Assets/logo.png; sourceTree = "<group>"; };
+		2E8EEB6721B929FE00968A6F /* RequiredInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequiredInfoController.swift; sourceTree = "<group>"; };
+		2E8EEB6921B92AAA00968A6F /* ProfessionalInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfessionalInfoController.swift; sourceTree = "<group>"; };
+		2E8EEB6B21B92AE500968A6F /* SupplementaryInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupplementaryInfoController.swift; sourceTree = "<group>"; };
 		2EC4B3E721951393006E9B3E /* UserParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserParserTests.swift; sourceTree = "<group>"; };
 		2EC4B3E921952BD1006E9B3E /* WalletController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletController.swift; sourceTree = "<group>"; };
 		2EC4B3EC21954AD4006E9B3E /* GetUserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserData.swift; sourceTree = "<group>"; };
@@ -177,6 +190,8 @@
 		2E49449D2187DEE000A97FB9 /* Bizy */ = {
 			isa = PBXGroup;
 			children = (
+				2E8EEB6121B8470000968A6F /* Assets */,
+				2E909FCA21B83AEB00E6A0D9 /* Fonts */,
 				2EC4B3EB219538D9006E9B3E /* Network */,
 				2E4944A82187DEE100A97FB9 /* Assets.xcassets */,
 				2E4944AD2187DEE100A97FB9 /* Info.plist */,
@@ -224,6 +239,7 @@
 			children = (
 				2E4944A02187DEE000A97FB9 /* ViewController.swift */,
 				2EC4B3E921952BD1006E9B3E /* WalletController.swift */,
+				2E8EEB5D21B83CC400968A6F /* GiddyupStd.otf */,
 				2EC4B3F021956439006E9B3E /* CameraViewController.swift */,
 				2EC4B3F22195645F006E9B3E /* QRCodeController.swift */,
 				2EC4B3F421957A35006E9B3E /* SecondaryCameraView.swift */,
@@ -233,6 +249,9 @@
 				2E24A88821AEEF23000A3540 /* TableViewCell.swift */,
 				2E24A88C21AEF453000A3540 /* TableViewCell.xib */,
 				2ED67D6421B130E000CA6270 /* CardDetailView.swift */,
+				2E8EEB6721B929FE00968A6F /* RequiredInfoController.swift */,
+				2E8EEB6921B92AAA00968A6F /* ProfessionalInfoController.swift */,
+				2E8EEB6B21B92AE500968A6F /* SupplementaryInfoController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -250,6 +269,7 @@
 		2E4944D22187DF4500A97FB9 /* InternalAPIs */ = {
 			isa = PBXGroup;
 			children = (
+				2E8EEB6021B842AD00968A6F /* Material */,
 				2E4FE352218E8C4100CCAC51 /* QRCodeReader */,
 				2E4FE350218E8C2200CCAC51 /* QRCodeGenerator */,
 			);
@@ -298,6 +318,30 @@
 				2E4FE35E218E8F4A00CCAC51 /* WalletParser.swift */,
 			);
 			path = Parsers;
+			sourceTree = "<group>";
+		};
+		2E8EEB6021B842AD00968A6F /* Material */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Material;
+			sourceTree = "<group>";
+		};
+		2E8EEB6121B8470000968A6F /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				2E8EEB6321B849DE00968A6F /* logo-2.png */,
+				2E8EEB6421B849DE00968A6F /* logo.png */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		2E909FCA21B83AEB00E6A0D9 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				2E8EEB5F21B83CC800968A6F /* GiddyupStd.otf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		2EC4B3E621951344006E9B3E /* Classes */ = {
@@ -447,8 +491,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E8EEB5E21B83CC500968A6F /* GiddyupStd.otf in Resources */,
 				2EC4B3EF21955E80006E9B3E /* Temp.storyboard in Resources */,
 				2E24A88D21AEF453000A3540 /* TableViewCell.xib in Resources */,
+				2E8EEB6521B849DE00968A6F /* logo-2.png in Resources */,
+				2E8EEB6621B849DE00968A6F /* logo.png in Resources */,
 				2E4944AC2187DEE100A97FB9 /* LaunchScreen.storyboard in Resources */,
 				2E4944A92187DEE100A97FB9 /* Assets.xcassets in Resources */,
 				2E4944A42187DEE000A97FB9 /* Wallet.storyboard in Resources */,
@@ -480,6 +527,13 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Bizy/Pods-Bizy-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
+				"${BUILT_PRODUCTS_DIR}/MDFInternationalization/MDFInternationalization.framework",
+				"${BUILT_PRODUCTS_DIR}/MDFTextAccessibility/MDFTextAccessibility.framework",
+				"${BUILT_PRODUCTS_DIR}/MaterialComponents/MaterialComponents.framework",
+				"${BUILT_PRODUCTS_DIR}/MotionAnimator/MotionAnimator.framework",
+				"${BUILT_PRODUCTS_DIR}/MotionInterchange/MotionInterchange.framework",
+				"${BUILT_PRODUCTS_DIR}/MotionTransitioning/MotionTransitioning.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
@@ -487,6 +541,13 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFInternationalization.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFTextAccessibility.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MaterialComponents.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MotionAnimator.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MotionInterchange.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MotionTransitioning.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
@@ -557,7 +618,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E8EEB6A21B92AAA00968A6F /* ProfessionalInfoController.swift in Sources */,
 				2ECB081F218E935E0035D264 /* ToggleTorchButton.swift in Sources */,
+				2E8EEB6C21B92AE500968A6F /* SupplementaryInfoController.swift in Sources */,
 				2ECB081B218E932A0035D264 /* ReaderOverlayView.swift in Sources */,
 				62C22B33219910DE00189CDB /* EditProfileController.swift in Sources */,
 				2ED67D6521B130E000CA6270 /* CardDetailView.swift in Sources */,
@@ -568,6 +631,7 @@
 				2E4944A12187DEE000A97FB9 /* ViewController.swift in Sources */,
 				2E4FE363218E91E600CCAC51 /* QRCodeReaderResult.swift in Sources */,
 				2E24A88921AEEF23000A3540 /* TableViewCell.swift in Sources */,
+				2E8EEB6821B929FE00968A6F /* RequiredInfoController.swift in Sources */,
 				2E4FE358218E8DA100CCAC51 /* CIColorExtension.swift in Sources */,
 				2E4FE35F218E8F4A00CCAC51 /* WalletParser.swift in Sources */,
 				2ECB0815218E92C90035D264 /* QRCodeReaderViewController.swift in Sources */,

@@ -8,14 +8,19 @@
 
 import UIKit
 import CoreData
-
+//import Chameleon
+import ChameleonFramework
+import MaterialComponents.MaterialButtons
+import MaterialComponents.MaterialColorScheme
+import MaterialComponents.MaterialButtons_ButtonThemer
 
 class WalletController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
   @IBOutlet var profile: UIButton!
+  @IBOutlet var profileBarButton: UIBarButtonItem!
   @IBOutlet var tableView: UITableView!
-  @IBOutlet var scanCode: UIButton!
-  @IBOutlet var qrCode: UIButton!
+  @IBOutlet var scanCode: MDCButton!
+  @IBOutlet var qrCode: MDCButton!
   @IBOutlet weak var nameData: UILabel!
   @IBOutlet weak var tablesView: UITableView!
  
@@ -29,13 +34,13 @@ class WalletController: UIViewController, UITableViewDelegate, UITableViewDataSo
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
     let cellNib = UINib(nibName: "TableViewCell", bundle: nil)
-//    self.tablesView.register(cellNib, forCellReuseIdentifier: "cell")
-    self.tablesView.register(TableViewCell.self, forCellReuseIdentifier: "cell")
+    self.tablesView.register(cellNib, forCellReuseIdentifier: "cell")
+//    self.tablesView.register(TableViewCell.self, forCellReuseIdentifier: "cell")
   }
   
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
-    
+    initChameleonColors()
     if (self.selfLoaded == false) {
       loadSelf()
       configureView()
@@ -44,6 +49,50 @@ class WalletController: UIViewController, UITableViewDelegate, UITableViewDataSo
     tablesView.reloadData()
     print(cards.count)
 
+  }
+  
+  func initChameleonColors() {
+//    self.view.backgroundColor = UIColor.flatPowderBlue
+//    self.tablesView.backgroundColor = UIColor.flatPowderBlue
+    
+    nameData.textColor = HexColor("E0C393")
+    initializeLogos()
+    initializeButtons()
+    
+  }
+  
+  func initializeButtons() {
+    let colorSchemeScan = MDCSemanticColorScheme()
+    colorSchemeScan.primaryColor = HexColor("A6DD69")!
+    let colorSchemeCode = MDCSemanticColorScheme()
+    colorSchemeCode.primaryColor = HexColor("E0C393")!
+
+    
+    let buttonSchemeScan = MDCButtonScheme()
+    let buttonSchemeCode = MDCButtonScheme()
+    MDCContainedButtonThemer.applyScheme(buttonSchemeScan, to: scanCode)
+    MDCContainedButtonColorThemer.applySemanticColorScheme(colorSchemeScan, to: scanCode)
+    
+    
+    MDCContainedButtonThemer.applyScheme(buttonSchemeCode, to: qrCode)
+    MDCContainedButtonColorThemer.applySemanticColorScheme(colorSchemeCode, to: qrCode)
+
+    
+    
+  }
+  
+  func initializeLogos() {
+    let logo = UIImage(named: "title_2.png")
+    let profile = UIImage(named: "resume.png")!.withRenderingMode(.alwaysOriginal)
+    let bizyLogo = UIImageView(image:logo)
+    let profileLogo = UIImageView(image: profile)
+    profileBarButton.image = profile
+    self.navigationItem.titleView = bizyLogo
+
+  }
+  
+  @objc func tabBarTableauClicked(sender: UIBarButtonItem){
+    performSegue(withIdentifier: "toProfile", sender: self)
   }
   
   override func viewWillAppear(_ animated: Bool) {

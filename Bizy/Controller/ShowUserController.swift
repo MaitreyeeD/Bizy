@@ -11,6 +11,10 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 import CoreData
+import ChameleonFramework
+import MaterialComponents.MaterialButtons
+import MaterialComponents.MaterialColorScheme
+import MaterialComponents.MaterialButtons_ButtonThemer
 
 class ShowUserController: UIViewController {
   
@@ -20,8 +24,8 @@ class ShowUserController: UIViewController {
   var thisuser = User(fname: "", lname: "", email: "")
   
   
-  @IBOutlet var addButton: UIButton!
-  @IBOutlet var declineButton: UIButton!
+  @IBOutlet var addButton: MDCButton!
+  @IBOutlet var declineButton: MDCButton!
   
   @IBOutlet weak var firstNameLabel: UILabel!
   @IBOutlet weak var lastNameLabel: UILabel!
@@ -39,6 +43,7 @@ class ShowUserController: UIViewController {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
     fetchUserData()
+    initializeUI()
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     let context = appDelegate.persistentContainer.viewContext
     
@@ -61,6 +66,29 @@ class ShowUserController: UIViewController {
       
       print("Failed")
     }
+  }
+  
+  func initializeUI() {
+    let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
+    navigationController?.navigationBar.titleTextAttributes = textAttributes
+    
+    let name = userData.firstName + " " + userData.lastName
+    self.navigationController?.title = name
+    let colorSchemeYes = MDCSemanticColorScheme()
+    colorSchemeYes.primaryColor = HexColor("A6DD69")!
+    let colorSchemeNo = MDCSemanticColorScheme()
+    colorSchemeNo.primaryColor = HexColor("E54E4E")!
+    
+    let buttonSchemeYes = MDCButtonScheme()
+    let buttonSchemeNo = MDCButtonScheme()
+    
+    MDCContainedButtonThemer.applyScheme(buttonSchemeNo, to: declineButton)
+    MDCContainedButtonColorThemer.applySemanticColorScheme(colorSchemeNo, to: declineButton)
+
+    MDCContainedButtonThemer.applyScheme(buttonSchemeYes, to: addButton)
+    MDCContainedButtonColorThemer.applySemanticColorScheme(colorSchemeYes, to: addButton)
+
+    
   }
   
   func fetchUserData() {

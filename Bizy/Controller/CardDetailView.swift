@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import ChameleonFramework
 
 
 class CardDetailView: UIViewController {
@@ -39,9 +40,7 @@ class CardDetailView: UIViewController {
   
   func loadInfo() {
     if (self.thisuser.firstName.count > 0) {
-      
-      firstNameLabel.text = thisuser.firstName
-      lastNameLabel.text = thisuser.lastName
+      initializeUI()
       emailLabel.text = thisuser.email
       
       if let company = thisuser.company {
@@ -76,6 +75,15 @@ class CardDetailView: UIViewController {
 //      stateLabel.text = thisuser.state ?? "Not Available"
 //      summaryLabel.text = thisuser.summary ?? "Not Available"
     }
+  }
+  
+  func initializeUI() {
+    let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
+    navigationController?.navigationBar.titleTextAttributes = textAttributes
+    
+    let name = thisuser.firstName + " " + thisuser.lastName
+    self.navigationController?.title = name;
+//    main.textColor = HexColor("E0C393")
   }
   
 

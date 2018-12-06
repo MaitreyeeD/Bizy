@@ -11,41 +11,55 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="216" id="eLm-Gx-D63">
-            <rect key="frame" x="0.0" y="0.0" width="608" height="216"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="198" id="eLm-Gx-D63" customClass="TableViewCell" customModule="Bizy" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="558" height="198"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eLm-Gx-D63" id="ztf-Jx-pZ6">
-                <rect key="frame" x="0.0" y="0.0" width="608" height="215.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="558" height="197.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NWW-Vf-LAY">
-                        <rect key="frame" x="0.0" y="0.0" width="240" height="216"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NWW-Vf-LAY">
+                        <rect key="frame" x="7" y="11" width="216" height="178"/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uUz-Jk-zhu">
-                        <rect key="frame" x="349" y="148" width="130" height="39"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
-                        <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RsN-bn-UaO">
-                        <rect key="frame" x="248" y="11" width="340" height="70"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RsN-bn-UaO">
+                        <rect key="frame" x="255" y="17" width="283" height="70"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="70" id="CtP-zW-fqk"/>
+                            <constraint firstAttribute="width" constant="283" id="OoY-gg-HeE"/>
+                        </constraints>
                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="23"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jfm-1z-RCI">
-                        <rect key="frame" x="349" y="101" width="130" height="39"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uUz-Jk-zhu">
+                        <rect key="frame" x="408" y="150" width="130" height="29"/>
+                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jfm-1z-RCI">
+                        <rect key="frame" x="408" y="103" width="130" height="39"/>
                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="RsN-bn-UaO" firstAttribute="trailing" secondItem="Jfm-1z-RCI" secondAttribute="trailing" id="3Iz-dW-DjA"/>
+                    <constraint firstItem="RsN-bn-UaO" firstAttribute="trailing" secondItem="uUz-Jk-zhu" secondAttribute="trailing" id="Shc-jV-FYU"/>
+                    <constraint firstItem="RsN-bn-UaO" firstAttribute="trailing" secondItem="ztf-Jx-pZ6" secondAttribute="trailingMargin" id="cJN-Eg-Rgj"/>
+                    <constraint firstItem="RsN-bn-UaO" firstAttribute="top" secondItem="ztf-Jx-pZ6" secondAttribute="topMargin" constant="6" id="eLN-qA-4N0"/>
+                    <constraint firstItem="Jfm-1z-RCI" firstAttribute="top" secondItem="RsN-bn-UaO" secondAttribute="bottom" constant="16" id="qHW-aX-dU3"/>
+                    <constraint firstItem="RsN-bn-UaO" firstAttribute="leading" secondItem="NWW-Vf-LAY" secondAttribute="trailing" constant="27" id="slE-cH-Y5t"/>
+                </constraints>
             </tableViewCellContentView>
-            <point key="canvasLocation" x="-14.4" y="167.31634182908547"/>
+            <connections>
+                <outlet property="company" destination="Jfm-1z-RCI" id="Svn-EF-Lwp"/>
+                <outlet property="name" destination="RsN-bn-UaO" id="jGi-Y8-qIL"/>
+                <outlet property="photo" destination="NWW-Vf-LAY" id="CYm-f5-2oB"/>
+                <outlet property="position" destination="uUz-Jk-zhu" id="Lsk-6Q-Kq8"/>
+            </connections>
+            <point key="canvasLocation" x="-14.4" y="175.41229385307346"/>
         </tableViewCell>
     </objects>
 </document>

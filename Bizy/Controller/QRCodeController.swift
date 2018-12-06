@@ -7,13 +7,21 @@
 //
 import UIKit
 import CoreData
+import ChameleonFramework
+import MaterialComponents.MaterialButtons
+import MaterialComponents.MaterialColorScheme
+import MaterialComponents.MaterialButtons_ButtonThemer
+
+
 
 class QRCodeController: UIViewController {
 
   @IBOutlet weak var qrCodeImage: UIImageView!
   @IBOutlet weak var statusLabel: UILabel!
-  @IBOutlet weak var customizeButton: UIButton!
+  @IBOutlet weak var customizeButton: MDCButton!
   @IBOutlet weak var back: UIButton!
+  
+  @IBOutlet weak var main: UILabel!
   
   var thisuser = User(fname: "", lname: "", email: "")
   var codePlaced = false
@@ -37,7 +45,8 @@ class QRCodeController: UIViewController {
       
       print("Failed")
     }
-    
+    main.textColor = HexColor("E0C393")
+    initializeUI()
   }
   
   
@@ -46,6 +55,20 @@ class QRCodeController: UIViewController {
     if (self.codePlaced != true ) {
         loadInfo()
     }
+    
+  }
+  
+  func initializeUI() {
+    let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
+    navigationController?.navigationBar.titleTextAttributes = textAttributes
+    
+    let colorScheme = MDCSemanticColorScheme()
+    colorScheme.primaryColor = HexColor("A6DD69")!
+    
+    let buttonSchemeScan = MDCButtonScheme()
+    MDCContainedButtonThemer.applyScheme(buttonSchemeScan, to: customizeButton)
+    MDCContainedButtonColorThemer.applySemanticColorScheme(colorScheme, to: customizeButton)
+    
     
   }
   
@@ -59,9 +82,11 @@ class QRCodeController: UIViewController {
   
   func loadInfo() {
     if (thisuser.firstName.count > 0){
+      
       print("WHOAAAAAAAAAOAOAOAOOA")
       statusLabel.text = "Go ahead and share!"
-      let qrCode = QRCode(thisuser.qrCode!)
+      var qrCode = QRCode(thisuser.qrCode!)
+      qrCode!.color = CIColor(rgba: "E0C393")
       qrCodeImage.image = qrCode?.image
       codePlaced = true
       return

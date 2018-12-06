@@ -9,7 +9,10 @@
 import Foundation
 import UIKit
 import AVFoundation
-
+import ChameleonFramework
+import MaterialComponents.MaterialButtons
+import MaterialComponents.MaterialColorScheme
+import MaterialComponents.MaterialButtons_ButtonThemer
 
 
 class CameraViewController: UIViewController, QRCodeReaderViewControllerDelegate {
@@ -22,18 +25,37 @@ class CameraViewController: UIViewController, QRCodeReaderViewControllerDelegate
   
   //Temporary
   @IBOutlet weak var back: UIButton!
-  
-  
+  @IBOutlet var scanButton: MDCButton!
+  @IBOutlet weak var label: UILabel!
   var userURL = ""
+  
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
 //    readerVC.requestAuthorization({_ in return})
+    initializeUI()
   }
   
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
+  }
+  
+  func initializeUI() {
+    label.textColor = HexColor("E0C393")
+//    let navigationBarAppearace = UINavigationBar.appearance()?
+//    navigationBarAppearace.barTintColor = HexColor("FFFFFF")
+
+    let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
+    navigationController?.navigationBar.titleTextAttributes = textAttributes
+    
+    
+    let buttonSchemeScan = MDCButtonScheme()
+    let colorSchemeScan = MDCSemanticColorScheme()
+    colorSchemeScan.primaryColor = HexColor("A6DD69")!
+    MDCContainedButtonThemer.applyScheme(buttonSchemeScan, to: scanButton)
+    MDCContainedButtonColorThemer.applySemanticColorScheme(colorSchemeScan, to: scanButton)
   }
   
   lazy var reader: QRCodeReader = QRCodeReader()
