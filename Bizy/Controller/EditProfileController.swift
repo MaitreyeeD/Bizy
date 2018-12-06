@@ -94,48 +94,13 @@ class EditProfileController: UIViewController, UIImagePickerControllerDelegate, 
       if let email = self.email {
         email.text = detail.email
       }
-      if let phone = self.phone{
-        phone.text = detail.phone
-      }
-      if let company = self.company{
-        company.text = detail.company
-      }
-      if let position = self.position{
-        position.text = detail.position
-      }
-      //changes
-//      if let password = self.password{
-//        password.text = detail.password
-//      }
-      if let summary = self.summary{
-        summary.text = detail.summary
-      }
-      if let linkedin = self.linkedin{
-        linkedin.text = detail.linkedIn
-      }
-      if let state = self.state{
-        state.text = detail.state
-      }
-      if let city = self.city{
-        city.text = detail.city
-      }
-      if let website = self.website{
-        website.text = detail.website
-      }
-      if let image = self.picPreview {
-        image.image = detail.image
-      }
-      
-      
     }
   }
   
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    print(modeluser?.linkedIn)
-    
-    
+  
     self.hideKeyboardWhenTappedAround() 
     
     PHPhotoLibrary.requestAuthorization({_ in return})
@@ -159,17 +124,16 @@ class EditProfileController: UIViewController, UIImagePickerControllerDelegate, 
     user.firstName = firstName.text!
     user.lastName = lastName.text!
     user.email = email.text!
-    user.phone = phone.text!
-    user.company = company.text!
-    user.position = position.text!
-    user.summary = summary.text!
+    user.phone = modeluser?.phone
+    user.company = modeluser?.company
+    user.position = modeluser?.position
+    user.summary = modeluser?.summary
+    user.linkedIn = modeluser?.linkedIn
+    user.city = modeluser?.city
+    user.state = modeluser?.state
+    user.website = modeluser?.website
     
-    //changes
-//    user.password = password.text!
-    user.linkedIn = linkedin.text!
-    user.state = state.text!
-    user.city = city.text!
-    user.website = website.text!
+
     user.image = picture
     
     
@@ -224,17 +188,17 @@ class EditProfileController: UIViewController, UIImagePickerControllerDelegate, 
     newUser.setValue(user.firstName, forKey: "first_name")
     newUser.setValue(user.lastName, forKey: "last_name")
     newUser.setValue(user.email, forKey: "email")
-    newUser.setValue(user.phone, forKey: "phone")
-    newUser.setValue(user.company, forKey: "company")
-    newUser.setValue(user.position, forKey: "position")
-    newUser.setValue(user.summary, forKey: "summary")
+    newUser.setValue(modeluser?.phone, forKey: "phone")
+    newUser.setValue(modeluser?.company, forKey: "company")
+    newUser.setValue(modeluser?.position, forKey: "position")
+    newUser.setValue(modeluser?.summary, forKey: "summary")
     newUser.setValue(user.qrCode, forKey: "qrcode")
     
-    newUser.setValue(user.linkedIn, forKey: "linkedin")
+    newUser.setValue(modeluser?.linkedIn, forKey: "linkedin")
 //    newUser.setValue(user.password, forKey: "password")
-    newUser.setValue(user.state, forKey: "state")
-    newUser.setValue(user.city, forKey: "city")
-    newUser.setValue(user.website, forKey: "website")
+    newUser.setValue(modeluser?.state, forKey: "state")
+    newUser.setValue(modeluser?.city, forKey: "city")
+    newUser.setValue(modeluser?.website, forKey: "website")
     
     if let pic = user.image {
       newUser.setValue(UIImagePNGRepresentation(pic), forKey: "image")

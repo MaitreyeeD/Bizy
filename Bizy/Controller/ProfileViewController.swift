@@ -22,7 +22,7 @@ class ProfileViewController: UIViewController, EditProfileControllerDelegate {
   
   var userController =  UserController()
   
-
+  
   
   @IBOutlet weak var nameData: UILabel!
   @IBOutlet weak var emailData: UILabel!
@@ -46,9 +46,8 @@ class ProfileViewController: UIViewController, EditProfileControllerDelegate {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    let modeluser = userController.user
-    print( modeluser.firstName)
-    print (modeluser.linkedIn)
+    userController.user = thisuser
+    let modeluser = thisuser
     
     //self.navigationItem.leftBarButtonItem = self.editButtonItem
     
@@ -102,6 +101,7 @@ class ProfileViewController: UIViewController, EditProfileControllerDelegate {
 //     newUser.qrCode = (data.value(forKey: "QRcode") as! QRCode)
 //    users.append(newUser)
     thisuser = newUser
+    userController.user = thisuser
     //self.loaded = true
   }
   
@@ -121,12 +121,10 @@ class ProfileViewController: UIViewController, EditProfileControllerDelegate {
       companyData.text = thisuser.company ?? "N/A"
       positionData.text = thisuser.position ?? "N/A"
       summaryData.text = thisuser.summary ?? "N/A"
-    //changes
-//    passwordData.text = thisuser.password ?? "N/A"
-    linkedinData.text = thisuser.linkedIn ?? "N/A"
-    websiteData.text = thisuser.website ?? "N/A"
-    cityData.text = thisuser.city ?? "N/A"
-    stateData.text = thisuser.state ?? "N/A"
+      linkedinData.text = thisuser.linkedIn ?? "N/A"
+      websiteData.text = thisuser.website ?? "N/A"
+      cityData.text = thisuser.city ?? "N/A"
+      stateData.text = thisuser.state ?? "N/A"
 //    imageData.image = thisuser.image ?? nil
     
   }
@@ -156,8 +154,7 @@ class ProfileViewController: UIViewController, EditProfileControllerDelegate {
       let thiscontroller = userController
       (segue.destination as! EditProfileController).modeluser = thiscontroller.user
       
-      // declaring that this VC is acting as the delegate
-      print("\n-- I'm \(String(describing: addDataVC))'s delegate: \(String(describing: addDataVC.delegate))\n")
+      
     }
     else if segue.identifier == "backToHome" {
       let backToHome: WalletController = segue.destination as! WalletController

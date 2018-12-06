@@ -24,7 +24,7 @@ class EditProfile2Controller: UIViewController{
   
   var modeluser: User? {
     didSet{
-      print("set again")
+      print(modeluser?.linkedIn)
     }
   }
   
