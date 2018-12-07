@@ -29,6 +29,7 @@ class User  {
   var image: UIImage?
   var qrCode: String?
   var id: String?
+  var photo: String?
 
   
   // MARK: - General

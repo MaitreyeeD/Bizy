@@ -14,6 +14,13 @@ import Alamofire
 import SwiftyJSON
 import RealmSwift
 
+import ChameleonFramework
+import MaterialComponents.MaterialButtons
+import MaterialComponents.MaterialColorScheme
+import MaterialComponents.MaterialButtons_ButtonThemer
+
+
+
 // Step 1: Define a protocol for being a delegate for
 //         Object A (AddViewController)
 //protocol DataEnteredDelegate {
@@ -43,77 +50,79 @@ protocol EditProfileControllerDelegate: class {
 class EditProfileController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
   
  
-   @IBOutlet weak var firstName:UITextField!
-   @IBOutlet weak var lastName:UITextField!
-   @IBOutlet weak var email:UITextField!
-   @IBOutlet weak var phone:UITextField!
-   @IBOutlet weak var company:UITextField!
-   @IBOutlet weak var position:UITextField!
-   @IBOutlet weak var summary:UITextField!
+   @IBOutlet weak var firstNameLabel:UILabel!
+   @IBOutlet weak var lastNameLabel:UILabel!
+   @IBOutlet weak var emailLabel:UILabel!
+   @IBOutlet weak var phoneLabel:UILabel!
+   @IBOutlet weak var companyLabel:UILabel!
+   @IBOutlet weak var positionLabel:UILabel!
+   @IBOutlet weak var summaryLabel:UILabel!
 
-  @IBOutlet weak var linkedin: UITextField!
-  @IBOutlet weak var state: UITextField!
-  @IBOutlet weak var city: UITextField!
-  @IBOutlet weak var website: UITextField!
+  @IBOutlet weak var linkedinLabel: UILabel!
+  @IBOutlet weak var stateLabel: UILabel!
+  @IBOutlet weak var cityLabel: UILabel!
+  @IBOutlet weak var websiteLabel: UILabel!
   
   
-   @IBOutlet weak var doneBarButton: UIButton!
+  @IBOutlet weak var doneBarButton: MDCButton!
   @IBOutlet weak var picPreview: UIImageView!
   
   let imagePicker = UIImagePickerController()
   var picture: UIImage?
   var me: User? = nil
+    var thisuser = User(fname: "", lname: "", email: "")
   
-  var detailItem: User? {
-    didSet{
-      self.configureView()
-    }
-    
-  }
+//  var detailItem: User? {
+//    didSet{
+//      self.configureView()
+//    }
+//
+//  }
   // Step 3: Give object A an optional delegate variable
   //var delegate:DataEnteredDelegate?
   
   weak var delegate: EditProfileControllerDelegate?
   
   func configureView(){
-    if let detail: User = self.detailItem{
-      if let fname = self.firstName{
-        fname.text = detail.firstName
+    if let detail: User = self.thisuser{
+
+      firstNameLabel.text = detail.firstName
+      
+  
+      lastNameLabel.text = detail.lastName
+      
+
+      emailLabel.text = detail.email
+      
+      if let phone = detail.phone{
+        phoneLabel.text = detail.phone
       }
-      if let lname = self.lastName{
-        lname.text = detail.lastName
+      if let company = detail.company{
+        companyLabel.text = detail.company
       }
-      if let email = self.email {
-        email.text = detail.email
-      }
-      if let phone = self.phone{
-        phone.text = detail.phone
-      }
-      if let company = self.company{
-        company.text = detail.company
-      }
-      if let position = self.position{
-        position.text = detail.position
+      if let position = detail.position{
+        positionLabel.text = detail.position
       }
 
-      if let summary = self.summary{
-        summary.text = detail.summary
+      if let summary = detail.summary{
+        summaryLabel.text = detail.summary
       }
-      if let linkedin = self.linkedin{
-        linkedin.text = detail.linkedIn
+      if let linkedin = detail.linkedIn{
+        linkedinLabel.text = detail.linkedIn
       }
-      if let state = self.state{
-        state.text = detail.state
+      if let state = detail.state{
+        stateLabel.text = detail.state
       }
-      if let city = self.city{
-        city.text = detail.city
+      if let city = detail.city{
+        cityLabel.text = detail.city
       }
-      if let website = self.website{
-        website.text = detail.website
+      if let website = detail.website{
+        websiteLabel.text = detail.website
       }
-      if let image = self.picPreview {
-        image.image = detail.image
-      }
+      
+//      if let image = detail.picPreview {
+//        image.image = detail.image
+//      }
       
       
     }
@@ -127,40 +136,55 @@ class EditProfileController: UIViewController, UIImagePickerControllerDelegate, 
     
     PHPhotoLibrary.requestAuthorization({_ in return})
     imagePicker.delegate = (self as UIImagePickerControllerDelegate & UINavigationControllerDelegate)
+    
+    
+    
     self.configureView()
   }
   
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
-    firstName.becomeFirstResponder()
   }
   
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
   }
   
+  
+  func initializeButtons() {
+
+    let colorSchemeCode = MDCSemanticColorScheme()
+    colorSchemeCode.primaryColor = HexColor("E0C393")!
+    
+    
+    let buttonSchemeScan = MDCButtonScheme()
+    MDCContainedButtonThemer.applyScheme(buttonSchemeScan, to: doneBarButton)
+    MDCContainedButtonColorThemer.applySemanticColorScheme(colorSchemeCode, to: doneBarButton)
+  }
+  
+  
   @IBAction func done() {
     let user = User(fname: "", lname: "", email: "")
-    user.firstName = firstName.text!
-    user.lastName = lastName.text!
-    user.email = email.text!
-    user.phone = phone.text!
-    user.company = company.text!
-    user.position = position.text!
-    user.summary = summary.text!
+    user.firstName = thisuser.firstName
+    user.lastName = thisuser.lastName
+    user.email = thisuser.email
+    user.phone = thisuser.phone
+    user.company = thisuser.company
+    user.position = thisuser.position
+    user.summary = thisuser.summary
     
     //changes
-    user.linkedIn = linkedin.text!
-    user.state = state.text!
-    user.city = city.text!
-    user.website = website.text!
-    user.image = picture
+    user.linkedIn = thisuser.linkedIn
+    user.state = thisuser.state
+    user.city = thisuser.city
+    user.website = thisuser.website
+    user.photo = "2";
     self.me = user
     
     sendPostRequest()
     
-    
+    _ = navigationController?.popToRootViewController(animated: true)
     
     delegate?.editProfileController(controller: self, didFinishAddingProfile: me!)
     
@@ -245,14 +269,14 @@ class EditProfileController: UIViewController, UIImagePickerControllerDelegate, 
     }
   }
   
-  func textField(_ nameField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-    
-    let oldText: NSString = nameField.text! as NSString
-    let newText: NSString = oldText.replacingCharacters(in: range, with: string) as NSString
-    
-    doneBarButton.isEnabled = (newText.length > 0)
-    return true
-  }
+//  func textField(_ nameField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+//
+//    let oldText: NSString = nameField.text! as NSString
+//    let newText: NSString = oldText.replacingCharacters(in: range, with: string) as NSString
+//
+//    doneBarButton.isEnabled = (newText.length > 0)
+//    return true
+//  }
   
   
   @IBAction func loadImageButtonTapped(sender: UIButton) {

@@ -103,15 +103,61 @@ class ProfileViewController: UIViewController, EditProfileControllerDelegate {
         print(thisuser.email)
         nameData.text = thisuser.firstName + " " + thisuser.lastName
         emailData.text = thisuser.email
-        phoneData.text = thisuser.phone ?? ""
-        companyData.text = thisuser.company ?? ""
-        positionData.text = thisuser.position ?? ""
-        summaryData.text = thisuser.summary ?? ""
+        if let phone = thisuser.phone {
+          phoneData.text = phone
+        } else {
+          phoneData.text =  ""
+        }
+        
+        if let company = thisuser.company {
+          companyData.text = company
+        } else {
+          companyData.text =  ""
+        }
+        
+        if let pos = thisuser.position {
+          positionData.text = pos
+        } else {
+          positionData.text =  ""
+        }
+        
+        if let phone = thisuser.phone {
+          phoneData.text = phone
+        } else {
+          phoneData.text =  ""
+        }
+        
+        if let sum = thisuser.summary {
+          summaryData.text = sum
+        } else {
+          summaryData.text =  ""
+        }
+        
+        if let link = thisuser.linkedIn {
+          linkedinData.text = link
+        } else {
+          linkedinData.text =  ""
+        }
+        
         //changes
-        linkedinData.text = thisuser.linkedIn ?? ""
-        websiteData.text = thisuser.website ?? ""
-        cityData.text = thisuser.city ?? ""
-        stateData.text = thisuser.state ?? ""
+        if let web = thisuser.website {
+          websiteData.text = web
+        } else {
+          websiteData.text =  ""
+        }
+        
+        if let city = thisuser.city {
+          cityData.text = city
+        } else {
+          cityData.text =  ""
+        }
+        
+        
+        if let state = thisuser.state {
+          stateData.text = state
+        } else {
+          stateData.text =  ""
+        }
         //    imageData.image = thisuser.image ?? nil
       }
     
@@ -155,7 +201,7 @@ class ProfileViewController: UIViewController, EditProfileControllerDelegate {
       // Step 4: Tell object A (AddVC) that object B (VC) is now its delegate
       addDataVC.delegate = self as EditProfileControllerDelegate
       let us = thisuser
-      (segue.destination as! EditProfileController).detailItem = us
+//      (segue.destination as! EditProfileController).detailItem = us
       // declaring that this VC is acting as the delegate
       print("\n-- I'm \(String(describing: addDataVC))'s delegate: \(String(describing: addDataVC.delegate))\n")
     }

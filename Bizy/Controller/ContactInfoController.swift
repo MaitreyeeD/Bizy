@@ -1,9 +1,8 @@
 //
-//  ProfessionalInfoController.swift
-//  Bizy
+//  ContactInfoController.swift
+//
 //
 //  Created by Wolf on 12/6/18.
-//  Copyright © 2018 Wolf. All rights reserved.
 //
 
 import Foundation
@@ -16,11 +15,11 @@ import MaterialComponents.MaterialButtons_ButtonThemer
 
 
 
-class ProfessionalInfoController: UIViewController, UITextFieldDelegate {
+class ContactInfoController: UIViewController, UITextFieldDelegate {
   
-  @IBOutlet weak var company:UITextField!
-  @IBOutlet weak var position:UITextField!
-  @IBOutlet weak var summary:UITextView!
+  @IBOutlet weak var phone:UITextField!
+  @IBOutlet weak var city:UITextField!
+  @IBOutlet weak var state:UITextField!
   @IBOutlet var nextButton: MDCButton!
   
   
@@ -32,9 +31,9 @@ class ProfessionalInfoController: UIViewController, UITextFieldDelegate {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    print("GOOOOOOOO!!!")
-    print(thisuser.firstName)
     // Do any additional setup after loading the view, typically from a nib.
+    print("HEYYYYYYYYYY!!!")
+    print(thisuser.firstName)
     
     self.hideKeyboardWhenTappedAround()
     initializeUI()
@@ -63,25 +62,23 @@ class ProfessionalInfoController: UIViewController, UITextFieldDelegate {
   }
   
   
-  
   @IBAction func goBack(sender: UIButton) {
     self.dismiss(animated: true, completion: nil)
   }
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     // Your code here
-    if segue.identifier == "toSupplementary" {
-      if let cardView = segue.destination as? SupplementaryInfoController {
-        self.thisuser.company = company.text!
-        self.thisuser.position = position.text!
-        self.thisuser.summary = "I'ma BOP!!!"
+    if segue.identifier == "toProfessional" {
+      if let cardView = segue.destination as? ProfessionalInfoController {
+        self.thisuser.phone = phone.text!
+        self.thisuser.city = city.text!
+        self.thisuser.state = state.text!
         cardView.thisuser = self.thisuser
       }
       
     }
     
   }
-  
   func textField(_ nameField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
     
     let oldText: NSString = nameField.text! as NSString
