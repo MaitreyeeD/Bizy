@@ -38,23 +38,24 @@ class EditProfileController: UIViewController, UINavigationControllerDelegate, U
    @IBOutlet weak var company:UITextField!
    @IBOutlet weak var position:UITextField!
    @IBOutlet weak var summary:UITextField!
-  @IBOutlet weak var linkedin: UITextField!
-  @IBOutlet weak var state: UITextField!
-  @IBOutlet weak var city: UITextField!
-  @IBOutlet weak var website: UITextField!
+   @IBOutlet weak var linkedin: UITextField!
+   @IBOutlet weak var state: UITextField!
+   @IBOutlet weak var city: UITextField!
+   @IBOutlet weak var website: UITextField!
    @IBOutlet weak var doneBarButton: UIButton!
   
   @IBOutlet weak var imgView: UIImageView!
   
   let imagePicker = UIImagePickerController()
   var picture: UIImage?
+  var pickedImagePath: NSURL?
+  var pickedImageData: NSData?
+  var localPath: String?
   
   var userController: UserController!
   
-//  let picker = UIImagePickerController()
-//  var pickedImagePath: NSURL?
-//  var pickedImageData: NSData?
-//  var localPath: String?
+
+ 
   
   
   var user: User? = nil
@@ -117,6 +118,9 @@ class EditProfileController: UIViewController, UINavigationControllerDelegate, U
     imagePicker.allowsEditing = false
     imagePicker.sourceType = .photoLibrary
     
+//    guard let path = localPath else {
+//        return
+//    }
     present(imagePicker, animated: true, completion: nil)
   }
   
@@ -127,43 +131,28 @@ class EditProfileController: UIViewController, UINavigationControllerDelegate, U
       imgView.image = picture
     }
     
+//    let documentDirectory: NSString = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first! as NSString
+//    let imageName = "temp"
+//    let imagePath = documentDirectory.appendingPathComponent(imageName)
+//    if (picture != nil){
+//      if let data = UIImageJPEGRepresentation(picture!, 80){
+//        do{
+//          try data.write(to: URL(fileURLWithPath: imagePath))
+//          print("image uploaded")
+//        }
+//        catch{
+//          print("cannot upload image")
+//        }
+//      }
+//    }
+//
+//    localPath = imagePath
+//
+    
     dismiss(animated: true, completion: nil)
   }
   
-  
-//  @IBAction func onBtnOpenClicked(sender: UIButton) {
-//    //presentViewController(picker, animated: true, completion: nil)
-//    present(picker, animated: true, completion: nil)
-//    print("image to choose")
-//  }
-//
-//  @IBAction func onBtnSubmitClicked(sender: UIButton) {
-//    print("submit clicked")
-//    print(localPath)
-//    guard let path = localPath else {
-//      return
-//    }
-//
-//
-//    Alamofire.upload(multipartFormData: { formData in
-//      //let filePath = NSURL(fileURLWithPath: path)
-//      let filePath = URL(fileURLWithPath: path)
-//      //formData.append(filePath, withName: "upload")
-//      //formData.append(URL(fileURLWithPath: filePath), withName: "upload")
-//      formData.append(filePath, withName: "upload")
-//      formData.append("Alamofire".data(using: String.Encoding.utf8, allowLossyConversion: false)!, withName: "test")
-//
-//    }, to: "http://128.237.221.220:3000", encodingCompletion: { encodingResult in
-//      switch encodingResult{
-//      case .success:
-//        print("success")
-//
-//      case .failure(let error):
-//        print(error)
-//    }
-//  })
-//  }
-  
+
   
   @IBAction func done() {
     let user = User(fname: "", lname: "", email: "")
@@ -183,6 +172,7 @@ class EditProfileController: UIViewController, UINavigationControllerDelegate, U
     
     
     sendPostRequest()
+    sendPostRequestImage()
     self.saveUser(user: user)
     
     delegate?.editProfileController(controller: self, didFinishAddingProfile: user)
@@ -212,8 +202,7 @@ class EditProfileController: UIViewController, UINavigationControllerDelegate, U
     let urlString: String = "https://desolate-springs-29566.herokuapp.com/users/"
     DispatchQueue.main.async() {
       Alamofire.request(urlString, method: .post, parameters: parameters).responseJSON(completionHandler: {(response) in
-        print(response.response)
-        print(response.data)
+        
         let swifty = JSON(response.result.value)
         let id = swifty["id"].string
         self.user!.id = id
@@ -221,6 +210,33 @@ class EditProfileController: UIViewController, UINavigationControllerDelegate, U
         self.user!.qrCode = QRCode(code)
       })
     }
+  }
+  
+  func sendPostRequestImage(){
+    print("submit clicked")
+    if (localPath == nil) { print("local path is NIL")}
+//      guard let path = localPath else {
+//        return
+//      }
+//
+//
+//      Alamofire.upload(multipartFormData: { formData in
+//        //let filePath = NSURL(fileURLWithPath: path)
+//        let filePath = URL(fileURLWithPath: path)
+//        //formData.append(filePath, withName: "upload")
+//        //formData.append(URL(fileURLWithPath: filePath), withName: "upload")
+//        formData.append(filePath, withName: "upload")
+//        formData.append("Alamofire".data(using: String.Encoding.utf8, allowLossyConversion: false)!, withName: "test")
+//
+//      }, to: "http://128.237.221.220:3000", encodingCompletion: { encodingResult in
+//        switch encodingResult{
+//        case .success:
+//          print("success")
+//
+//        case .failure(let error):
+//          print(error)
+//      }
+//    })
   }
   
   
@@ -239,7 +255,6 @@ class EditProfileController: UIViewController, UINavigationControllerDelegate, U
     newUser.setValue(user.qrCode, forKey: "qrcode")
     
     newUser.setValue(modeluser?.linkedIn, forKey: "linkedin")
-//    newUser.setValue(user.password, forKey: "password")
     newUser.setValue(modeluser?.state, forKey: "state")
     newUser.setValue(modeluser?.city, forKey: "city")
     newUser.setValue(modeluser?.website, forKey: "website")
@@ -279,42 +294,8 @@ class EditProfileController: UIViewController, UINavigationControllerDelegate, U
    
   }
   
-//  func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-//    print("I am being called")
-//    guard let image = info[UIImagePickerControllerOriginalImage] as? UIImage else {
-//      return
-//    }
-//
-//    imgView.image = image
-//
-//    let documentDirectory: NSString = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first! as NSString
-//
-//    let imageName = "temp"
-//    let imagePath = documentDirectory.appendingPathComponent(imageName)
-//
-//    if let data = UIImageJPEGRepresentation(image, 80) {
-//      do{
-//        try data.write(to: URL(fileURLWithPath: imagePath))
-//        print("image uploaded")
-//      }
-//      catch{
-//        print("cannot upload image")
-//      }
-//
-//    }
-//
-//    localPath = imagePath
-//
-//    dismiss(animated: true, completion: {
-//
-//    })
-//  }
-//
-//  func imagePickerControllerDidCancel(picker: UIImagePickerController) {
-//    dismiss(animated: true, completion: nil)
-//  }
-//
-  
+
+
   
   
  
