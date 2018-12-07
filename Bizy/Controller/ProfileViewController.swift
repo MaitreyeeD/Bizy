@@ -88,6 +88,14 @@ class ProfileViewController: UIViewController, EditProfileControllerDelegate {
     newUser.state = (data.value(forKey: "state") as? String ?? "")
     newUser.website = (data.value(forKey: "website") as? String ?? "")
     newUser.linkedIn = (data.value(forKey: "linkedin") as? String ?? "")
+    
+    if(data.value(forKey: "image") == nil){
+      print("nil in pfv")
+    }else{
+      print("not nil in pfv")
+      newUser.image = UIImage(data:(data.value(forKey: "image") as! NSData) as Data)
+      
+    }
 
 //    newUser.image = UIImage(data:(data.value(forKey: "image") as! NSData) as! Data)
 //
@@ -157,6 +165,10 @@ class ProfileViewController: UIViewController, EditProfileControllerDelegate {
           stateData.text = state
         } else {
           stateData.text =  ""
+        }
+        
+        if let image = thisuser.image{
+          imageData.image = image
         }
         //    imageData.image = thisuser.image ?? nil
       }

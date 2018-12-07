@@ -247,6 +247,7 @@
                         <outlet property="lastNameLabel" destination="zGG-69-tFC" id="7gj-9V-pbj"/>
                         <outlet property="linkedinLabel" destination="ov2-W6-3ey" id="MKH-pg-F82"/>
                         <outlet property="phoneLabel" destination="Q5b-Pi-7M3" id="isx-rn-Qhr"/>
+                        <outlet property="picPreview" destination="xmJ-Dk-9Bc" id="x4H-Zn-Jmz"/>
                         <outlet property="positionLabel" destination="y26-hW-rjJ" id="Wfa-8a-bbH"/>
                         <outlet property="stateLabel" destination="1o9-o0-chY" id="7MW-To-B5a"/>
                         <outlet property="summaryLabel" destination="shx-f1-Zel" id="9zC-4h-Zjv"/>
@@ -897,10 +898,10 @@
                         <viewLayoutGuide key="safeArea" id="M86-Vg-TXo"/>
                     </view>
                     <connections>
+                        <outlet property="imgView" destination="ogh-re-6zv" id="D85-b9-wPD"/>
                         <outlet property="linkedIn" destination="6OH-bw-cyw" id="dum-VP-Ztw"/>
                         <outlet property="main" destination="txG-P6-NnM" id="lBM-KB-9bh"/>
                         <outlet property="nextButton" destination="Jk7-86-3Nt" id="GKF-WD-NOG"/>
-                        <outlet property="picPreview" destination="ogh-re-6zv" id="Oya-qb-yfe"/>
                         <outlet property="website" destination="qOn-Ev-Ii4" id="1u7-zE-PLt"/>
                     </connections>
                 </viewController>
@@ -911,8 +912,8 @@
     </scenes>
     <resources>
         <image name="camera" width="16" height="16"/>
-        <image name="checked" width="16" height="16"/>
-        <image name="close" width="16" height="16"/>
+        <image name="checked" width="12.800000190734863" height="12.800000190734863"/>
+        <image name="close" width="12.800000190734863" height="12.800000190734863"/>
         <image name="qr-code" width="16" height="16"/>
     </resources>
 </document>

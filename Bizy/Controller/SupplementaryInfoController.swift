@@ -24,7 +24,7 @@ class SupplementaryInfoController: UIViewController, UIImagePickerControllerDele
   @IBOutlet weak var website:UITextField!
   @IBOutlet weak var linkedIn:UITextField!
 
-  @IBOutlet weak var picPreview: UIImageView!
+  @IBOutlet weak var imgView: UIImageView!
   
   let imagePicker = UIImagePickerController()
   var picture: UIImage?
@@ -90,7 +90,7 @@ class SupplementaryInfoController: UIViewController, UIImagePickerControllerDele
   func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
     if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
       picture = pickedImage
-      picPreview.image = picture
+      imgView.image = picture
     }
     
     dismiss(animated: true, completion: nil)
@@ -111,6 +111,7 @@ class SupplementaryInfoController: UIViewController, UIImagePickerControllerDele
       if let cardView = segue.destination as? EditProfileController {
         self.thisuser.website = website.text!
         self.thisuser.linkedIn = linkedIn.text!
+        self.thisuser.image = imgView.image
         cardView.thisuser = self.thisuser
       }
       
