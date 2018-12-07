@@ -229,6 +229,18 @@
                                 <color key="textColor" red="0.80000000000000004" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="S5x-JC-e6K">
+                                <rect key="frame" x="67" y="311" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KEA-nD-eIp">
+                                <rect key="frame" x="66" y="447" width="49" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Upload"/>
+                                <connections>
+                                    <action selector="loadImageButtonTappedWithSender:" destination="ZI2-Ay-xha" eventType="touchUpInside" id="ovb-e7-6fC"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="QaO-IT-jyh"/>
@@ -236,6 +248,7 @@
                     <connections>
                         <outlet property="email" destination="AbC-3p-rjX" id="Ugg-LI-ubh"/>
                         <outlet property="firstName" destination="pVg-rk-a9I" id="sHE-c9-Wle"/>
+                        <outlet property="imgView" destination="S5x-JC-e6K" id="Hvx-v4-bl3"/>
                         <outlet property="lastName" destination="BO9-hF-E89" id="D9l-ld-M6I"/>
                     </connections>
                 </viewController>

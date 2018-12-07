@@ -13,11 +13,6 @@ import CoreData
 import Alamofire
 import SwiftyJSON
 
-// Step 1: Define a protocol for being a delegate for
-//         Object A (AddViewController)
-//protocol DataEnteredDelegate {
-//  func userDidEnterInformation(fname:String, lname:String, email:String, phone: String, company: String, position: String, summary:String)
-//}
 
 extension UIViewController {
   func hideKeyboardWhenTappedAround() {
@@ -25,23 +20,17 @@ extension UIViewController {
     tap.cancelsTouchesInView = false
     view.addGestureRecognizer(tap)
   }
-  
   @objc func dismissKeyboard() {
     view.endEditing(true)
   }
 }
 
 protocol EditProfileControllerDelegate: class {
-  //func addContactControllerDidCancel(controller: AddContactController)
-  
   func editProfileController(controller: EditProfileController, didFinishAddingProfile user: User)
 }
 
-
-
-class EditProfileController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
+class EditProfileController: UIViewController, UINavigationControllerDelegate, UITextFieldDelegate,  UIImagePickerControllerDelegate {
   
- 
    @IBOutlet weak var firstName:UITextField!
    @IBOutlet weak var lastName:UITextField!
    @IBOutlet weak var email:UITextField!
@@ -49,21 +38,25 @@ class EditProfileController: UIViewController, UIImagePickerControllerDelegate, 
    @IBOutlet weak var company:UITextField!
    @IBOutlet weak var position:UITextField!
    @IBOutlet weak var summary:UITextField!
-  //changes
-   //@IBOutlet weak var password: UITextField!
   @IBOutlet weak var linkedin: UITextField!
   @IBOutlet weak var state: UITextField!
   @IBOutlet weak var city: UITextField!
   @IBOutlet weak var website: UITextField!
-  
-  
    @IBOutlet weak var doneBarButton: UIButton!
-  @IBOutlet weak var picPreview: UIImageView!
   
-  var userController: UserController!
+  @IBOutlet weak var imgView: UIImageView!
   
   let imagePicker = UIImagePickerController()
   var picture: UIImage?
+  
+  var userController: UserController!
+  
+//  let picker = UIImagePickerController()
+//  var pickedImagePath: NSURL?
+//  var pickedImageData: NSData?
+//  var localPath: String?
+  
+  
   var user: User? = nil
   
   var detailItem: User? {
@@ -78,10 +71,10 @@ class EditProfileController: UIViewController, UIImagePickerControllerDelegate, 
       
     }
   }
-  // Step 3: Give object A an optional delegate variable
-  //var delegate:DataEnteredDelegate?
-  
+ 
   weak var delegate: EditProfileControllerDelegate?
+  
+  //METHODS
   
   func configureView(){
     if let detail: User = self.detailItem{
@@ -94,17 +87,18 @@ class EditProfileController: UIViewController, UIImagePickerControllerDelegate, 
       if let email = self.email {
         email.text = detail.email
       }
+      if let image = self.imgView {
+        image.image = detail.image
+      }
     }
   }
   
   
   override func viewDidLoad() {
     super.viewDidLoad()
-  
-    self.hideKeyboardWhenTappedAround() 
-    
     PHPhotoLibrary.requestAuthorization({_ in return})
     imagePicker.delegate = (self as UIImagePickerControllerDelegate & UINavigationControllerDelegate)
+    self.hideKeyboardWhenTappedAround()
     self.configureView()
     
   }
@@ -118,6 +112,58 @@ class EditProfileController: UIViewController, UIImagePickerControllerDelegate, 
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
   }
+  
+  @IBAction func loadImageButtonTapped(sender: UIButton) {
+    imagePicker.allowsEditing = false
+    imagePicker.sourceType = .photoLibrary
+    
+    present(imagePicker, animated: true, completion: nil)
+  }
+  
+  func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+    if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+      print("setting image")
+      picture = pickedImage
+      imgView.image = picture
+    }
+    
+    dismiss(animated: true, completion: nil)
+  }
+  
+  
+//  @IBAction func onBtnOpenClicked(sender: UIButton) {
+//    //presentViewController(picker, animated: true, completion: nil)
+//    present(picker, animated: true, completion: nil)
+//    print("image to choose")
+//  }
+//
+//  @IBAction func onBtnSubmitClicked(sender: UIButton) {
+//    print("submit clicked")
+//    print(localPath)
+//    guard let path = localPath else {
+//      return
+//    }
+//
+//
+//    Alamofire.upload(multipartFormData: { formData in
+//      //let filePath = NSURL(fileURLWithPath: path)
+//      let filePath = URL(fileURLWithPath: path)
+//      //formData.append(filePath, withName: "upload")
+//      //formData.append(URL(fileURLWithPath: filePath), withName: "upload")
+//      formData.append(filePath, withName: "upload")
+//      formData.append("Alamofire".data(using: String.Encoding.utf8, allowLossyConversion: false)!, withName: "test")
+//
+//    }, to: "http://128.237.221.220:3000", encodingCompletion: { encodingResult in
+//      switch encodingResult{
+//      case .success:
+//        print("success")
+//
+//      case .failure(let error):
+//        print(error)
+//    }
+//  })
+//  }
+  
   
   @IBAction func done() {
     let user = User(fname: "", lname: "", email: "")
@@ -133,7 +179,6 @@ class EditProfileController: UIViewController, UIImagePickerControllerDelegate, 
     user.state = modeluser?.state
     user.website = modeluser?.website
     
-
     user.image = picture
     
     
@@ -153,7 +198,6 @@ class EditProfileController: UIViewController, UIImagePickerControllerDelegate, 
     }
     let parameters: Parameters = [
       "email": person.email,
-//      "password": person.password ?? "",
       "first_name": person.firstName,
       "last_name": person.lastName,
       "company": person.company ?? "",
@@ -201,7 +245,11 @@ class EditProfileController: UIViewController, UIImagePickerControllerDelegate, 
     newUser.setValue(modeluser?.website, forKey: "website")
     
     if let pic = user.image {
+      print("images saved")
       newUser.setValue(UIImagePNGRepresentation(pic), forKey: "image")
+      if(UIImagePNGRepresentation(pic) != nil){
+        print ("image is not nil")
+      }
     }
     do {
       try context.save()
@@ -220,21 +268,7 @@ class EditProfileController: UIViewController, UIImagePickerControllerDelegate, 
   }
   
   
-  @IBAction func loadImageButtonTapped(sender: UIButton) {
-    imagePicker.allowsEditing = false
-    imagePicker.sourceType = .photoLibrary
-    
-    present(imagePicker, animated: true, completion: nil)
-  }
   
-  func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-    if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-      picture = pickedImage
-      picPreview.image = picture
-    }
-    
-    dismiss(animated: true, completion: nil)
-  }
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if segue.identifier == "profilePartTwo" {
@@ -245,8 +279,45 @@ class EditProfileController: UIViewController, UIImagePickerControllerDelegate, 
    
   }
   
+//  func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+//    print("I am being called")
+//    guard let image = info[UIImagePickerControllerOriginalImage] as? UIImage else {
+//      return
+//    }
+//
+//    imgView.image = image
+//
+//    let documentDirectory: NSString = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first! as NSString
+//
+//    let imageName = "temp"
+//    let imagePath = documentDirectory.appendingPathComponent(imageName)
+//
+//    if let data = UIImageJPEGRepresentation(image, 80) {
+//      do{
+//        try data.write(to: URL(fileURLWithPath: imagePath))
+//        print("image uploaded")
+//      }
+//      catch{
+//        print("cannot upload image")
+//      }
+//
+//    }
+//
+//    localPath = imagePath
+//
+//    dismiss(animated: true, completion: {
+//
+//    })
+//  }
+//
+//  func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+//    dismiss(animated: true, completion: nil)
+//  }
+//
   
   
   
  
 }
+
+

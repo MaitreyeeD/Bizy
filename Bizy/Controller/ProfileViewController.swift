@@ -30,9 +30,7 @@ class ProfileViewController: UIViewController, EditProfileControllerDelegate {
   @IBOutlet weak var companyData: UILabel!
   @IBOutlet weak var positionData: UILabel!
   @IBOutlet weak var summaryData: UILabel!
-  
-  //changes
-//  @IBOutlet weak var passwordData: UILabel!
+
   @IBOutlet weak var linkedinData: UILabel!
   @IBOutlet weak var websiteData: UILabel!
   @IBOutlet weak var cityData: UILabel!
@@ -49,8 +47,6 @@ class ProfileViewController: UIViewController, EditProfileControllerDelegate {
     userController.user = thisuser
     let modeluser = thisuser
     
-    //self.navigationItem.leftBarButtonItem = self.editButtonItem
-    
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     let context = appDelegate.persistentContainer.viewContext
     
@@ -60,12 +56,8 @@ class ProfileViewController: UIViewController, EditProfileControllerDelegate {
       let result = try context.fetch(request)
       for data in result as! [NSManagedObject] {
         self.loadUsers(data: data)
-//        nameData.text = thisuser.firstName
-//        emailData.text = thisuser.email
         self.configureView()
         
-//        print(data.value(forKey: "first_name") as! String)
-//        print(data.value(forKey: "email") as! String)
       }
       
     } catch {
@@ -94,8 +86,17 @@ class ProfileViewController: UIViewController, EditProfileControllerDelegate {
     newUser.state = (data.value(forKey: "state") as? String ?? "")
     newUser.website = (data.value(forKey: "website") as? String ?? "")
     newUser.linkedIn = (data.value(forKey: "linkedin") as? String ?? "")
-   // newUser.password = (data.value(forKey: "password") as? String ?? "")
-//    newUser.image = UIImage(data:(data.value(forKey: "image") as! NSData) as! Data)
+    //newUser.image = UIImage(data:(data.value(forKey: "image") as! NSData) as Data)
+    //newUser.image = UIImage(data: (((data.value(forKey: "image") as? Data)!)))
+    
+    if(data.value(forKey: "image") == nil){
+      print("nil in pfv")
+    }else{
+      print("not nil in pfv")
+      newUser.image = UIImage(data:(data.value(forKey: "image") as! NSData) as Data)
+      
+    }
+    
 //
     
 //     newUser.qrCode = (data.value(forKey: "QRcode") as! QRCode)
@@ -105,12 +106,7 @@ class ProfileViewController: UIViewController, EditProfileControllerDelegate {
     //self.loaded = true
   }
   
-//  override func viewDidAppear(_ animated: Bool) {
-//    super.viewDidAppear(animated)
-//    configureView()
-//  }
-  
- 
+
   
   func configureView() {
     
@@ -125,7 +121,8 @@ class ProfileViewController: UIViewController, EditProfileControllerDelegate {
       websiteData.text = thisuser.website ?? "N/A"
       cityData.text = thisuser.city ?? "N/A"
       stateData.text = thisuser.state ?? "N/A"
-//    imageData.image = thisuser.image ?? nil
+      imageData.image = thisuser.image ?? nil
+  //  if (!(imageData.image == nil)){ print("not nil")}
     
   }
   
@@ -135,19 +132,11 @@ class ProfileViewController: UIViewController, EditProfileControllerDelegate {
     super.didReceiveMemoryWarning()
   }
   
-  // Step 2b: Implementing the protocol; in this case,
-  //          simply taking the data and displaying
-  //          it in the outlet
-
-  
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if segue.identifier == "addDataVC" {
       
       
       let addDataVC: EditProfileController = segue.destination as! EditProfileController
-      
-
-      // Step 4: Tell object A (AddVC) that object B (VC) is now its delegate
       addDataVC.delegate = self as EditProfileControllerDelegate
       let us = thisuser
       (segue.destination as! EditProfileController).detailItem = us
@@ -166,12 +155,8 @@ class ProfileViewController: UIViewController, EditProfileControllerDelegate {
   
   
   func editProfileController(controller: EditProfileController, didFinishAddingProfile user: User) {
-    
     thisuser = user
-    
+    if(thisuser.image != nil) { print("profile view image not nil")}
     dismiss(animated: true, completion: nil)
   }
-  
-
-  
 }
