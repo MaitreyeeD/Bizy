@@ -74,7 +74,7 @@ class ProfessionalInfoController: UIViewController, UITextFieldDelegate {
       if let cardView = segue.destination as? SupplementaryInfoController {
         self.thisuser.company = company.text!
         self.thisuser.position = position.text!
-        self.thisuser.summary = "I'ma BOP!!!"
+        self.thisuser.summary = ""
         cardView.thisuser = self.thisuser
       }
       
