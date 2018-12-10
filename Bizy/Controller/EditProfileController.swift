@@ -121,6 +121,10 @@ class EditProfileController: UIViewController, UIImagePickerControllerDelegate, 
         websiteLabel.text = detail.website
       }
       
+      if let image = detail.image{
+        picPreview.image = detail.image
+      }
+      
 //      if let image = detail.picPreview {
 //        image.image = detail.image
 //      }
@@ -180,6 +184,9 @@ class EditProfileController: UIViewController, UIImagePickerControllerDelegate, 
     user.state = thisuser.state
     user.city = thisuser.city
     user.website = thisuser.website
+    user.photo = "2";
+    user.image = thisuser.image
+
     let number = Int.random(in: 0 ... 2)
     
     user.photo = proPic[number];
@@ -263,13 +270,18 @@ class EditProfileController: UIViewController, UIImagePickerControllerDelegate, 
     newUser.setValue(user.id, forKey: "id")
     
     if let pic = user.image {
+      print("images saved")
       newUser.setValue(UIImagePNGRepresentation(pic), forKey: "image")
+      if(UIImagePNGRepresentation(pic) != nil){
+        print ("image is not nil")
+      }
     }
     do {
       try context.save()
     } catch {
       print("Failed saving")
     }
+  
   }
   
 //  func textField(_ nameField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
