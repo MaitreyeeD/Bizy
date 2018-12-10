@@ -27,7 +27,9 @@ class User  {
   var city: String?
   var website: String?
   var image: UIImage?
+
   var qrCode: String?
+
   var id: String?
   var photo: String?
 
