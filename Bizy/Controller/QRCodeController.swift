@@ -85,8 +85,9 @@ class QRCodeController: UIViewController {
       
       print("WHOAAAAAAAAAOAOAOAOOA")
       statusLabel.text = "Go ahead and share!"
-      var qrCode = QRCode(thisuser.qrCode!)
-      qrCode!.color = CIColor(rgba: "E0C393")
+      let qrCode = QRCode(thisuser.qrCode!)
+//      qrCode!.color = CIColor(rgba: "E0C393")
+//      qrCode!.backgroundColor = CIColor(rgba: "000000")
       qrCodeImage.image = qrCode?.image
       codePlaced = true
       return

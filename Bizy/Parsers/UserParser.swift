@@ -16,6 +16,7 @@ class UserParser {
 ////  var call: NSURL
   var dataResult: Data!
   var swiftyjson: JSON!
+  var proPic = ["man.png", "woman.png", "wom.png"]
 //  init(url: String) {
 //    urlString = url
 //  }
@@ -76,17 +77,20 @@ class UserParser {
 //      print("Error parsing this url!!")
 //      return nil
 //    }
+    print(swiftyjson["first_name"].string!)
+//    guard let fname = swiftyjson["first_name"].string  else {
+//      return nil
+//    }
+    let fname = swiftyjson["first_name"].string!
+//    guard let lname = swiftyjson["last_name"].string  else {
+//      return nil
+//    }
+    let lname = swiftyjson["last_name"].string!
+//    guard let email = swiftyjson["email"].string  else {
+//      return nil
+//    }
     
-    guard let fname = swiftyjson["first_name"].string  else {
-      return nil
-    }
-    guard let lname = swiftyjson["last_name"].string  else {
-      return nil
-    }
-    guard let email = swiftyjson["email"].string  else {
-      return nil
-    }
-    
+    let email = swiftyjson["email"].string!
     let user = User(fname: fname, lname: lname, email: email);
     if let password = swiftyjson["password"].string {
       user.password = password
@@ -127,6 +131,10 @@ class UserParser {
       user.id = String(id)
       print(id)
     }
+    
+    let number = Int.random(in: 0 ... 2)
+
+    user.photo = proPic[number]
     
     //To Be Determined!!!!!!
     //How do we store and access images into our database!!!

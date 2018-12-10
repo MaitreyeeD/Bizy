@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Bizy/Controller/WalletController.swift"
-            timestampString = "565854402.089656"
+            timestampString = "565890258.0709929"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "170"
-            endingLineNumber = "170"
+            startingLineNumber = "177"
+            endingLineNumber = "177"
             landmarkName = "loadCard(data:)"
             landmarkType = "7">
          </BreakpointContent>

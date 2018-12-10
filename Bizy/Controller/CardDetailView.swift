@@ -30,6 +30,7 @@ class CardDetailView: UIViewController {
   @IBOutlet weak var resume: UIImageView!
   @IBOutlet weak var picture: UIImageView!
   var thisuser = User(fname: "", lname: "", email: "")
+  var proPic = ["man.png", "woman.png", "wom.png"]
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -64,6 +65,13 @@ class CardDetailView: UIViewController {
       }
       if let sum = thisuser.summary {
         summaryLabel.text = sum
+      }
+      
+      if let photo = thisuser.photo {
+        picture.image = UIImage(named: photo);
+      } else {
+        let number = Int.random(in: 0 ... 2)
+        picture.image = UIImage(named: proPic[number]);
       }
 
       

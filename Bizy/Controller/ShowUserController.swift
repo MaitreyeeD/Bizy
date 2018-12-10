@@ -22,6 +22,7 @@ class ShowUserController: UIViewController {
   var userData: User!
   let parser = UserParser()
   var thisuser = User(fname: "", lname: "", email: "")
+  var proPic = ["man.png", "woman.png", "wom.png"]
   
   
   @IBOutlet var addButton: MDCButton!
@@ -71,9 +72,11 @@ class ShowUserController: UIViewController {
   func initializeUI() {
     let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
     navigationController?.navigationBar.titleTextAttributes = textAttributes
-    
-    let name = userData.firstName + " " + userData.lastName
-    self.navigationController?.title = name
+//    var fname: String
+//    var lname: String
+//    fname = userData.firstName ?? "Mai"
+//    lname = userData.lastName ?? "Deshapande"
+//
     let colorSchemeYes = MDCSemanticColorScheme()
     colorSchemeYes.primaryColor = HexColor("A6DD69")!
     let colorSchemeNo = MDCSemanticColorScheme()
@@ -97,11 +100,18 @@ class ShowUserController: UIViewController {
         switch response.result {
         case.success(let value):
             let json = JSON(value);
+//            print(json)
+//            print(value)
             self.parser.swiftyjson = json
+            let fname = json["first_name"].string
+            print("-----FNAME----")
+            print(fname)
             if let user = self.parser.createUser() {
-                
+                print(user.firstName)
+                print(user.lastName)
                 self.userData = user
                 self.saveUser(user: self.userData)
+                self.populateView()
             }
           
         case.failure(let error):
@@ -113,14 +123,16 @@ class ShowUserController: UIViewController {
   
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
-    populateView()
+//    populateView()
   }
   
   func populateView() {
     
     if let user = self.userData {
-      firstNameLabel.text = user.firstName
-      lastNameLabel.text = user.lastName
+//      firstNameLabel.text = user.firstName
+//      lastNameLabel.text = user.lastName
+      let name = userData.firstName + " " + userData.lastName
+      self.navigationController?.title = name
       emailLabel.text = user.email
       
       companyLabel.text = user.company ?? "Not Available"
@@ -130,6 +142,12 @@ class ShowUserController: UIViewController {
       cityLabel.text = user.company ?? "Not Available"
       stateLabel.text = user.state ?? "Not Available"
       summaryLabel.text = user.summary ?? "Not Available"
+      
+      let number = Int.random(in: 0 ... 2)
+      if let photo = user.photo {
+        picture.image = UIImage(named: proPic[number])
+      }
+      
     }
     
   }
@@ -164,7 +182,8 @@ class ShowUserController: UIViewController {
     
     
     alert.addAction(UIAlertAction(title: "Go To Wallet!", style: .default, handler: {(action) -> Void in
-      self.performSegue(withIdentifier: "backToWallet", sender: self)
+//      self.performSegue(withIdentifier: "backToWallet", sender: self)
+      _ = self.navigationController?.popToRootViewController(animated: true)
     }))
     
     self.present(alert, animated: true, completion: nil)
@@ -239,6 +258,14 @@ class ShowUserController: UIViewController {
     newUser.setValue(user.city, forKey: "city")
     newUser.setValue(user.website, forKey: "website")
     newUser.setValue(user.id, forKey: "id")
+    let number = Int.random(in: 0 ... 2)
+    
+    if (user.photo != nil) {
+      newUser.setValue(user.photo, forKey: "photo")
+    } else {
+        newUser.setValue(proPic[number], forKey: "photo")
+    }
+    
     
     //Set RESUME AND IMAGE ------------------------------------------------------->
     //must set resume as well

@@ -109,6 +109,7 @@ class SupplementaryInfoController: UIViewController, UIImagePickerControllerDele
     // Your code here
     if segue.identifier == "toEdit" {
       if let cardView = segue.destination as? EditProfileController {
+        
         self.thisuser.website = website.text!
         self.thisuser.linkedIn = linkedIn.text!
         self.thisuser.image = imgView.image

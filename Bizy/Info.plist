@@ -24,10 +24,17 @@
 	<string>The camera is needed to scan QR Codes</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>This app would like to access your photos</string>
+<<<<<<< HEAD
 	<key>UIAppFonts</key>
 	<array>
 		<string>GiddyupStd.otf</string>
 	</array>
+=======
+
+	<string>To add profile photos.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>To add profile photos.</string>
+>>>>>>> b522cb115f76a3089761bf5c95b3de65229cb6af
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
