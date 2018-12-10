@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E24A88921AEEF23000A3540 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E24A88821AEEF23000A3540 /* TableViewCell.swift */; };
+		2E24A88D21AEF453000A3540 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E24A88C21AEF453000A3540 /* TableViewCell.xib */; };
 		2E49449F2187DEE000A97FB9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E49449E2187DEE000A97FB9 /* AppDelegate.swift */; };
 		2E4944A12187DEE000A97FB9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4944A02187DEE000A97FB9 /* ViewController.swift */; };
 		2E4944A42187DEE000A97FB9 /* Wallet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E4944A22187DEE000A97FB9 /* Wallet.storyboard */; };
@@ -25,12 +27,20 @@
 		2E4FE361218E91BC00CCAC51 /* QRCodeReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4FE360218E91BC00CCAC51 /* QRCodeReader.swift */; };
 		2E4FE363218E91E600CCAC51 /* QRCodeReaderResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4FE362218E91E600CCAC51 /* QRCodeReaderResult.swift */; };
 		2E4FE365218E923A00CCAC51 /* QRCodeReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4FE364218E923A00CCAC51 /* QRCodeReaderView.swift */; };
+		2E8EEB5E21B83CC500968A6F /* GiddyupStd.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2E8EEB5D21B83CC400968A6F /* GiddyupStd.otf */; };
+		2E8EEB6521B849DE00968A6F /* logo-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E8EEB6321B849DE00968A6F /* logo-2.png */; };
+		2E8EEB6621B849DE00968A6F /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E8EEB6421B849DE00968A6F /* logo.png */; };
+		2E8EEB6821B929FE00968A6F /* RequiredInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8EEB6721B929FE00968A6F /* RequiredInfoController.swift */; };
+		2E8EEB6A21B92AAA00968A6F /* ProfessionalInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8EEB6921B92AAA00968A6F /* ProfessionalInfoController.swift */; };
+		2E8EEB6C21B92AE500968A6F /* SupplementaryInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8EEB6B21B92AE500968A6F /* SupplementaryInfoController.swift */; };
 		2EC4B3E821951393006E9B3E /* UserParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC4B3E721951393006E9B3E /* UserParserTests.swift */; };
 		2EC4B3EA21952BD1006E9B3E /* WalletController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC4B3E921952BD1006E9B3E /* WalletController.swift */; };
 		2EC4B3ED21954AD4006E9B3E /* GetUserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC4B3EC21954AD4006E9B3E /* GetUserData.swift */; };
 		2EC4B3EF21955E80006E9B3E /* Temp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2EC4B3EE21955E80006E9B3E /* Temp.storyboard */; };
 		2EC4B3F121956439006E9B3E /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC4B3F021956439006E9B3E /* CameraViewController.swift */; };
 		2EC4B3F32195645F006E9B3E /* QRCodeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC4B3F22195645F006E9B3E /* QRCodeController.swift */; };
+		2EC4B3F521957A35006E9B3E /* SecondaryCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC4B3F421957A35006E9B3E /* SecondaryCameraView.swift */; };
+		2EC4B3F7219590EA006E9B3E /* ShowUserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC4B3F6219590E9006E9B3E /* ShowUserController.swift */; };
 		2ECB0813218E929F0035D264 /* QRCodeViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECB0812218E929F0035D264 /* QRCodeViewContainer.swift */; };
 		2ECB0815218E92C90035D264 /* QRCodeReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECB0814218E92C90035D264 /* QRCodeReaderViewController.swift */; };
 		2ECB0817218E92F40035D264 /* QRCodeReaderViewControllerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECB0816218E92F40035D264 /* QRCodeReaderViewControllerBuilder.swift */; };
@@ -38,7 +48,11 @@
 		2ECB081B218E932A0035D264 /* ReaderOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECB081A218E932A0035D264 /* ReaderOverlayView.swift */; };
 		2ECB081D218E93460035D264 /* SwitchCameraButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECB081C218E93460035D264 /* SwitchCameraButton.swift */; };
 		2ECB081F218E935E0035D264 /* ToggleTorchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECB081E218E935E0035D264 /* ToggleTorchButton.swift */; };
+		2ED36DD721BA3911009B0DC9 /* ContactInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED36DD621BA3911009B0DC9 /* ContactInfoController.swift */; };
+		2ED67D6521B130E000CA6270 /* CardDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED67D6421B130E000CA6270 /* CardDetailView.swift */; };
 		428A577047830792AC44C131 /* Pods_BizyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F6949F043C67A28AEFBACDC /* Pods_BizyUITests.framework */; };
+		62C22B33219910DE00189CDB /* EditProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C22B32219910DE00189CDB /* EditProfileController.swift */; };
+		62C22B352199137200189CDB /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C22B342199137200189CDB /* ProfileViewController.swift */; };
 		8441071D1D42271A2DED5928 /* Pods_Bizy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C2EF5CC9EC417F699F6D78A /* Pods_Bizy.framework */; };
 		8BD9D93944558DC296445380 /* Pods_BizyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA7A915DCACD0E444B4D1758 /* Pods_BizyTests.framework */; };
 /* End PBXBuildFile section */
@@ -62,6 +76,9 @@
 
 /* Begin PBXFileReference section */
 		218BA0C204732D86F13F1821 /* Pods-BizyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BizyUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BizyUITests/Pods-BizyUITests.release.xcconfig"; sourceTree = "<group>"; };
+		2E11246021B1AA3300CAED5D /* Bizy 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Bizy 2.xcdatamodel"; sourceTree = "<group>"; };
+		2E24A88821AEEF23000A3540 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		2E24A88C21AEF453000A3540 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		2E49449B2187DEE000A97FB9 /* Bizy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bizy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E49449E2187DEE000A97FB9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2E4944A02187DEE000A97FB9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -86,12 +103,21 @@
 		2E4FE360218E91BC00CCAC51 /* QRCodeReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeReader.swift; sourceTree = "<group>"; };
 		2E4FE362218E91E600CCAC51 /* QRCodeReaderResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeReaderResult.swift; sourceTree = "<group>"; };
 		2E4FE364218E923A00CCAC51 /* QRCodeReaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeReaderView.swift; sourceTree = "<group>"; };
+		2E8EEB5D21B83CC400968A6F /* GiddyupStd.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = GiddyupStd.otf; path = ../../../../../../../../Downloads/GiddyupStd.otf; sourceTree = "<group>"; };
+		2E8EEB5F21B83CC800968A6F /* GiddyupStd.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = GiddyupStd.otf; path = ../../../../../../../../Downloads/GiddyupStd.otf; sourceTree = "<group>"; };
+		2E8EEB6321B849DE00968A6F /* logo-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "logo-2.png"; path = "../../../Assets/logo-2.png"; sourceTree = "<group>"; };
+		2E8EEB6421B849DE00968A6F /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo.png; path = ../../../Assets/logo.png; sourceTree = "<group>"; };
+		2E8EEB6721B929FE00968A6F /* RequiredInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequiredInfoController.swift; sourceTree = "<group>"; };
+		2E8EEB6921B92AAA00968A6F /* ProfessionalInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfessionalInfoController.swift; sourceTree = "<group>"; };
+		2E8EEB6B21B92AE500968A6F /* SupplementaryInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupplementaryInfoController.swift; sourceTree = "<group>"; };
 		2EC4B3E721951393006E9B3E /* UserParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserParserTests.swift; sourceTree = "<group>"; };
 		2EC4B3E921952BD1006E9B3E /* WalletController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletController.swift; sourceTree = "<group>"; };
 		2EC4B3EC21954AD4006E9B3E /* GetUserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserData.swift; sourceTree = "<group>"; };
 		2EC4B3EE21955E80006E9B3E /* Temp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Temp.storyboard; sourceTree = "<group>"; };
 		2EC4B3F021956439006E9B3E /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		2EC4B3F22195645F006E9B3E /* QRCodeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeController.swift; sourceTree = "<group>"; };
+		2EC4B3F421957A35006E9B3E /* SecondaryCameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryCameraView.swift; sourceTree = "<group>"; };
+		2EC4B3F6219590E9006E9B3E /* ShowUserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowUserController.swift; sourceTree = "<group>"; };
 		2ECB0812218E929F0035D264 /* QRCodeViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeViewContainer.swift; sourceTree = "<group>"; };
 		2ECB0814218E92C90035D264 /* QRCodeReaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeReaderViewController.swift; sourceTree = "<group>"; };
 		2ECB0816218E92F40035D264 /* QRCodeReaderViewControllerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeReaderViewControllerBuilder.swift; sourceTree = "<group>"; };
@@ -99,7 +125,11 @@
 		2ECB081A218E932A0035D264 /* ReaderOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderOverlayView.swift; sourceTree = "<group>"; };
 		2ECB081C218E93460035D264 /* SwitchCameraButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchCameraButton.swift; sourceTree = "<group>"; };
 		2ECB081E218E935E0035D264 /* ToggleTorchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleTorchButton.swift; sourceTree = "<group>"; };
+		2ED36DD621BA3911009B0DC9 /* ContactInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactInfoController.swift; sourceTree = "<group>"; };
+		2ED67D6421B130E000CA6270 /* CardDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailView.swift; sourceTree = "<group>"; };
 		2F6949F043C67A28AEFBACDC /* Pods_BizyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BizyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		62C22B32219910DE00189CDB /* EditProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileController.swift; sourceTree = "<group>"; };
+		62C22B342199137200189CDB /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		68C38BC3FFE055A1C3E2B9B6 /* Pods-BizyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BizyTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BizyTests/Pods-BizyTests.release.xcconfig"; sourceTree = "<group>"; };
 		70CEB54289FDECAD0E8FAE88 /* Pods-BizyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BizyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BizyTests/Pods-BizyTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7B895FF69AC8C545A4491F36 /* Pods-Bizy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bizy.release.xcconfig"; path = "Pods/Target Support Files/Pods-Bizy/Pods-Bizy.release.xcconfig"; sourceTree = "<group>"; };
@@ -162,6 +192,8 @@
 		2E49449D2187DEE000A97FB9 /* Bizy */ = {
 			isa = PBXGroup;
 			children = (
+				2E8EEB6121B8470000968A6F /* Assets */,
+				2E909FCA21B83AEB00E6A0D9 /* Fonts */,
 				2EC4B3EB219538D9006E9B3E /* Network */,
 				2E4944A82187DEE100A97FB9 /* Assets.xcassets */,
 				2E4944AD2187DEE100A97FB9 /* Info.plist */,
@@ -209,8 +241,20 @@
 			children = (
 				2E4944A02187DEE000A97FB9 /* ViewController.swift */,
 				2EC4B3E921952BD1006E9B3E /* WalletController.swift */,
+				2E8EEB5D21B83CC400968A6F /* GiddyupStd.otf */,
 				2EC4B3F021956439006E9B3E /* CameraViewController.swift */,
 				2EC4B3F22195645F006E9B3E /* QRCodeController.swift */,
+				2EC4B3F421957A35006E9B3E /* SecondaryCameraView.swift */,
+				2EC4B3F6219590E9006E9B3E /* ShowUserController.swift */,
+				62C22B32219910DE00189CDB /* EditProfileController.swift */,
+				62C22B342199137200189CDB /* ProfileViewController.swift */,
+				2E24A88821AEEF23000A3540 /* TableViewCell.swift */,
+				2E24A88C21AEF453000A3540 /* TableViewCell.xib */,
+				2ED67D6421B130E000CA6270 /* CardDetailView.swift */,
+				2E8EEB6721B929FE00968A6F /* RequiredInfoController.swift */,
+				2E8EEB6921B92AAA00968A6F /* ProfessionalInfoController.swift */,
+				2E8EEB6B21B92AE500968A6F /* SupplementaryInfoController.swift */,
+				2ED36DD621BA3911009B0DC9 /* ContactInfoController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -228,6 +272,7 @@
 		2E4944D22187DF4500A97FB9 /* InternalAPIs */ = {
 			isa = PBXGroup;
 			children = (
+				2E8EEB6021B842AD00968A6F /* Material */,
 				2E4FE352218E8C4100CCAC51 /* QRCodeReader */,
 				2E4FE350218E8C2200CCAC51 /* QRCodeGenerator */,
 			);
@@ -276,6 +321,30 @@
 				2E4FE35E218E8F4A00CCAC51 /* WalletParser.swift */,
 			);
 			path = Parsers;
+			sourceTree = "<group>";
+		};
+		2E8EEB6021B842AD00968A6F /* Material */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Material;
+			sourceTree = "<group>";
+		};
+		2E8EEB6121B8470000968A6F /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				2E8EEB6321B849DE00968A6F /* logo-2.png */,
+				2E8EEB6421B849DE00968A6F /* logo.png */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		2E909FCA21B83AEB00E6A0D9 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				2E8EEB5F21B83CC800968A6F /* GiddyupStd.otf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		2EC4B3E621951344006E9B3E /* Classes */ = {
@@ -425,7 +494,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E8EEB5E21B83CC500968A6F /* GiddyupStd.otf in Resources */,
 				2EC4B3EF21955E80006E9B3E /* Temp.storyboard in Resources */,
+				2E24A88D21AEF453000A3540 /* TableViewCell.xib in Resources */,
+				2E8EEB6521B849DE00968A6F /* logo-2.png in Resources */,
+				2E8EEB6621B849DE00968A6F /* logo.png in Resources */,
 				2E4944AC2187DEE100A97FB9 /* LaunchScreen.storyboard in Resources */,
 				2E4944A92187DEE100A97FB9 /* Assets.xcassets in Resources */,
 				2E4944A42187DEE000A97FB9 /* Wallet.storyboard in Resources */,
@@ -457,11 +530,29 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Bizy/Pods-Bizy-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
+				"${BUILT_PRODUCTS_DIR}/MDFInternationalization/MDFInternationalization.framework",
+				"${BUILT_PRODUCTS_DIR}/MDFTextAccessibility/MDFTextAccessibility.framework",
+				"${BUILT_PRODUCTS_DIR}/MaterialComponents/MaterialComponents.framework",
+				"${BUILT_PRODUCTS_DIR}/MotionAnimator/MotionAnimator.framework",
+				"${BUILT_PRODUCTS_DIR}/MotionInterchange/MotionInterchange.framework",
+				"${BUILT_PRODUCTS_DIR}/MotionTransitioning/MotionTransitioning.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFInternationalization.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFTextAccessibility.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MaterialComponents.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MotionAnimator.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MotionInterchange.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MotionTransitioning.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -530,28 +621,38 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E8EEB6A21B92AAA00968A6F /* ProfessionalInfoController.swift in Sources */,
 				2ECB081F218E935E0035D264 /* ToggleTorchButton.swift in Sources */,
+				2E8EEB6C21B92AE500968A6F /* SupplementaryInfoController.swift in Sources */,
 				2ECB081B218E932A0035D264 /* ReaderOverlayView.swift in Sources */,
+				62C22B33219910DE00189CDB /* EditProfileController.swift in Sources */,
+				2ED67D6521B130E000CA6270 /* CardDetailView.swift in Sources */,
 				2E4944D62187E84A00A97FB9 /* User.swift in Sources */,
 				2EC4B3F121956439006E9B3E /* CameraViewController.swift in Sources */,
 				2E4FE361218E91BC00CCAC51 /* QRCodeReader.swift in Sources */,
+				2EC4B3F521957A35006E9B3E /* SecondaryCameraView.swift in Sources */,
 				2E4944A12187DEE000A97FB9 /* ViewController.swift in Sources */,
 				2E4FE363218E91E600CCAC51 /* QRCodeReaderResult.swift in Sources */,
+				2E24A88921AEEF23000A3540 /* TableViewCell.swift in Sources */,
+				2E8EEB6821B929FE00968A6F /* RequiredInfoController.swift in Sources */,
 				2E4FE358218E8DA100CCAC51 /* CIColorExtension.swift in Sources */,
 				2E4FE35F218E8F4A00CCAC51 /* WalletParser.swift in Sources */,
 				2ECB0815218E92C90035D264 /* QRCodeReaderViewController.swift in Sources */,
 				2E4944A72187DEE000A97FB9 /* Bizy.xcdatamodeld in Sources */,
+				2ED36DD721BA3911009B0DC9 /* ContactInfoController.swift in Sources */,
 				2EC4B3F32195645F006E9B3E /* QRCodeController.swift in Sources */,
 				2E4FE34F218E82AC00CCAC51 /* WalletCard.swift in Sources */,
 				2EC4B3ED21954AD4006E9B3E /* GetUserData.swift in Sources */,
 				2ECB081D218E93460035D264 /* SwitchCameraButton.swift in Sources */,
 				2ECB0817218E92F40035D264 /* QRCodeReaderViewControllerBuilder.swift in Sources */,
+				62C22B352199137200189CDB /* ProfileViewController.swift in Sources */,
 				2ECB0813218E929F0035D264 /* QRCodeViewContainer.swift in Sources */,
 				2E4FE35A218E8DCA00CCAC51 /* CIImageExtension.swift in Sources */,
 				2E49449F2187DEE000A97FB9 /* AppDelegate.swift in Sources */,
 				2E4FE35D218E8F2900CCAC51 /* UserParser.swift in Sources */,
 				2ECB0819218E93130035D264 /* QRCodeReaderViewControllerDelegate.swift in Sources */,
 				2EC4B3EA21952BD1006E9B3E /* WalletController.swift in Sources */,
+				2EC4B3F7219590EA006E9B3E /* ShowUserController.swift in Sources */,
 				2E4FE365218E923A00CCAC51 /* QRCodeReaderView.swift in Sources */,
 				2E4FE356218E8D6000CCAC51 /* QRCode.swift in Sources */,
 			);
@@ -729,12 +830,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q2PRY7Y4V6;
 				INFOPLIST_FILE = Bizy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Wolf.Bizy;
+				PRODUCT_BUNDLE_IDENTIFIER = Bizy.Bizy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -747,12 +849,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q2PRY7Y4V6;
 				INFOPLIST_FILE = Bizy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Wolf.Bizy;
+				PRODUCT_BUNDLE_IDENTIFIER = Bizy.Bizy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -886,9 +989,10 @@
 		2E4944A52187DEE000A97FB9 /* Bizy.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				2E11246021B1AA3300CAED5D /* Bizy 2.xcdatamodel */,
 				2E4944A62187DEE000A97FB9 /* Bizy.xcdatamodel */,
 			);
-			currentVersion = 2E4944A62187DEE000A97FB9 /* Bizy.xcdatamodel */;
+			currentVersion = 2E11246021B1AA3300CAED5D /* Bizy 2.xcdatamodel */;
 			path = Bizy.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

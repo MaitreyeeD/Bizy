@@ -7,6 +7,9 @@ target 'Bizy' do
 
     pod 'Alamofire'
     pod 'SwiftyJSON'
+    pod 'RealmSwift'
+    pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
+    pod 'MaterialComponents'
 
   # Pods for Bizy
 

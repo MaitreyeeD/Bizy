@@ -14,8 +14,9 @@ class User  {
   // MARK: - Properties
   var firstName: String
   var lastName: String
-  var password: String?
   var email: String
+  var password: String?
+  
   
   var phone: String?
   var summary: String?
@@ -26,8 +27,11 @@ class User  {
   var city: String?
   var website: String?
   var image: UIImage?
-  var qrCode: QRCode?
+
+  var qrCode: String?
+
   var id: String?
+  var photo: String?
 
   
   // MARK: - General
@@ -42,7 +46,13 @@ class User  {
     self.email = email
   }
   
-
+  
+  func equals(first: User, second: User) -> Bool {
+    if(first.id! == second.id!) {
+      return true
+    }
+    return false
+  }
   
 //  For Encoding and Decoding.
 //  required init(coder aDecoder: NSCoder) {

@@ -14,8 +14,9 @@ import SwiftyJSON
 class UserParser {
   var urlString: String!
 ////  var call: NSURL
-//  var dataResult: Data!
+  var dataResult: Data!
   var swiftyjson: JSON!
+  var proPic = ["man.png", "woman.png", "wom.png"]
 //  init(url: String) {
 //    urlString = url
 //  }
@@ -76,17 +77,20 @@ class UserParser {
 //      print("Error parsing this url!!")
 //      return nil
 //    }
+    print(swiftyjson["first_name"].string!)
+//    guard let fname = swiftyjson["first_name"].string  else {
+//      return nil
+//    }
+    let fname = swiftyjson["first_name"].string!
+//    guard let lname = swiftyjson["last_name"].string  else {
+//      return nil
+//    }
+    let lname = swiftyjson["last_name"].string!
+//    guard let email = swiftyjson["email"].string  else {
+//      return nil
+//    }
     
-    guard let fname = swiftyjson["first_name"].string  else {
-      return nil
-    }
-    guard let lname = swiftyjson["last_name"].string  else {
-      return nil
-    }
-    guard let email = swiftyjson["email"].string  else {
-      return nil
-    }
-    
+    let email = swiftyjson["email"].string!
     let user = User(fname: fname, lname: lname, email: email);
     if let password = swiftyjson["password"].string {
       user.password = password
@@ -123,9 +127,14 @@ class UserParser {
       user.website = website
     }
     
-    if let id = swiftyjson["id"].string {
-      user.id = id
+    if let id = swiftyjson["id"].int {
+      user.id = String(id)
+      print(id)
     }
+    
+    let number = Int.random(in: 0 ... 2)
+
+    user.photo = proPic[number]
     
     //To Be Determined!!!!!!
     //How do we store and access images into our database!!!
@@ -153,31 +162,6 @@ class UserParser {
       "summary": person.summary ?? "",
     ]
     
-    Alamofire.request(urlString, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil).responseJSON {
-      response in
-      switch response.result {
-      case .success:
-        do {
-
-          let swiftyjson = try JSON(data: response.data!)
-          let userId = swiftyjson["id"].string
-          person.id = userId;
-          if let bop = userId {
-            let qrString = urlString + bop
-            person.qrCode = QRCode(qrString)
-          }
-          
-          
-        } catch {
-          print("Error sending the post request with this information!")
-        }
-        
-        break
-      case .failure(let error):
-
-        print(error)
-      }
-    }
     
   }
   
