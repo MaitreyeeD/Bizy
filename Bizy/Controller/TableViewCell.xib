@@ -18,39 +18,51 @@
                 <rect key="frame" x="0.0" y="0.0" width="558" height="197.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NWW-Vf-LAY">
-                        <rect key="frame" x="7" y="11" width="216" height="178"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NWW-Vf-LAY">
+                        <rect key="frame" x="20" y="80" width="118" height="97"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="118" id="Jaq-uf-Mse"/>
+                        </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RsN-bn-UaO">
-                        <rect key="frame" x="255" y="17" width="283" height="70"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="70" id="CtP-zW-fqk"/>
-                            <constraint firstAttribute="width" constant="283" id="OoY-gg-HeE"/>
-                        </constraints>
+                        <rect key="frame" x="20" y="7" width="497" height="70"/>
                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="23"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uUz-Jk-zhu">
-                        <rect key="frame" x="408" y="150" width="130" height="29"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uUz-Jk-zhu">
+                        <rect key="frame" x="369" y="128" width="130" height="29"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="29" id="pu0-9l-I5T"/>
+                        </constraints>
                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jfm-1z-RCI">
-                        <rect key="frame" x="408" y="103" width="130" height="39"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jfm-1z-RCI">
+                        <rect key="frame" x="369" y="80" width="130" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="ftD-o9-pGe"/>
+                            <constraint firstAttribute="width" constant="130" id="idt-JU-Th8"/>
+                        </constraints>
                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="RsN-bn-UaO" firstAttribute="trailing" secondItem="Jfm-1z-RCI" secondAttribute="trailing" id="3Iz-dW-DjA"/>
-                    <constraint firstItem="RsN-bn-UaO" firstAttribute="trailing" secondItem="uUz-Jk-zhu" secondAttribute="trailing" id="Shc-jV-FYU"/>
-                    <constraint firstItem="RsN-bn-UaO" firstAttribute="trailing" secondItem="ztf-Jx-pZ6" secondAttribute="trailingMargin" id="cJN-Eg-Rgj"/>
-                    <constraint firstItem="RsN-bn-UaO" firstAttribute="top" secondItem="ztf-Jx-pZ6" secondAttribute="topMargin" constant="6" id="eLN-qA-4N0"/>
-                    <constraint firstItem="Jfm-1z-RCI" firstAttribute="top" secondItem="RsN-bn-UaO" secondAttribute="bottom" constant="16" id="qHW-aX-dU3"/>
-                    <constraint firstItem="RsN-bn-UaO" firstAttribute="leading" secondItem="NWW-Vf-LAY" secondAttribute="trailing" constant="27" id="slE-cH-Y5t"/>
+                    <constraint firstItem="Jfm-1z-RCI" firstAttribute="leading" secondItem="uUz-Jk-zhu" secondAttribute="leading" id="0hu-Bo-Azy"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="NWW-Vf-LAY" secondAttribute="bottom" constant="10" id="2X6-SP-YF8"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="RsN-bn-UaO" secondAttribute="trailing" constant="21" id="BQ5-ia-2RU"/>
+                    <constraint firstItem="RsN-bn-UaO" firstAttribute="top" secondItem="ztf-Jx-pZ6" secondAttribute="topMargin" constant="-4" id="Gun-cy-2yC"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Jfm-1z-RCI" secondAttribute="trailing" constant="39" id="Txu-AF-xUp"/>
+                    <constraint firstItem="uUz-Jk-zhu" firstAttribute="top" secondItem="Jfm-1z-RCI" secondAttribute="bottom" constant="8" symbolic="YES" id="d2i-V2-OOe"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="uUz-Jk-zhu" secondAttribute="bottom" constant="30" id="gmp-fV-qTG"/>
+                    <constraint firstItem="RsN-bn-UaO" firstAttribute="leading" secondItem="NWW-Vf-LAY" secondAttribute="leading" id="jBh-n6-M7E"/>
+                    <constraint firstItem="NWW-Vf-LAY" firstAttribute="top" secondItem="RsN-bn-UaO" secondAttribute="bottom" constant="3" id="llf-Xn-L0U"/>
+                    <constraint firstItem="Jfm-1z-RCI" firstAttribute="trailing" secondItem="uUz-Jk-zhu" secondAttribute="trailing" id="oOO-mQ-wdo"/>
+                    <constraint firstItem="NWW-Vf-LAY" firstAttribute="top" secondItem="Jfm-1z-RCI" secondAttribute="top" id="tSA-4E-nxP"/>
+                    <constraint firstItem="RsN-bn-UaO" firstAttribute="leading" secondItem="ztf-Jx-pZ6" secondAttribute="leadingMargin" id="w2g-Q1-cNY"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

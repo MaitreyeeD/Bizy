@@ -69,6 +69,7 @@ class EditProfileController: UIViewController, UIImagePickerControllerDelegate, 
   
   let imagePicker = UIImagePickerController()
   var picture: UIImage?
+  var proPic = ["man.png", "woman.png", "wom.png"]
   var me: User? = nil
     var thisuser = User(fname: "", lname: "", email: "")
   
@@ -137,7 +138,7 @@ class EditProfileController: UIViewController, UIImagePickerControllerDelegate, 
     PHPhotoLibrary.requestAuthorization({_ in return})
     imagePicker.delegate = (self as UIImagePickerControllerDelegate & UINavigationControllerDelegate)
     
-    
+    initializeButtons()
     
     self.configureView()
   }
@@ -179,7 +180,9 @@ class EditProfileController: UIViewController, UIImagePickerControllerDelegate, 
     user.state = thisuser.state
     user.city = thisuser.city
     user.website = thisuser.website
-    user.photo = "2";
+    let number = Int.random(in: 0 ... 2)
+    
+    user.photo = proPic[number];
     self.me = user
     
     sendPostRequest()

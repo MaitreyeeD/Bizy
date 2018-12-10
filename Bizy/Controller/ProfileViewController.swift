@@ -159,6 +159,8 @@ class ProfileViewController: UIViewController, EditProfileControllerDelegate {
           stateData.text =  ""
         }
         //    imageData.image = thisuser.image ?? nil
+        
+        imageData.image = UIImage(named: "man.png")
       }
     
       else {
@@ -175,6 +177,7 @@ class ProfileViewController: UIViewController, EditProfileControllerDelegate {
         cityData.text =  ""
         stateData.text = ""
         //    imageData.image = thisuser.image ?? nil
+        
     }
     
     

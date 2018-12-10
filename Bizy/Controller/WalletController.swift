@@ -28,7 +28,7 @@ class WalletController: UIViewController, UITableViewDelegate, UITableViewDataSo
   var cards = [User]()
   var selfLoaded = false;
   var currentUser = User(fname: "", lname: "", email: "")
-  
+  var proPic = ["man.png", "woman.png", "wom.png"]
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -47,6 +47,7 @@ class WalletController: UIViewController, UITableViewDelegate, UITableViewDataSo
     }
     loadCards()
     tablesView.reloadData()
+    print(thisuser.firstName + " ...NOTHING OR SOMETHING??")
     print(cards.count)
 
   }
@@ -163,6 +164,12 @@ class WalletController: UIViewController, UITableViewDelegate, UITableViewDataSo
     newUser.website = (data.value(forKey: "website") as? String ?? "")
     newUser.linkedIn = (data.value(forKey: "linkedin") as? String ?? "")
     
+    let number = Int.random(in: 0 ... 2)
+    newUser.photo = proPic[number]
+    
+    
+    
+    
     //Waiting for image information---------------------------------------------------------
 //    newUser.resume = (data.value(forKey: "resume") as? String ?? "")
 //    newUser.image = UIImage(data:(data.value(forKey: "image") as! NSData) as! Data)
@@ -216,6 +223,16 @@ class WalletController: UIViewController, UITableViewDelegate, UITableViewDataSo
     cell.name?.text = fullName
     cell.company?.text = card.company
     cell.position?.text = card.position
+    cell.photo?.image = UIImage(named: card.photo!)
+    
+    
+    let number = Int.random(in: 0 ... 2)
+    if (card.photo != nil) {
+        cell.photo?.image = UIImage(named: card.photo!)
+    } else {
+      cell.photo?.image = UIImage(named: proPic[number])
+    }
+    
     
     //Waiting for images-----------------------------------------------------------------
 //    cell.imageView!.image = contact.image!.image
