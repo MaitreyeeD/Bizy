@@ -1,5 +1,5 @@
 # Bizy
-A business card makeover. Semester long project for course iOS development (67442) Fall 2018.
+A business card makeover. Semester long project for iOS development course (67442) Fall 2018.
 
 Bizy is an iOS application that makes storing and sharing digital business cards flawless.
 
