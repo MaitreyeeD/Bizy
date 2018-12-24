@@ -11,6 +11,12 @@ The most important part of a business card is the information on the card, not t
 
 # Screenshots 
 
+![Screenshot 1](/screenshots/s1.png?raw=true)
+![Screenshot 2](/screenshots/s2.png?raw=true)
+![Screenshot 3](/screenshots/s3.png?raw=true)
+![Screenshot 4](/screenshots/s4.png?raw=true)
+![Screenshot 5](/screenshots/s5.png?raw=true)
+
 
 
 # Features
